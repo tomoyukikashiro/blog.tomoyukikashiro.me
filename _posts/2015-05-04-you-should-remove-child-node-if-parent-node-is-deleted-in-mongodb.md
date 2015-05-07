@@ -1,68 +1,88 @@
 ---
 layout: post
-date: 2015-05-07 00:00
-title: Can not get $routeParams - AngularJS - 
-tags: [angularjs]
-slug: can-not-get-$routeparams-angularjs
+date: 2015-05-04 00:00
+title: You should remove child node if parent node is deleted in mongodb
+tags: [mongodb, mongoid]
+slug: you-should-remove-child-node-if-parent-node-is-deleted-in-mongodb.md
 ---
 
 ## Outline
 
-You can not get $routeparams.key in `$routeProvider resolve section`.
+You should remove child node if parent node is delete in mongodb.
+Here is simple example.
+
+## Models
+
+### Parent
+
+{% highlight ruby %}
+class Parent
+  include Mongoid::Document
+
+  field :name,  type: String
+  has_many :children
+end
+{% endhighlight %}
+
+### Child
+
+{% highlight ruby %}
+class Child
+  include Mongoid::Document
+
+  field :name,  type: String
+  belongs_to :parent
+end
+{% endhighlight %}
 
 ## Example
 
-{% highlight js %}
-  angular.module('app')
-    .config(Router);
+### Bad
 
-  Router.$inject = ['$routeProvider'];
+{% highlight bash %}
+$ rails c
+$ parent = Parent.create(name: "parent1")
+$ parent.children.create(name: "child1")
+$ child = parent.children.first
 
-  function Router($routeProvider) {
-    $routeProvider
-      .when('/path/:iuserId',
-          {
-            templateUrl: '/templates/path.html',
-            controller: 'PathController',
-            resolve: {
-              user: ['$routeParams', 'PathResource', function($routeParams, PathResource) {
-                var id = $routeParams.userId; // you can not get parameter from $routeProvider
-                return PathResource.get(id);.
-              }]
-            }
-          });
+# if you delete parent child1 still exist in db.
+$ parent.destroy
+$ Parent.where(id, parent.id).size # result is 0
+$ Child.where(id, child.id).size   # result is 1
 {% endhighlight %}
-
-## Reason
-
-In `$routeScope.$locationChangeSuccess` event, execute resolve section to get data before Rouing then `$routeParams` are updated.
 
 ## Solution
 
-{% highlight js %}
-  angular.module('app')
-    .config(Router);
+You have to add cleanup logic using "before_destroy" callback
 
-  Router.$inject = ['$routeProvider'];
+### Parent
 
-  function Router($routeProvider) {
-    $routeProvider
-      .when('/path/:iuserId',
-          {
-            templateUrl: '/templates/path.html',
-            controller: 'PathController',
-            resolve: {
-              user: ['$routeParams', 'PathResource', function($routeParams, PathResource) {
-                var id = $route.current.params.id; // you can get parameter from $route.current
-                return PathResource.get(id);.
-              }]
-            }
-          });
+{% highlight ruby %}
+class Parent
+  include Mongoid::Document
+
+  field :name,  type: String
+  has_many :children
+
+  before_destroy do
+    children.destroy_all
+  end
+end
 {% endhighlight %}
 
-`$route.current` is updated in `$routeScope.$locationChangeStart` event which is fired before execute resolve section (`$routeScope.$locationChangeSuccess`)
+## Example
 
+### Good
 
- 
+{% highlight bash %}
+$ rails c
+$ parent = Parent.create(name: "parent1")
+$ parent.children.create(name: "child1")
+$ child = parent.children.first
 
+# if you delete parent child1 is delete too in db.
+$ parent.destroy
+$ Parent.where(id, parent.id).size # result is 0
+$ Child.where(id, child.id).size   # result is 0
+{% endhighlight %}
 
