@@ -6,7 +6,7 @@ tags: [ruby, rails, kaminari]
 slug: how-to-use-kaminari-from-array
 ---
 
-You can generate pager object using [kaminari](https://github.com/amatsuda/kaminari)
+You can generate pager object using [kaminari](https://github.com/amatsuda/kaminari) from array object.
 
 {% highlight ruby %}
 # select admin user and push to array

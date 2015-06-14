@@ -8,15 +8,15 @@ slug: how-long-dose-browser-keep-data-in-session
 
 ## Background
 
-I develped some web application. This application use session cookie.
+I develped some web applications. This application use session cookie.
 I expected session cookie data is deleted when user close browse window.
 
 But browser keep having data after closing browser window.
-I wonder how long dose browser save data in client storage.
+I wonder how long dose browser keep data in client storage.
 
 ## Outline
 
-survey how long dose typical bower storage save data.
+survey how long dose typical bower storage keep data.
 
 ## Survey
 
@@ -60,11 +60,11 @@ this page..
 
 
 If you want to delete data in client after session Sessionstorage is best but you need to implement expire logic to delete data.
-Because Some browser did not delete data after session.
+Because some browsers did not delete data after session.
 
 e.g.
 
-SessionStorage was not deleted afeter back to home screen and return browser window in iOS safari, iOS chrome
+SessionStorage was not deleted afeter back to home screen and return browser window in iOS safari, iOS chrome.
 
 ### Data
 
