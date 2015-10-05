@@ -1,12 +1,20 @@
 
+## prepare
+
+```
+$ bundle install
+$ gem install jekyll-gh-pages
+$ rake prepare
+```
+
 ## deploy
 
 ```
-rake deploy
+bundle exec rake deploy
 ```
 
 ## server
 
 ```
-jekyll serve --watch
+bundle exec jekyll serve --watch
 ```
