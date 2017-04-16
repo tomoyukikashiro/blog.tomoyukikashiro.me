@@ -1,20 +1,16 @@
+# Operation
 
-## prepare
+## Install
 
 ```
 $ bundle install
-$ gem install jekyll-gh-pages
-$ rake prepare
 ```
 
-## deploy
+## Run server
 
 ```
-bundle exec rake deploy
+bundle exec jekyll
 ```
 
-## server
-
-```
-bundle exec jekyll serve --watch
-```
+# material-jekyll-theme
+![Material Jekyll Theme](https://github.com/alexcarpenter/material-jekyll-theme)

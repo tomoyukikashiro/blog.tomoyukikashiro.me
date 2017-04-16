@@ -1,71 +1,40 @@
-title:            TOMOYUKI KASHIRO
-description:      Front-end Engineer Tomoyuki Kashiro's blog
-disqus_shortname: tkashiro
-reading_time:     true
-words_per_minute: 200
-# Your site's domain goes here (eg: //mmistakes.github.io, http://mademistakes.com, etc)
-# When testing locally leave blank or use http://localhost:4000
-url: http://blog.tomoyukikashiro.me
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing these this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
 
-# Owner/author information
-owner:
-  name:           Tomoyuki Kashiro
-  avatar:         avatar.png
-  bio:            "while(true){ [HTML5, CSS3, JavaScript, Ruby].join('').hack(); }"
-  email:          ksrtmyk@gmail.com
-  # Social networking links used in footer. Update and remove as you like.
-  twitter:        Tkashiro
-  facebook:       
-  github:         kashiro
-  stackexchange:  
-  linkedin:       tomoyukikashiro
-  instagram:      
-  flickr:         
-  tumblr:  
-  resume:         http://tomoyukikashiro.me/resume      
-  # For Google Authorship https://plus.google.com/authorship
-  # google plus id, include the '+', eg +mmistakes
-  google_plus:    +KashiroTomoyuki
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: TOMOYUKI KASHIRO's Blog
+email: ksrtmyk@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  This is a blog to share what I learned. Especially Javascript, HTML, CSS and Python.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://blog.tomoyukikashiro.me" # the base hostname & protocol for your site
 
-# Background image to be tiled on all pages
-background: 
+# Social
+githubUsername: tomoyukikashiro
+twitterUsername: tomoyukikashiro
+dribbbleUsername:
+codepenUsername:
 
-# Analytics and webmaster tools stuff goes here
-google_analytics: UA-50867411-2
-google_verify:      
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:         
+# Build settings
+markdown: kramdown
 
-# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    Asia/Tokyo
-future:      true
-highlighter: pygments
-markdown:    kramdown
-gems:
-  - jekyll-sitemap
+themeColor: orange # green, blue, orange, purple, grey
+fixedNav: 'true' # true or false
+
+permalink: /:year/:month/:title
+markdown: kramdown
+include: [_pages]
+exclude: [_site, CHANGELOG.md, LICENSE, README.md]
 sass:
-  sass_dir: _sass
   style: compressed
-
-# https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink:   /post/:title/
-
-# Amount of post to show on home page
-paginate: 5
-
-kramdown:
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  use_coderay: true
-
-  coderay:
-    coderay_line_numbers: nil
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: class
-
-include: [".htaccess"]
-exclude: ["lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-01-9 00:00
-title: add ticket number to git commit automatically
+title: Add ticket number to git commit automatically
 tags: [git, development]
 slug: add-ticket-number-to-git-commit-automatically
 ---
