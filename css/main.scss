@@ -25,7 +25,9 @@
   'components/archives',
   'components/social',
   'components/buttons',
-  'components/footer';
+  'components/footer',
+  'components/share-dialog',
+  'components/share-button';
 
 // Themes
 @import
@@ -33,6 +35,7 @@
   'themes/green',
   'themes/grey',
   'themes/orange',
+  'themes/orange_custom',
   'themes/purple';
 
 // Vendor

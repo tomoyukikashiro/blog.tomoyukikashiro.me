@@ -8,6 +8,7 @@
   padding-right: 2.5rem;
   padding-left: 2.5rem;
   background: $t-theme;
+  position: relative;
 }
 
 .c-header__title {
@@ -26,4 +27,15 @@
   span {
     color: rgba(#fff, .5);
   }
+}
+
+.c-header__button {
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  max-width: 76rem;
+  padding-right: 2.5rem;
+  padding-left: 2.5rem;
 }

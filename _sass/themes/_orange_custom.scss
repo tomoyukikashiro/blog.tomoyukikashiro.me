@@ -1,0 +1,21 @@
+/* ==========================================================================
+   Orange Custom Theme
+   ========================================================================== */
+.t-orange-custom {
+  color: $primary-text-color; 
+
+  .c-navigation {
+    background-color: $primary-color-dark;
+  }
+  .c-header {
+    background: $primary-color;
+  }
+
+  .c-article__main a:not(.c-btn) {
+    color: $primary-color;
+  }
+
+  .c-footer a {
+    color: $primary-color;
+  }
+}

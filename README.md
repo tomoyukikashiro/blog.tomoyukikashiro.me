@@ -21,7 +21,7 @@ $ git clone -b gh-pages git@github.com:tomoyukikashiro/blog.tomoyukikashiro.me.g
 $ bundle exec jekyll build
 $ cp -rf _site/* _build/
 $ cd _build
-$ git commit -am 'update';git push origin gh-pages -f
+$ git add .;git commit -m 'update';git push origin gh-pages -f
 ```
 
 

@@ -1,5 +1,11 @@
 ---
 layout: page
 ---
+<ul class="list-unstyled list-inlined text-right">
+{% for tag in page.tags %}
+<li><a href="{{ site.url }}/tags/#{{ tag }}">{{tag}}</a></li>
+{% endfor %}
+</ul>
+<p class="text-right"><date datetime="{{page.date | date: '%Y-%m-%d'}}">{{ page.date | date: "%b %-d, %Y" }}</date></p>
 {{ content }}
 {% include disqus_comments.html %}

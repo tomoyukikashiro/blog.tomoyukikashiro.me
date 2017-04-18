@@ -2,6 +2,14 @@
   list-style: none;
 }
 
+.list-inlined {
+  > li {display: inline;}
+}
+
+.text-right {
+  text-align: right;
+}
+
 .m-r-half {
 	margin-right: $space/2;
 }

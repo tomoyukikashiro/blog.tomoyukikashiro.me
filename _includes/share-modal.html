@@ -1,0 +1,18 @@
+{% capture share_url %}{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
+<ul class="list-unstyled list-inlined c-share-dialog">
+  <li>
+    <button type="button" ngclipboard data-clipboard-text="{{share_url}}">
+    <i class="fa fa-clipboard" aria-hidden="true"></i><span>COPY URL</span>
+    </button>
+  </li>
+  <li>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-url="{{share_url}}" data-via="tomoyukikashiro">
+    <i class="fa fa-twitter" aria-hidden="true"></i><span>TWITTER</span>
+    </a>
+  </li>
+  <li web-share ng-show="$webShareCtrl.isSupported">
+    <button type="button" web-share data-url="{{share_url}}" data-text="{{page.title}}" ng-click="$webShareCtrl.share()">
+      <i class="fa fa-rocket" aria-hidden="true"></i><span>MORE</span>
+    </button>
+  </li>
+</ul>
