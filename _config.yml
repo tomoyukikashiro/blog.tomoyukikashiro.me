@@ -28,13 +28,17 @@ codepenUsername:
 
 # Build settings
 markdown: kramdown
+gems:
+  - jekyll-sitemap
 
 themeColor: orange # green, blue, orange, purple, grey
 fixedNav: 'true' # true or false
 
-permalink: /:year/:month/:title
+permalink: /post/:title
 markdown: kramdown
 include: [_pages]
-exclude: [_site, CHANGELOG.md, LICENSE, README.md]
+exclude: [_site, _build, CHANGELOG.md, LICENSE, README.md]
 sass:
   style: compressed
+
+google_analytics: UA-50867411-2
