@@ -25,6 +25,7 @@ githubUsername: tomoyukikashiro
 twitterUsername: tomoyukikashiro
 dribbbleUsername:
 codepenUsername:
+disqus_shortname: tkashiro
 
 # Build settings
 markdown: kramdown
