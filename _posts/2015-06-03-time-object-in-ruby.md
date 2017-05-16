@@ -3,7 +3,6 @@ layout: post
 date: 2015-06-03 00:00
 title: time object in ruby
 tags: [ruby]
-slug: time-object-in-ruby
 ---
 
 Time object in ruby can not parse Time string(e.g. 2015-05-29T19:59:48+09:00) by default.

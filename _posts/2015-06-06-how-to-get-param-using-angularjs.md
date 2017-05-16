@@ -3,7 +3,6 @@ layout: post
 date: 2015-06-06 00:00
 title: how to get params using angularjs
 tags: [angularjs]
-slug: how-to-get-params-using-angularjs
 ---
 
 # Basic Usage

@@ -3,7 +3,6 @@ layout: post
 date: 2014-11-30 00:00
 title: How to set :active style to button in mobile
 tags: [cssactivebutton]
-slug:  how-to-set-active-style-to-button-in-mobile
 ---
 
 ## Outline

@@ -3,7 +3,6 @@ layout: post
 date: 2015-05-11 00:00
 title: When before syntax is called in Rspec
 tags: [TDD, rubyonrails, rspec]
-slug: when-before-syntax-is-called-in-rspec
 ---
 
 # Outline

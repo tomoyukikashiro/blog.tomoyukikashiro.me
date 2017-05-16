@@ -3,7 +3,6 @@ layout: post
 date: 2017-01-9 00:00
 title: Add ticket number to git commit automatically
 tags: [git, development]
-slug: add-ticket-number-to-git-commit-automatically
 ---
 
 Most of ticket tracker like Github, pivotal tracker have function to connect your commit to ticket(story).

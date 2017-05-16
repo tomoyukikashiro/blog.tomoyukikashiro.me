@@ -3,7 +3,6 @@ layout: post
 date: 2014-11-18 00:00
 title: algorithm in JavaScript
 tags: [sortalgorithmjavascriptsearch]
-slug: algorithm-in-javascript
 ---
 
 I've tried to expressed some algorithm in javascript to understand it.

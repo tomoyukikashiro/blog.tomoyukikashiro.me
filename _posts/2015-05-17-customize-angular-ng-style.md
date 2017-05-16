@@ -3,7 +3,6 @@ layout: post
 date: 2015-05-17 00:00
 title: Customize AngularJS ng-style
 tags: [angularjs, style, javascript]
-slug: customize-angularjs-ng-style
 ---
 
 # Basic Usage

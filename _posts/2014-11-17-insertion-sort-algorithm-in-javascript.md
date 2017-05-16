@@ -3,7 +3,6 @@ layout: post
 date: 2014-11-17 00:00
 title: Insertion sort algorithm in JavaScript
 tags: [sortInsertionalgorithm]
-slug: insertion-sort-algorithm-in-javascript
 ---
 
 ## What is Insertion sort algorithm ?

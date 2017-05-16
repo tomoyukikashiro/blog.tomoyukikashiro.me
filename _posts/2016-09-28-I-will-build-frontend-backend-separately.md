@@ -3,7 +3,6 @@ layout: post
 date: 2016-09-28 00:00
 title: I will build frontend and backend separately
 tags: [javascript, development, devops]
-slug: I-will-build-frontend-and-backend-separately
 ---
 
 # TL;DL

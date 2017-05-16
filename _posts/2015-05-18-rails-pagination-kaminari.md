@@ -3,7 +3,6 @@ layout: post
 date: 2015-05-18 00:00
 title: Rails Pagination - kaminari
 tags: [rubyonrails, kaminari, pagination]
-slug: rails-pagination-kaminari
 ---
 
 `Kaminari` is popular pagination gem.

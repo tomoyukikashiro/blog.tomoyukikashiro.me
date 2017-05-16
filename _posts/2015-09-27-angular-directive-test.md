@@ -3,7 +3,6 @@ layout: post
 date: 2015-09-27 00:00
 title: don't forget $digest in angular directive unit test
 tags: [javascript, angularjs]
-slug: donot-forget-digest-in-angular-directive-unit-test
 ---
 
 ## Outline

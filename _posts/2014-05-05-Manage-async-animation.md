@@ -3,7 +3,6 @@ layout: post
 date: 2014-05-05 00:00
 title: Manage Async Animation by using jQuery.DeferredPipeline
 tags: [jquery animation Async]
-slug: Manage-async-animation
 ---
 
 [jQuery.DeferredPipeline](https://github.com/Takazudo/jQuery.DeferredPipeline) is jquery plugin to manage async function more easily.

@@ -3,7 +3,6 @@ layout: post
 date: 2014-11-18 00:00
 title: Quick sort algorithm in JavaScript
 tags: [sortquickalgorithm]
-slug: quick-sort-algorithm-in-javascript
 ---
 
 ## What is Quick sort algorithm ?

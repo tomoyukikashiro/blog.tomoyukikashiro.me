@@ -3,7 +3,6 @@ layout: post
 date: 2013-07-07 00:00
 title: W3C Technical Report Process
 tags: [html5 W3c TR]
-slug: w3c-technical-report-process
 ---
 
 ## Process

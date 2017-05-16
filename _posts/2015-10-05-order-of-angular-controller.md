@@ -3,7 +3,6 @@ layout: post
 date: 2015-10-05 00:00
 title: order of angular controller's initialisation
 tags: [javascript, angularjs]
-slug: order-of-angular-controller
 ---
 
 ## Outline

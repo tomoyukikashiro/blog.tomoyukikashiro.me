@@ -3,7 +3,6 @@ layout: post
 date: 2015-06-11 00:00
 title: How long dose browser keep data in session
 tags: [javascript, html]
-slug: how-long-dose-browser-keep-data-in-session
 ---
 
 ## Background

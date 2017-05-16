@@ -3,7 +3,6 @@ layout: post
 date: 2014-11-14 00:00
 title: Linear search algorithm in JavaScript
 tags: [linearsearchalgorithm]
-slug: linear-search-algorithm-in-javascript
 ---
 
 ## What is linear search algorithm ?

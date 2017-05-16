@@ -3,7 +3,6 @@ layout: post
 date: 2015-05-13 00:00
 title: Feature test tips using capybara
 tags: [TDD, rubyonrails, rspec, capybara, featuretest]
-slug: feature-test-tips-using-capybara.md
 ---
 
 ##  Can not find element PART 1

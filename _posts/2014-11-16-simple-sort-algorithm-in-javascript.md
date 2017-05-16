@@ -3,7 +3,6 @@ layout: post
 date: 2014-11-16 00:00
 title: Simple sort algorithm in JavaScript
 tags: [sortsimplealgorithm]
-slug: simple-sort-algorithm-in-javascript
 ---
 
 ## What is Simple sort algorithm ?

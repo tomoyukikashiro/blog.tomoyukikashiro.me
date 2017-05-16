@@ -3,7 +3,6 @@ layout: post
 date: 2015-05-09 00:00
 title: Try to page.reset! if the page is not reloaded in Capybara
 tags: [test, capybara, rubyonrails]
-slug: try-to-page-reset-if-the-page-is-not-reloaded-in-capybara
 ---
 
 ## Outline

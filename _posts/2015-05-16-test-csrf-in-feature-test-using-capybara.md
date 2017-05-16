@@ -3,7 +3,6 @@ layout: post
 date: 2015-05-16 00:00
 title: Test CSRF in feature test using Capybara
 tags: [tdd, capybara, rubyonrails, ruby]
-slug: test-csrf-in-feature-test-using-capybara
 ---
 
 Rails app disable request forgery protection in test environment by default.

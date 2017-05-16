@@ -3,7 +3,6 @@ layout: post
 date: 2015-05-04 00:00
 title: How to set subdomain in rails rspec
 tags: [rails ruby rspec]
-slug: how-to-set-subdomain-in-rails-rspec.md
 ---
 
 {% highlight ruby %}

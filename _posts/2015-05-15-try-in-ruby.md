@@ -3,7 +3,6 @@ layout: post
 date: 2015-05-15 00:00
 title: Try in ruby
 tags: [rubyonrails, ruby]
-slug: try-in-ruby
 ---
 
 ## Try method

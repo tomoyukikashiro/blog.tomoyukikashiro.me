@@ -3,7 +3,6 @@ layout: post
 date: 2013-01-13 12:30
 title: How to use sencha touch custom components(Ext.ux.touch)
 tags: [sendh  senchatouch]
-slug: how-to-use-senchatouch-custom-components
 ---
 
 ## Outline

@@ -34,7 +34,7 @@ gems:
 themeColor: orange-custom
 fixedNav: 'true' # true or false
 
-permalink: /post/:title
+permalink: /post/:title/index.html
 markdown: kramdown
 highlighter: pygments
 include: [_pages]

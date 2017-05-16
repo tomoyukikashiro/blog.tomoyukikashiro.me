@@ -3,7 +3,6 @@ layout: post
 date: 2015-06-07 00:00
 title: how to add extra data in draper
 tags: [ruby, rails, draper]
-slug: how-to-add-extra-data-in-draper
 ---
 
 If you want to add extra data in draper you can use `:context` option.

@@ -3,7 +3,6 @@ layout: post
 date: 2013-02-16 14:08
 title: How to create sencha plugin
 tags: [sencha  senchatouch]
-slug: how-to-create-senchatouch-plugin
 ---
 
 

@@ -3,7 +3,6 @@ layout: post
 date: 2014-10-27 00:00
 title: Getting Start Custom Element
 tags: [webcomponentscustomelement]
-slug: start-custom-element
 ---
 
 ## Outline

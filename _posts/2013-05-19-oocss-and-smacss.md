@@ -3,7 +3,6 @@ layout: post
 date: 2013-05-19 15:00
 title: OOCSS and SMACSS
 tags: [CSS OOP]
-slug: oocss-and-smacss
 ---
 
 ## What are these?

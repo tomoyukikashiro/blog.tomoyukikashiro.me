@@ -3,7 +3,6 @@ layout: post
 date: 2013-09-11 00:00
 title: Deploy Express(node) app on heroku
 tags: [heroku node Express]
-slug: deploy-express-app-on-heroku
 ---
 
 ## Prerequisite

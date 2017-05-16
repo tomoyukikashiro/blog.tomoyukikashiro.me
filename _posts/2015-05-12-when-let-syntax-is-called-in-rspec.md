@@ -3,7 +3,6 @@ layout: post
 date: 2015-05-12 00:00
 title: When let is called in Rspec
 tags: [TDD, rubyonrails, rspec]
-slug: when-let-syntax-is-called-in-rspec
 ---
 
 # Outline

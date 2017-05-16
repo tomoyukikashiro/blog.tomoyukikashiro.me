@@ -3,7 +3,6 @@ layout: post
 date: 2014-11-16 00:00
 title: Bubble sort algorithm in JavaScript
 tags: [sortbubblealgorithm]
-slug: bubble-sort-algorithm-in-javascript
 ---
 
 ## What is Bubble sort algorithm ?

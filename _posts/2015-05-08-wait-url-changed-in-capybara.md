@@ -3,7 +3,6 @@ layout: post
 date: 2015-05-08 00:00
 title: How to wait url changing in feature test using capybara
 tags: [test, capybara, rubyonrails]
-slug: how-to-wait-url-changing-in-feature-test-using-capybara
 ---
 
 ## Outline

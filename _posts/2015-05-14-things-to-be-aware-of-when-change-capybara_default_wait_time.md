@@ -3,7 +3,6 @@ layout: post
 date: 2015-05-14 00:00
 title: Things to be aware of when change Capybara default_wait_time
 tags: [TDD, rubyonrails, rspec, capybara]
-slug: things-to-be-aware-of-when-change-Capybara_default_wait_time
 ---
 
 # About `Capybara.default_wait_time`

@@ -3,7 +3,6 @@ layout: post
 date: 2014-11-15 00:00
 title: Hashing search algorithm in JavaScript
 tags: [hashingsearchalgorithm]
-slug: hashing-search-algorithm-in-javascript
 ---
 
 ## What is Hashing search algorithm ?

@@ -3,7 +3,6 @@ layout: post
 date: 2015-05-10 00:00
 title: Capybara method and matchers which is frequently used
 tags: [featuretest, capybara, rubyonrails]
-slug: capybara-method-or-matches-which-is-frequently-used
 ---
 
 ## method

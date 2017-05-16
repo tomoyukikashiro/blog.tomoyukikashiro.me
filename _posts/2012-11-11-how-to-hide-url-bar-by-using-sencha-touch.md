@@ -3,7 +3,6 @@ layout: post
 date: 2012-11-11 00:36
 title: How to hide URL Bar by using sencha touch
 tags: [sendh  senchatouch]
-slug: how-to-hide-urlbar-by-using-senchatouch
 ---
 
 ## Outline

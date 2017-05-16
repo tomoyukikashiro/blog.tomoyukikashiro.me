@@ -3,7 +3,6 @@ layout: post
 date: 2014-12-08 00:00
 title: How to specify high resolution display in css
 tags: [retinacss]
-slug: how-to-specify-high-resolution-display-in-css
 ---
 
 ## media query

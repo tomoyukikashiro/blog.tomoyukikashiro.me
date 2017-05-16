@@ -3,7 +3,6 @@ layout: post
 date: 2014-12-21 00:00
 title: Use Capybara-webkit in Rails RSpec
 tags: [rails ruby rspec capybara]
-slug: use-capybara-webkit-in-rails-rspec
 ---
 
 ## About Capybara-webkit

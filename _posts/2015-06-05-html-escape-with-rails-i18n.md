@@ -3,7 +3,6 @@ layout: post
 date: 2015-06-05 00:00
 title: html escape with rails I18n
 tags: [rails, I18n, ruby]
-slug: html-escape-with-rails-i18n
 ---
 
 # String is always html escaped in 'config/locales/en.yml'

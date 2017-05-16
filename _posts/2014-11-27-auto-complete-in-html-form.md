@@ -3,7 +3,6 @@ layout: post
 date: 2014-11-27 00:00
 title: AutoComplete in html form
 tags: [forminputtypeautocomplete]
-slug:  auto-complete-in-html-form
 ---
 
 {% highlight html %}

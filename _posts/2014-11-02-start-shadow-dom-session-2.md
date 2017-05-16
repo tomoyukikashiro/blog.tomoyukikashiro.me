@@ -3,7 +3,6 @@ layout: post
 date: 2014-11-02 00:00
 title: Getting Start Shadow Dom Session 2
 tags: [webcomponentsshadowdom]
-slug: start-shadow-dom-session-2
 ---
 
 ## Outline

@@ -3,7 +3,6 @@ layout: post
 date: 2015-05-07 00:00
 title: Can not get $routeParams - AngularJS - 
 tags: [angularjs]
-slug: can-not-get-$routeparams-angularjs
 ---
 
 ## Outline

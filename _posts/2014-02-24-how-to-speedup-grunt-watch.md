@@ -3,7 +3,6 @@ layout: post
 date: 2014-02-24 00:00
 title: How to speedup Grunt watch task
 tags: [gruntspeedupwatch]
-slug: how-to-speedup-grunt-watch
 ---
 
 ## Edit Gruntfile.js

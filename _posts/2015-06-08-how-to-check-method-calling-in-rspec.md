@@ -3,7 +3,6 @@ layout: post
 date: 2015-06-08 00:00
 title: how to check method calling in rspec
 tags: [ruby, rails, rspec]
-slug: how-to-check-method-calling-in-rspec
 ---
 
 You can check a method is called or not by using `receive` in rspec.

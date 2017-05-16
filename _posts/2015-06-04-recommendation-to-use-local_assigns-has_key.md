@@ -3,7 +3,6 @@ layout: post
 date: 2015-06-04 00:00
 title: Recommendation to use local_assigns.has_key?
 tags: [rails, ruby, erb]
-slug: recommendation-to-use-local_assigns-has_key
 ---
 
 You can check loal definition using `defined?` and `local_assigns.has_key?`

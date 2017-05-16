@@ -3,7 +3,6 @@ layout: post
 date: 2014-02-16 19:11
 title: How to use custom component by using bower in sencha touch
 tags: [sendh  senchatouch bower]
-slug: How-to-use-custom-component-by-using-bower-in-sencha-touch
 ---
 
 ## Prerequisite

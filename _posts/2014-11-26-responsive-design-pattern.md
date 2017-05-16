@@ -3,7 +3,6 @@ layout: post
 date: 2014-11-26 00:00
 title: Responsive Design Pattern
 tags: [responsive]
-slug: responsive-design-pattern
 ---
 
 

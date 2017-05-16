@@ -3,7 +3,6 @@ layout: post
 date: 2013-09-21 00:00
 title: Tracking Facebook events by using Google Analytics
 tags: [GoogleAnalytics Javascript]
-slug: Tracking-Facebook-events-by-using-Google-Analytics
 ---
 
 ## Facebook evens

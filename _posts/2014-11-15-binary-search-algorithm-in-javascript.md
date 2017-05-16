@@ -3,7 +3,6 @@ layout: post
 date: 2014-11-15 00:00
 title: Binary search algorithm in JavaScript
 tags: [binarysearchalgorithm]
-slug: binary-search-algorithm-in-javascript
 ---
 
 ## What is Binary search algorithm ?

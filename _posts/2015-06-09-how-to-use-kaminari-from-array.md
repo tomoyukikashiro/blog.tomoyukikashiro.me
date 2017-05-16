@@ -3,7 +3,6 @@ layout: post
 date: 2015-06-09 00:00
 title: how to use kaminari from array
 tags: [ruby, rails, kaminari]
-slug: how-to-use-kaminari-from-array
 ---
 
 You can generate pager object using [kaminari](https://github.com/amatsuda/kaminari) from array object.

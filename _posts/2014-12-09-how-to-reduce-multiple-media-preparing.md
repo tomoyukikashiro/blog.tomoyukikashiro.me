@@ -3,7 +3,6 @@ layout: post
 date: 2014-12-09 00:00
 title: How to reduce multiple media preparing
 tags: [video]
-slug: how-to-reduce-multiple-media-preparing 
 ---
 
 ## Media Fragments URI

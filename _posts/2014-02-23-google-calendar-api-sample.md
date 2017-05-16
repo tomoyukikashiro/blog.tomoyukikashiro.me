@@ -3,7 +3,6 @@ layout: post
 date: 2014-02-23 00:00
 title: Google Calendar API Sample
 tags: [googlecalendar api sample]
-slug: google-calendar-api-sample
 ---
 
 ## Developer Site

@@ -3,7 +3,6 @@ layout: post
 date: 2014-10-28 00:00
 title: Getting Start HTML's Template
 tags: [webcomponentstemplate]
-slug: start-html-template
 ---
 
 ## Outline

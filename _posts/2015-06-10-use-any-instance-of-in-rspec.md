@@ -3,7 +3,6 @@ layout: post
 date: 2015-06-10 00:00
 title: use any_instance_of in rspec
 tags: [ruby, rails, rspec]
-slug: use-any-instance-of-in-rspec
 ---
 
 You can use stub like this.

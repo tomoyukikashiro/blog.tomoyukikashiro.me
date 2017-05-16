@@ -3,7 +3,6 @@ layout: post
 date: 2013-06-16 00:00
 title: HTM5 prefetch and prerendering
 tags: [html5 prefetch prerender]
-slug: html5-prefetch-and-prerendering
 ---
 
 ## Prefetch for DNS

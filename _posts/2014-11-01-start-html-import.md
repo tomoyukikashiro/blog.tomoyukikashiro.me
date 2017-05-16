@@ -3,7 +3,6 @@ layout: post
 date: 2014-11-01 00:00
 title: Getting Start HTML Import
 tags: [webcomponentshtmlimport]
-slug: start-html-import
 ---
 
 ## Outline
