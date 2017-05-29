@@ -28,9 +28,9 @@ https://code.google.com/p/google-api-javascript-client/
 load Javascript client.
 `onload` parameter is to set a callback method name which will be called when client is initialized.
 
-{% highlight html %}
+```html
 <script src="https://apis.google.com/js/client.js?onload=onLoadGapiClient"></script>
-{% endhighlight %}
+```
 	
 	
 ### Auth
@@ -38,21 +38,21 @@ load Javascript client.
 Following method is to auth.
 You can check about calendar auth [information](https://developers.google.com/google-apps/calendar/auth) and auth [method](https://developers.google.com/api-client-library/javascript/reference/referencedocs).
 
-{% highlight js %}
+```js
 var config = {
 	'client_id': clientId,
     'scope'    : 'https://www.googleapis.com/auth/calendar',
     'immediate': false
 };
 gapi.auth.authorize(config, $.proxy(this.handleAuthResult, this));
-{% endhighlight %}
+```
     
 ### Get Calendar Information
 
 Following method is to get calendar information.
 You can check about client [method](https://developers.google.com/google-apps/calendar/v3/reference/calendarList/list) (`gapi.client.calendar`)
 
-{% highlight js %}
+```js
 var config = {
         minAccessRole: 'owner'
     },
@@ -61,7 +61,7 @@ var config = {
 request.execute(function(res){
     console.log(res); // calendar informatino :)
 });
-{% endhighlight %}
+```
     
 ## My Sample Code
 

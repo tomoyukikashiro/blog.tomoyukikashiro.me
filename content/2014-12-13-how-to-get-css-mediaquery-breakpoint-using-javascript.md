@@ -10,18 +10,18 @@ In the following case you have to fix both `400` and `400px`.
 
 ccs 
 
-{% highlight css %}
+```css
 @media screen and (min-width: 400px){
   body:after{
     content: 'desktop';
     display: none;
   }
 }
-{% endhighlight %}   
+```   
 
 Javascript
 
-{% highlight js %}
+```js
 // ....
 // ....
 var minWidth = 400;
@@ -30,31 +30,31 @@ function isSp(){
    return !(minWidth < window.innerWidth);
 }
 
-{% endhighlight %}   
+```   
 ## using `window.getComputedStyle`
 
 css
 
-{% highlight css %}
+```css
 @media screen and (min-width: 400px){
   body:after{
     content: 'desktop';
     display: none;
   }
 }
-{% endhighlight %}   
+```   
 
 javascript
 
 
-{% highlight js %}
+```js
 // desktop or ''
 var deviceWidth = window.getComputedStyle(document.body,':after').getPropertyValue('content');
 
 function isSp(){
   return deviceWidth !== 'desktop';
 }
-{% endhighlight %}   
+```   
 
 ## Deomo
 

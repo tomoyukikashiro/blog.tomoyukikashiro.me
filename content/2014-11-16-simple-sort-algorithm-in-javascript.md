@@ -11,7 +11,7 @@ tags: algorithm
 
 ## Code
 
-{% highlight js %}
+```js
 /***************************************
  * util
  ***************************************/
@@ -51,7 +51,7 @@ console.log('before : ' + before);
 
 var after = sortByMin(before);
 console.log('after : ' + after);
-{% endhighlight %}
+```
     
 ## Test
 

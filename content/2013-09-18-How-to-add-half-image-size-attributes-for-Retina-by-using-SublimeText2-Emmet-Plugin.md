@@ -30,7 +30,7 @@ overwrite 'updateImageSizeHTML' function by the follows code
 
 emmet-app.js
 
-{% highlight js %}
+```js
 function updateImageSizeHTML(editor, isRetina) {
   var offset = editor.getCaretPos(),
       rate = isRetina ? 0.5 : 1;
@@ -53,13 +53,13 @@ function updateImageSizeHTML(editor, isRetina) {
     });
   }
 }
-{% endhighlight %}
+```
 
 overwrite 'updateImageSizeCSS' function by the follows
 
 emmet-app.js
 
-{% highlight js %}
+```js
 function updateImageSizeCSS(editor, isRetina) {
   var offset = editor.getCaretPos(),
       rate = isRetina ? 0.5 : 1;
@@ -86,13 +86,13 @@ function updateImageSizeCSS(editor, isRetina) {
     }
   }
 }
-{% endhighlight %}
+```
 
 add `update_image_size_for_retin`(the follows code) under the `update_image_size`
 
 emmet-app.js
 
-{% highlight js %}
+```js
 require('actions').add('update_image_size', function(editor) {
   // this action will definitely won’t work in SASS dialect,
   // but may work in SCSS or LESS
@@ -117,7 +117,7 @@ require('actions').add('update_image_size_for_retina', function(editor) {
 
   return true;
 });
-{% endhighlight %}
+```
 
 ## 3. Open configuration file
 
@@ -129,7 +129,7 @@ require('actions').add('update_image_size_for_retina', function(editor) {
 
 add follows code in `Default.sublime-commands`
 
-{% highlight json %}
+```json
 {
     "caption": "Emmet: Update Image Size for Retina",
     "command": "run_emmet_action",
@@ -137,7 +137,7 @@ add follows code in `Default.sublime-commands`
         "action": "update_image_size_for_retina"
     }
 },
-{% endhighlight %}
+```
 
 ## 5. Do action of Emmet
 

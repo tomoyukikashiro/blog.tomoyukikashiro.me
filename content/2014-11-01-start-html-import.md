@@ -22,17 +22,17 @@ You can import HTML using `<link rel="import">`
 
 main HTML
 
-{% highlight html %}
+```html
 <head>
 	<link rel="import" href="/path/to/imports/stuff.html">
 </head>
-{% endhighlight %}
+```
 
 You have to append elements you import if you want to use it.
 
 Imported HTML (stuff.html)
 
-{% highlight html %}
+```html
 <nav>
 	<ul>
 		<li>page 1</li>
@@ -47,31 +47,31 @@ Imported HTML (stuff.html)
 	var nav = importDoc.querySelector('nav');
 	mainDoc.querySelector('.navi-outer').appendChild(nav.cloneNode(true));
 </script>
-{% endhighlight %}
+```
 
 You can also use imported elements from main HTML like that.
 
 main HTML
 
-{% highlight js %}
+```js
 var link = document.querySelector('link[rel="import"]');
 var nav = link.import.querySelector('nav');
 document.querySelector('.navi-outer').appendChild(nav.cloneNode(true));
-{% endhighlight %}
+```
 
 ### Import CSS in imported HTML
 
 Imported HTML
 
-{% highlight html %}
+```html
 <link rel="stylesheet" href="/path/to/imports/stuff.css">
-{% endhighlight %}
+```
 	
 You have to append `link tag` if you want to apply that style.
 
 Imported HTML (stuff.html)
 
-{% highlight html %}
+```html
 <link rel="stylesheet" href="/path/to/imports/stuff.css">
 <script>
 	var importDoc = document.currentScript.ownerDocument; // imported HTML
@@ -79,7 +79,7 @@ Imported HTML (stuff.html)
 	var style = importDoc.querySelector('link[rel="stylesheet"]');
 	mainDoc.head.appendChild(style.cloneNode(true));
 </script>
-{% endhighlight %}
+```
 
 
 ### Javascript context in imported HTML

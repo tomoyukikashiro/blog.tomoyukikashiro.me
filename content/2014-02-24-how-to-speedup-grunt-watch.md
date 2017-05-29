@@ -7,7 +7,7 @@ tags: grunt
 
 ### Before
 
-{% highlight json %}
+```json
     watch: {
       js: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
@@ -17,10 +17,10 @@ tags: grunt
         }
       }
     }
-{% endhighlight %}
+```
 ### After
 
-{% highlight json %}
+```json
     watch: {
       options: {
         spawn: false // add spawn option in watch task
@@ -32,7 +32,7 @@ tags: grunt
           livereload: true
         }
       },
-{% endhighlight %}
+```
 ## Result
 
 `50%` speedup ( 4s -> 2s )

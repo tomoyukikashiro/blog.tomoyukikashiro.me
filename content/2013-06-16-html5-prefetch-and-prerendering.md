@@ -6,39 +6,39 @@ tags: webapi
 ## Prefetch for DNS
 resolve DNS when browser is idled.
 
-{% highlight html %}
+```html
 <link rel="dns-prefetch" href="http://www.example.com">
-{% endhighlight %}
+```
 
 You can also control(opt in / our) prefetch by using meta tag
 
 ### meta tag
 
-{% highlight html %}
+```html
 <meta http-equiv="x-dns-prefetch-control" content="on">
-{% endhighlight %}
+```
 
 ## Prefetch contents or page
 preload contents when current page is loaded fully.
 
 ###content
 
-{% highlight html %}
+```html
 <link rel="prefetch" href="http://www.example.com/hoge.png">
-{% endhighlight %}
+```
 	
 ### page
 
-{% highlight html %}
+```html
 <link rel="prefetch" href="http://www.example.com/">
-{% endhighlight %}
+```
 
 ## Prefetch content (high priority)
 This is supported in Google Chrome.
 
-{% highlight html %}
+```html
 <link rel="subresource" href="jquery.js">
-{% endhighlight %}
+```
 
 Chronium project [says that](http://www.chromium.org/spdy/link-headers-and-server-hint/link-rel-subresource)…
 
@@ -48,9 +48,9 @@ Chronium project [says that](http://www.chromium.org/spdy/link-headers-and-serve
 Currently prerendering tag is only supported in Google Chrome.
 [suppecification](https://developers.google.com/chrome/whitepapers/prerender?hl=ja)
 
-{% highlight html %}
+```html
 <link rel="prerender" href="http://www.example.com/">
-{% endhighlight %}
+```
 
 ## Notice
 Prerendering may make your site slowly. so you had better define height relative page ( e.g. next page).

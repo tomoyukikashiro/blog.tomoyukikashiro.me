@@ -5,15 +5,15 @@ tags: ruby
 
 Time object in ruby can not parse Time string(e.g. 2015-05-29T19:59:48+09:00) by default.
 
-{% highlight ruby %}
+```ruby
 # return Time objet with "2015-01-01 00:00:00 +0900"
 Time.new("2015-05-29T19:59:48+09:00")
-{% endhighlight %}
+```
 
 You need to require `time` to extend default time.
 
-{% highlight ruby %}
+```ruby
 # return Time objet with "2015-05-29T19:59:48+09:00"
 Time.parse("2015-05-29T19:59:48+09:00")
-{% endhighlight %}
+```
 

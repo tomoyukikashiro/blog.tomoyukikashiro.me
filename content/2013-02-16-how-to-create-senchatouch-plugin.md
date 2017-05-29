@@ -24,40 +24,40 @@ In this article, explain it by using my plugin. [sencha-list-scroll-reset](https
 
 ## Create new application
 
-{% highlight bash %}
+```bash
 mkdir sencha-list-scroll-reset
 sencha -sdk ./sdk-2.1.0 generate app SenchaListScrollReset ./
-{% endhighlight %}
-	
+```
+
 ## Make ux.touch directory
 
 make ${APP_DIR}/ux/touch to deploy plugin you create
 
-{% highlight bash %}
+```bash
 mkdir -p sencha-list-scroll-reset/ux/touch
-{% endhighlight %}
+```
 
 _* there are some pattern to deploy plugin **ux or ux.touch or tux**_
 
 ## Add class path to Ext.loader
 
-{% highlight bash %}
+```bash
 $ vi sencha-list-scroll-rese/app.js
-{% endhighlight %}
+```
 
-{% highlight js %}
+```js
 Ext.Loader.setPath({
 	'Ext': 'touch/src',
 	'Ext.ux.touch': './ux/touch',  // add class path 
 	'SenchaListScrollReset': 'app'
 });
-{% endhighlight %}
+```
 
 ## Development
 
 ### outline of plugin
 
-{% highlight js %}
+```js
 Ext.define('Ext.ux.touch.ListScrollReset', {
 
     requires: [
@@ -80,20 +80,20 @@ Ext.define('Ext.ux.touch.ListScrollReset', {
     }
     
 });
-{% endhighlight %}
+```
 
 ## set alias
 
 You have to set alias as **plugin.XXXX**
 
-{% highlight js %}
+```js
 Ext.define('Ext.ux.touch.ListScrollReset', {
 
 	requires: [
 	],
 
 	alias: 'plugin.listscrollreset',
-{% endhighlight %}
+```
 
 Plugin is created to inherit **Ext.plugin.Plugin** by setting **plugin.XXX** alias
 
@@ -102,17 +102,17 @@ refer to [Ext.Component.applyplugins](http://docs.sencha.com/touch/2-0/source/Co
 ## Logic
 parameter (component) is passed init function is reference to component which is include that plugin
 
-{% highlight js %}
+```js
 init: function (component) {
 	// componentが読み込んだコンポーネント
 }
-{% endhighlight %}
+```
 
 
 ## Include plugin
 include plugin to set **plugin.xclass** propetry in component configuration which you want set plugin to. 
 
-{% highlight js %}
+```js
 config {
 	plugins: [
 		{
@@ -121,7 +121,7 @@ config {
 			listItemId: 'main-list',
 			scrollAnim: {duration: 5000}
 		}
-{% endhighlight %}
+```
 
 ## Build
 1. set class path to build command
@@ -131,29 +131,29 @@ config {
 ## Attention
 If you excute build command without setting class path following error occur.
 
-{% highlight bash %}
+```bash
 Failed to find file for Ext.ux.touch.ListScrollReset
-{% endhighlight %}
+```
 
 ## Set class path to build command
 
-{% highlight bash %}
+```bash
 cd sencha-list-scroll-reset
 vi .sencha/app/sencha.cfg
-{% endhighlight %}
+```
 
-{% highlight js %}
+```js
 app.name=SenchaListScrollReset
 app.framework=touch
 app.classpath=${app.dir}/app.js,${app.dir}/app,ux // ←set "ux" directory
-{% endhighlight %}
+```
 
 ## Excute build
 
-{% highlight bash %}
+```bash
 cd sencha-list-scroll-reset
 sencha app build production
-{% endhighlight %}
+```
 
 ## Publishment (github / sencha market)
 

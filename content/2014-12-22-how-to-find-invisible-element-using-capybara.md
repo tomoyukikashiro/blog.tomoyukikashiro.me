@@ -5,9 +5,9 @@ tags: rails,ruby,rspec,capybara
 
 Capybara don't find invisible element.
 
-{% highlight ruby %}
+```ruby
 page.find("#delete-button")
-{% endhighlight %}
+```
 
 In this case if `#delete-button` element has `display: hidden` or any other invisible style (e.g. visibility: none) `ElementNotFound` error is occurred.
 
@@ -15,9 +15,9 @@ In this case if `#delete-button` element has `display: hidden` or any other invi
 
 You want to find it you should add visible option.
 
-{% highlight ruby %}
+```ruby
 page.find("#delete-button", :visible => :all)
-{% endhighlight %}
+```
 
 visible (Boolean, Symbol)
 

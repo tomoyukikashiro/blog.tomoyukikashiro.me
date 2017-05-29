@@ -12,7 +12,7 @@ tags: algorithm
 
 ## Code
 
-{% highlight js %}
+```js
 /***************************************
  * sort
  ***************************************/
@@ -53,7 +53,7 @@ console.log('before : ' + before);
 
 var after = insertionSort(before);
 console.log('after : ' + after);
-{% endhighlight %}
+```
     
 ## Test
 

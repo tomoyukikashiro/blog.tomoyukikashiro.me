@@ -12,7 +12,7 @@ tags: algorithm
 
 ## Code
 
-{% highlight js %}
+```js
 /***************************************
  * sort
  ***************************************/
@@ -43,7 +43,7 @@ console.log('before : ' + before);
 var after = bubbleSort(before);
 console.log('after : ' + after);
 
-{% endhighlight %}
+```
  
 ## Test
 

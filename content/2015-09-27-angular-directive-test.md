@@ -11,7 +11,7 @@ for data binding, `scope.$digest()` is needed in angular directive unit test
 
 ### directive
 
-{% highlight js %}
+```js
 (function() {
   'use strict';
 
@@ -37,11 +37,11 @@ for data binding, `scope.$digest()` is needed in angular directive unit test
     return directive;
   }
 })();
-{% endhighlight %}
+```
 
 ### unit test
 
-{% highlight js %}
+```js
 (function() {
 
   'use strict';
@@ -72,5 +72,5 @@ for data binding, `scope.$digest()` is needed in angular directive unit test
   });
 
 })();
-{% endhighlight %}
+```
 

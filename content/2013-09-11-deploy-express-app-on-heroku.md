@@ -13,9 +13,9 @@ tags: heroku,node,Express
 
 ### 1. login by using heroku command
 
-{% highlight bash %}
+```bash
 heroku login
-{% endhighlight %}
+```
 
 Input email address and password of heroku account.
 
@@ -25,10 +25,10 @@ Input email address and password of heroku account.
 
 ### 2. create public key
 
-{% highlight bash %}
+```bash
 ssh-keygen -t rsa -C "mail address"
 heroku keys:add ~/.ssh/id_rsa.pub
-{% endhighlight %}
+```
 	
 ### 3. clone Express app
 
@@ -37,9 +37,9 @@ heroku keys:add ~/.ssh/id_rsa.pub
 
 ### 4. edit .gitignore
 
-{% highlight bash %}
+```bash
 vi .gitignore
-{% endhighlight %}
+```
 
 Add follows text in .gitignore.
 
@@ -49,26 +49,26 @@ Add follows text in .gitignore.
 
 You have to add follows settings to deploy your app on heroku in `package.json`.
 
-{% highlight bash %}
+```bash
 vi .gitignore
 vi package.json
-{% endhighlight %}
+```
 
-{% highlight json %}
+```json
 "engines": {
     "node": "XXX",
     "npm": "XXX"
 }
-{% endhighlight %}
+```
 
 ### 6. create web server process setting config
 
 On hreoku, You have to create `Procfile`.
 It is process configuration file you will start your app.
 
-{% highlight bash %}
+```bash
 vi Procfile
-{% endhighlight %}
+```
 	
 Write follows text.
 
@@ -76,9 +76,9 @@ Write follows text.
  
 ### 8. create app on heroku
  
-{% highlight bash %}
+```bash
 heroku create ${appname}
-{% endhighlight %}
+```
 	
 
 > Creating ${appname}… done, stack is cedar
@@ -89,9 +89,9 @@ heroku create ${appname}
 
 When you push code to heroku git repository. All npm dependency resources are installed.
 
-{% highlight bash %}
+```bash
 git push heroku master
-{% endhighlight %}
+```
 	
 ## Reference
 
@@ -99,29 +99,29 @@ Other heroku command
 
 ### start app on local
 
-{% highlight bash %}
+```bash
 foreman start
-{% endhighlight %}
+```
 
 ### check web server process
 
-{% highlight bash %}
+```bash
 heroku ps:scale web=1
-{% endhighlight %}
+```
 	
 ### check heroku logs
 
 Including access log.
 
-{% highlight bash %}
+```bash
 heroku logs
-{% endhighlight %}
+```
 	
 ### run command on heroku
 
-{% highlight bash %}
+```bash
 heroku run ${command}
-{% endhighlight %}
+```
 
 
 

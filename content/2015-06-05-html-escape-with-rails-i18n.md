@@ -7,57 +7,57 @@ tags: rails,I18n,ruby
 
 'config/locales/en.yml'
 
-{% highlight yaml %}
+```yaml
 en:
   hello_message: "Hello <strong>%{user_name}</strong>"
-{% endhighlight %}
+```
 
 hello.html.erb
 
-{% highlight erb %}
+```erb
 <%= t("hello_message", user_name: @user.name) %>
-{% endhighlight %}
+```
 
 check hello.html in your brower.
 `<strong></strong>`tag is html escaped automatically.
 
-{% highlight html %}
+```html
 hello <strong>Tomoyuki</strong>
-{% endhighlight %}
+```
 
 html source is like this
 
-{% highlight html %}
+```html
 hello &lt;strong&gt;Tomoyuki&lt;/strong&gt;
-{% endhighlight %}
+```
 
 # Output html and locales with html safe
 
 You can set locale and set html tags in 'conf/locales/XX.yml' with html safe.
 Try to use 'XXX_html' suffix in your locale key.
 
-{% highlight yaml %}
+```yaml
 en:
   hello_message_html: "Hello <strong>%{user_name}</strong>"
-{% endhighlight %}
+```
 
 hello.html.erb
-{% highlight erb %}
+```erb
 <%= t("hello_message", user_name: @user.name) %>
-{% endhighlight %}
+```
 
 check hello.html in your brower.
 `<strong></strong>`tag is not html escaped automatically.
 
-{% highlight html %}
+```html
 hello Tomoyuki
-{% endhighlight %}
+```
 
 html source is like this
 
-{% highlight html %}
+```html
 hello <strong>Tomoyuki</strong>
-{% endhighlight %}
+```
 
 # Reference
 

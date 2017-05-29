@@ -11,7 +11,7 @@ Try to use `page.reset!`
 ## Solution
 
 
-{% highlight ruby %}
+```ruby
 escribe "test" do
 
   it "the page title is user name" do
@@ -26,4 +26,4 @@ escribe "test" do
   end
 
 end
-{% endhighlight %}
+```

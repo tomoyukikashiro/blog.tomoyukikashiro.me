@@ -27,33 +27,33 @@ In all of modern browser we can use it.
 
 If you have following template you can use it with 2 ways below.
 
-{% highlight html %}
+```html
 <template id="mytemplate">
 	<div class="comment">this is new contents generated from template element.</div>
 </template>
 
 <section id="host"></section>
-{% endhighlight %}
+```
 
 ### basic
 
-{% highlight js %}
+```js
 var t = document.querySelector('#mytemplate');
 var host = document.querySelector('#host');
 var clone = document.importNode(t.content, true);
 
 host.appendChild(clone);
-{% endhighlight %}
+```
 
 ### with shadow dom
 
-{% highlight js %}
+```js
 var t = document.querySelector('#mytemplate');
 var host = document.querySelector('#host-target').createShadowRoot();
 var clone = document.importNode(t.content, true);
 
 host.appendChild(clone);
-{% endhighlight %}
+```
 
 ## Reference
 

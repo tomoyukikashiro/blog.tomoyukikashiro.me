@@ -13,7 +13,7 @@ I'll tell you easier way.
 
 css is normal. you set `:hover`, `:forcus`, and `:active` Pseudo-classes.
 
-{% highlight css %}
+```css
 .btn {
   background-color: blue;
 }
@@ -26,19 +26,19 @@ css is normal. you set `:hover`, `:forcus`, and `:active` Pseudo-classes.
 .btn:active {
   background-color: gray;
 }
-{% endhighlight %}
+```
 
 ## Javascript
 
 There are a trick. You should set empty function to `touchstart` event in body like this.
 
-{% highlight js %}
+```js
 window.onload = function() {
     if(/iP(hone|ad)/.test(window.navigator.userAgent)) {
         document.body.addEventListener('touchstart', function() {}, false);
     }
 }
-{% endhighlight %}
+```
 ## Demo
 
 [Try it](http://codepen.io/Tkashiro/full/EaVVxr)
@@ -64,7 +64,7 @@ match `:hover` and `:focus` style.
 
 sass
 
-{% highlight css %}
+```css
 $hover: red
 
 .btn {
@@ -79,7 +79,7 @@ $hover: red
 .btn:active {
   background-color: gray;
 }
-{% endhighlight %}
+```
 ## mobile
 
 nothing.

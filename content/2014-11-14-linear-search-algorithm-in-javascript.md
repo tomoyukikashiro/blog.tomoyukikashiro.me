@@ -10,7 +10,7 @@ tags: algorithm
 ## Code
 
 
-{% highlight js %}
+```js
  /***************************************
   * Util
   ***************************************/
@@ -52,7 +52,7 @@ var list = getRandomNumList(100),
 
 console.log(list);
 console.log('index of tartget(' + target + ') is ' + result);
-{% endhighlight %}
+```
    
 ## Test
 

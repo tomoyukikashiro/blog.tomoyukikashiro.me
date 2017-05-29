@@ -36,4 +36,4 @@ ARCHIVES_SAVE_AS = 'articles/index.html'
 ARTICLE_URL = 'posts/{slug}/'
 ARTICLE_SAVE_AS = 'posts/{slug}/index.html'
 SUMMARY_MAX_LENGTH = 160
-
+MARKDOWN = ['fenced_code', 'codehilite(css_class=highlight, linenums=True)', 'extra']

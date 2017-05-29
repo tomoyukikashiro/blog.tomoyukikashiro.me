@@ -10,15 +10,15 @@ So I created a script using git hook to add ticket number to your commit automat
 
 ## Script
 
-{% highlight bash %}
+```bash
 $ mkdir -p ~/.git-templates/hooks
 $ touch ~/.git-templates/hooks/prepare-commit-msg
 $ chmod u+x ~/.git-templates/hooks/prepare-commit-msg
-{% endhighlight %}
+```
 
 Then you can copy & paste this script to `prepare-commit-msg`
 
-{% highlight bash %}
+```bash
 #!/bin/sh
 
 LF=$'\\\x0A'
@@ -36,15 +36,15 @@ if [[ $BRANCH_NAME =~ .*\/[0-9]* ]]; then
     sed -i.back "1s/^/$LF$LF$MESSAGE$LF/" "$1"
   fi
 fi
-{% endhighlight %}
+```
 
 ## Configuration
 
 To enable this script run this command.
 
-{% highlight bash %}
+```bash
 $ git config core.hooksPath ~/.git-templates/hooks/
-{% endhighlight %}
+```
 
 ## Usage
 
@@ -52,29 +52,29 @@ This script expects that your branch is named using this format
 
 ### Pivotal Tracker
 
-{% highlight bash %}
+```bash
 story/1111
-{% endhighlight %}
+```
 
 
 ### Github
 
-{% highlight bash %}
+```bash
 issue/1111
 fix/1111
 feature/1111
-{% endhighlight %}
+```
 
 
 When every time you commit script add that number using this format to you commit !!
 
 
 ### Pivotal Tracker
-{% highlight bash %}
+```bash
 [#1111]
-{% endhighlight %}
+```
 
 ### Github
-{% highlight bash %}
+```bash
 GH-1111
-{% endhighlight %}
+```

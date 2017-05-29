@@ -11,7 +11,7 @@ For example, You make SAP(single page application) using angularjs then the appl
 
 You need include this helper.
 
-{% highlight ruby %}
+```ruby
 module WaitHelper
 
   def wait_url(url)
@@ -29,10 +29,10 @@ module WaitHelper
     end
 
 end
-{% endhighlight %}
+```
 
 then You can use like this.
-{% highlight ruby %}
+```ruby
 describe "form submit" do
 
   context "input values are valid" do
@@ -49,4 +49,4 @@ describe "form submit" do
   end
 
 end
-{% endhighlight %}
+```

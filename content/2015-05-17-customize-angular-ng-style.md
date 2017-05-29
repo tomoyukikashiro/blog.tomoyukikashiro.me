@@ -7,33 +7,33 @@ tags: angularjs,css,javascript
 
 You can set style value using `scope`.
 
-{% highlight html %}
+```html
 <div image class="image" ng-style="{'background-image': 'url(' + backimg + ')'}">
-{% endhighlight %}
+```
 
-{% highlight js %}
+```js
 $scope.backimg = 'XXXXX' // image url
-{% endhighlight %}
+```
 
 You can switch style value using expression.
 
-{% highlight html %}
+```html
 <div image class="image" ng-style="{ 'width': isMobile: ? '200px': '300px' }">
-{% endhighlight %}
+```
 
-{% highlight js %}
+```js
 $scope.isMobile = true // switch value to change style
-{% endhighlight %}
+```
 
 # Customize Usage
 
 How to change style propertry and value using expression
 
-{% highlight html %}
+```html
 <div image class="image" ng-style="getStyle(ua)">
-{% endhighlight %}
+```
 
-{% highlight js %}
+```js
 $scope.getStyle = function(ua){
   if(ua.match(/Android/i)){
     return { display: 'none' };
@@ -41,4 +41,4 @@ $scope.getStyle = function(ua){
     return { width: '300px': height: '300px' };
   }
 }
-{% endhighlight %}
+```

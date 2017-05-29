@@ -6,20 +6,20 @@ tags: sencha
 ## Outline
 I wonder if you want to hide urlbar in smartphone web site, you will write following script( using jquery)
 
-{% highlight js %}
+```js
 $(function(){
     window.scrollTo(0,1);
 });
-{% endhighlight %}
+```
 
 # How to...
 If you want to hide URLbar by using sencha touch, you can write following code in ** app.js **.
 
-{% highlight js %}
+```js
 viewport: {
     autoMaximize: !Ext.browser.is.Standalone && Ext.os.is.iOS
-},
-{% endhighlight %}
+}
+```
 
 * Orientation change performance is drastically reduced when this is enabled, on all devices.
 * On some devices (mostly Android) this can sometimes cause issues when the default browser zoom setting is changed.

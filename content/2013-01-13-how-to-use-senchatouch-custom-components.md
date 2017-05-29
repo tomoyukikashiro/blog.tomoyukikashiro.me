@@ -25,13 +25,13 @@ When you develop app by using custom components, you should add configation in *
 
 This is adding Ext.ux.touch class path.
 
-{% highlight js %} 
+```js
 Ext.Loader.setPath({
 	'Ext': 'touch/src',
 	'Ext.ux.touch': './ux/touch',  // add Ext.ux.touch class path
 	'MultistateButton': 'app'
 });
-{% endhighlight %}
+```
 
 ## when building
 
@@ -39,16 +39,16 @@ When you build your app use Ext.ux.touch custom components, you add following co
 This is adding Ext.ux.touch class path to build tool
 
 
-{% highlight js %} 
+```js
 app.name=sencha-multistate-button
 app.framework=touch
 app.classpath=${app.dir}/app.js,${app.dir}/app,ux // add "ux" folder path
-{% endhighlight %}
+```
 
 
 If you don't add this configation, the following error is occured.
 
 
-{% highlight js %} 
+```js
 Failed to find file for Ext.ux.${component name}
-{% endhighlight %}
+```

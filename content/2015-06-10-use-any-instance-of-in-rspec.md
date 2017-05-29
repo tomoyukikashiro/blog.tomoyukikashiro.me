@@ -5,13 +5,13 @@ tags: ruby,rails,rspec
 
 You can use stub like this.
 
-{% highlight ruby %}
+```ruby
 user.stub(:name).and_return("example")
-{% endhighlight %}
+```
 
 But you can not use stub method to non-initialize object which is initialize in application logic (e.g. ApplicationController)
 In this case you need to use `any_instance_of` method.
 
-{% highlight ruby %}
+```ruby
 ApplicationController.any_instance_of.stub(:auth?).and_return(true)
-{% endhighlight %}
+```

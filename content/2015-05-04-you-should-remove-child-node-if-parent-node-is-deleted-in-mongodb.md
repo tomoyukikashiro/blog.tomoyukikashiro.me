@@ -12,31 +12,31 @@ Here is simple example.
 
 ### Parent
 
-{% highlight ruby %}
+```ruby
 class Parent
   include Mongoid::Document
 
   field :name,  type: String
   has_many :children
 end
-{% endhighlight %}
+```
 
 ### Child
 
-{% highlight ruby %}
+```ruby
 class Child
   include Mongoid::Document
 
   field :name,  type: String
   belongs_to :parent
 end
-{% endhighlight %}
+```
 
 ## Example
 
 ### Bad
 
-{% highlight bash %}
+```bash
 $ rails c
 $ parent = Parent.create(name: "parent1")
 $ parent.children.create(name: "child1")
@@ -46,7 +46,7 @@ $ child = parent.children.first
 $ parent.destroy
 $ Parent.where(id, parent.id).size # result is 0
 $ Child.where(id, child.id).size   # result is 1
-{% endhighlight %}
+```
 
 ## Solution
 
@@ -54,7 +54,7 @@ You have to add cleanup logic using "before_destroy" callback
 
 ### Parent
 
-{% highlight ruby %}
+```ruby
 class Parent
   include Mongoid::Document
 
@@ -65,13 +65,13 @@ class Parent
     children.destroy_all
   end
 end
-{% endhighlight %}
+```
 
 ## Example
 
 ### Good
 
-{% highlight bash %}
+```bash
 $ rails c
 $ parent = Parent.create(name: "parent1")
 $ parent.children.create(name: "child1")
@@ -81,5 +81,5 @@ $ child = parent.children.first
 $ parent.destroy
 $ Parent.where(id, parent.id).size # result is 0
 $ Child.where(id, child.id).size   # result is 0
-{% endhighlight %}
+```
 

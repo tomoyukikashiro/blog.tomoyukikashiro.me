@@ -5,13 +5,13 @@ tags: css
 
 ## media query
 
-{% highlight css %}
+```css
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
 	   only screen and (min-resolution: 2dppx){
 	   
 	   // css for high resolution display here 
 }
-{% endhighlight %}
+```
 
 ## Attension of media query solution
 
@@ -23,7 +23,7 @@ Actually, You need to use both property.
 
 ## image-set in background-image
 
-{% highlight css %}
+```css
 .img-image-set{
   width: 200px;
   height: 200px;
@@ -35,7 +35,7 @@ Actually, You need to use both property.
   );
   background-size: contain;
 }
-{% endhighlight %}
+```
 
 ## Attension of image-set solution
 

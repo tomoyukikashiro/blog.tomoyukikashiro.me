@@ -9,7 +9,7 @@ When before syntax is called in Rspec. ?
 
 # Example
 
-{% highlight ruby %}
+```ruby
 describe "before spec example" do
 
   before(:all) do
@@ -50,4 +50,4 @@ describe "before spec example" do
   end
 
 end
-{% endhighlight %}
+```

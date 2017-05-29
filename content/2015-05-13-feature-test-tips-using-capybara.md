@@ -8,9 +8,9 @@ tags: TDD,rails,rspec,capybara,test
 Capybara can not find invisible element by default.
 You need set `visible` option like this.
 
-{% highlight ruby %}
+```ruby
 find(selector, visible: false)
-{% endhighlight %}
+```
 
 * true - only finds visible elements.
 * false - finds invisible and visible elements.
@@ -25,12 +25,12 @@ You could need more then 3 seconds to wait to find element. (e.g. the element is
 
 try to set `wait` option. :)
 
-{% highlight ruby %}
+```ruby
 
 ## some async logic .....
 
 find(selector, wait: 4) # can find
-{% endhighlight %}
+```
 
 `ATENTION`
 You had better not set this option a lot. Because Capybara stop test to wait so test time can be long.
@@ -49,9 +49,9 @@ The text which is inside invisible element can not be got by default too.
 
 You need to set `visible` option to  get text which is inside invisible element.
 
-{% highlight ruby %}
+```ruby
 find(selector, visible: false).text(:all)
-{% endhighlight %}
+```
 
 * :all → all text (visible or not)
 * :visible → only visible text
@@ -63,32 +63,32 @@ You can not test invisible links using `have_link` so you need to check link tex
 
 BAD
 
-{% highlight ruby %}
+```ruby
 link_tag = find(selector) # link is invisible
 expect(link_tag).to have_link(text, href: "http://stores.jp") # failed
-{% endhighlight %}
+```
 
 GOOD
 
-{% highlight ruby %}
+```ruby
 link_tag = find(selector, visible: alse) # find invisible link
 
 expect(link_tag).to have_text(:all, text) # check link text
 expect(link_tag[:href]).to eq("http://stores.jp") # check href attribute
-{% endhighlight %}
+```
 
 ## Can not get screenshot
 
 You need to set `js:true` option in `describe` or `context`
 
-{% highlight ruby %}
+```ruby
 
 describe "test", js:true do
   it "screenshot test" do
     page.save_screenshot('name.png')
   end
 end
-{% endhighlight %}
+```
 
 
 ## Too slow

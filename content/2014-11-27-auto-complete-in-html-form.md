@@ -4,10 +4,10 @@ slgu: auto-complete-in-html-form
 tags: html
 
 
-{% highlight html %}
+```html
 <label for="fullName">Name</label>
 <input type="text" name="name" id="fullName" placeholder="Full name" required autocomplete="name">
-{% endhighlight %}
+```
 
 These parts of form has 2 important things.
 `name` and `autocomplete` attribute.
@@ -67,7 +67,7 @@ You can check `autocomplete` value in `whatwg` specification. (this specificatio
 
 ### html
 
-{% highlight html %}
+```html
 <h1>Credit Card Information</h1>
 <form id="cardf-form" action="POST">
   <div>
@@ -96,11 +96,11 @@ You can check `autocomplete` value in `whatwg` specification. (this specificatio
   </div>
 </form>
 <button id="request-autocomplete">Request AutoComplete</button>
-{% endhighlight %}
+```
 
 ### Javascript
 
-{% highlight js %}
+```js
 document.addEventListener('DOMContentLoaded', function(){
     var button = document.querySelectorAll('#request-autocomplete')[0];
     var form = document.querySelectorAll('#cardf-form')[0];
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function(){
       }
     });
 });
-{% endhighlight %}
+```
 
 ### Attension
 

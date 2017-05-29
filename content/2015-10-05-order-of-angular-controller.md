@@ -19,11 +19,11 @@ In this sample, controller are declared from `thirdController`, `secondControlle
 
 But their names outputed in conole are bellow.
 
-{% highlight bash %}
+```bash
 "init firstController"
 "init secondController"
 "init thirdController"
-{% endhighlight %}
+```
 
 Because Angular controller are initialized from parent dom to child dom regardless of the declared order.
 

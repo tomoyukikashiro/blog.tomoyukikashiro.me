@@ -22,7 +22,7 @@ At the moment (2014/10/29) we can it only `Google Chrome`, `Opera`, `Android Bro
 
 HTML
 
-{% highlight html %}
+```html
 <template id="nameTagTemplate">
 	<div class="innerTemplate">
 		<p>Hi! My name is <span class="name"><content select=".name"></content></p>
@@ -36,10 +36,10 @@ HTML
 	<span class="sex">Male</span>
 	<span class="live">London</span>
 </div> 
-{% endhighlight %}
+```
 Javascript
 
-{% highlight js %}
+```js
 var shadow = document.querySelector('#nameTag').createShadowRoot();
 var template = document.querySelector('#nameTagTemplate');
 var clone = document.importNode(template.content, true);
@@ -49,7 +49,7 @@ shadow.appendChild(clone);
 // console.log(document.querySelector('#nameTag .innerTemplate .name')); // null
 // console.log(document.querySelector('#nameTag .innerTemplate .sex'));  // null
 // console.log(document.querySelector('#nameTag .innerTemplate .live')); // null
-{% endhighlight %}
+```
 
 Result
  
@@ -73,18 +73,18 @@ Those styles are not affected from page styles.
 
 CSS
 
-{% highlight css %}
+```css
 #buttons::shadow button {
 	text-decoration: underline;
 }
 body /deep/ .name1{
 	color: red;
 }
-{% endhighlight %}
+```
 
 HTML
 
-{% highlight html %}
+```html
 <!-- --------------------------------------------- -->
 <!-- Template -->
 <!-- --------------------------------------------- -->
@@ -111,16 +111,16 @@ HTML
 	</div>
 
 </section>
-{% endhighlight %}
+```
 
 JS
 
-{% highlight js %}
+```js
 var shadow = document.querySelector('#buttons').createShadowRoot();
 var template = document.querySelector('#buttonTemplate');
 var clone = document.importNode(template.content, true);
 shadow.appendChild(clone);
-{% endhighlight %}
+```
   	
 ### :unresolved
 
@@ -138,9 +138,9 @@ You can define css styles for inside template tags.
 
 e.g.
 
-{% highlight css %}
+```css
 button{color: blue;}
-{% endhighlight %}
+```
 
 ### :host
 
@@ -148,9 +148,9 @@ You can define host tag style.
 
 e.g.
 	
-{% highlight css %}
+```css
 :host{ width: 200px; display: block; background-color: #999; text-align: center;}
-{% endhighlight %}
+```
 
 ### :host(selector)
 
@@ -158,9 +158,9 @@ You can specify host using `(selector)`.
 
 e.g.
 
-{% highlight css %}
+```css
 :host(.big) button{font-size: 1em;}
-{% endhighlight %}
+```
 
 ### :host-context(selector)
 
@@ -169,12 +169,12 @@ This is useful to define style that is based on page theme.
 
 e.g.
 
-{% highlight css %}
+```css
 :host-context(.theme-emphasis) button{text-transform: uppercase;}
-{% endhighlight %}
+```
 
 
-{% highlight html %}
+```html
 <body class="theme-emphasis">
 ...
 ...
@@ -182,7 +182,7 @@ e.g.
 		<p class="name1">super</p>
 		<p class="name2">ultra</p>
 	</div>
-{% endhighlight %}
+```
   		
 In this case, You can define style for button in `theme-emphasis` using `:host-context(.theme-emphasis)`.
 
@@ -192,9 +192,9 @@ If you use some `<content></content>` tags you can define styles for certain `<c
 
 e.g.
 	
-{% highlight css %}
+```css
 ::content .name2{color: red;}
-{% endhighlight %}
+```
 	
 
 ## Break encapsulation
@@ -207,11 +207,11 @@ You can define style for shadow dom using `::shadow` from page style.
 
 e.g.
 
-{% highlight css %}
+```css
 #buttons::shadow button {
 	text-decoration: underline;
 }
-{% endhighlight %}
+```
 
 ### /deep/
 
@@ -220,11 +220,11 @@ In this case you don't need to specify shadow host tag compared with `::shadow`.
 
 e.g.
 
-{% highlight css %}
+```css
 body /deep/ .name1{
 	color: red;
 }
-{% endhighlight %}
+```
 
 ## Result 
 

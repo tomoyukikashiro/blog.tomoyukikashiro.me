@@ -38,27 +38,27 @@ In specification there are two type of custom elements.
 
 define `x-foo` tag.
 
-{% highlight js %}
+```js
 	var XFoo = document.registerElement('x-foo');
-{% endhighlight %}
+```
 	 
 define `x-bar` tag which inherit `x-foo` element.
 
-{% highlight js %}
+```js
 	var XBar = document.registerElement('x-bar', {
     	prototype: Object.create(XFoo.prototype)
   	});
-{% endhighlight %}
+```
 
 > NOTICE :
 > According to [HTML5Rocks](http://www.html5rocks.com/en/tutorials/webcomponents/customelements/#extendcustomeel), We can extends custom tag by using `extends` property. like this...
 
-{% highlight js %}
+```js
 	var XBar = document.registerElement('x-bar', {
     	prototype: Object.create(XFoo.prototype),
     	extends: 'x-foo'
   	});
-{% endhighlight %}
+```
 
 > But in `Google Chrome Canary v40` it cause error below.
 > 
@@ -71,35 +71,35 @@ define `x-bar` tag which inherit `x-foo` element.
 
 use in html.
 
-{% highlight html %}
+```html
 <x-foo></x-foo>
 <x-bar></x-bar>
-{% endhighlight %}
+```
 
 create instance by using `document.createElement`.
 
-{% highlight js %}
+```js
 var xfoo = document.createElement('x-foo');
 document.body.appendChild(xfoo);
-{% endhighlight %}
+```
 
 create new function.
 
-{% highlight js %}
+```js
 var xbar = new XBar();
 document.body.appendChild(xbar);
-{% endhighlight %}
+```
 
 ## Type extension
 
 ## Register
 
-{% highlight js %}
+```js
 var SpecialButton = document.registerElement('special-button', {
 	prototype: Object.create(HTMLButtonElement.prototype),
 	extends  : 'button'
 });
-{% endhighlight %}
+```
 
 
 ### create
@@ -107,39 +107,39 @@ var SpecialButton = document.registerElement('special-button', {
 use in html.
 You have to set `is` attribute if you use `Type extension`.
 
-{% highlight html %}
+```html
 <button is="special-button"></button>
-{% endhighlight %}
+```
 	
 create instance by using `document.createElement`.
 
-{% highlight js %}
+```js
 var specialButton =  document.createElement('button', 'special-button');
 document.body.appendChild(specialButton);
-{% endhighlight %}
+```
 	
 create new function.
 
-{% highlight js %}
+```js
 var specialButton = new SpecialButton();
 document.body.appendChild(specialButton);
-{% endhighlight %}
+```
 	
 
 ## Add Properties
 
 ### use `Object.defineProperty`.
 
-{% highlight js %}
+```js
 var xPiyoProto = Object.create(HTMLElement.prototype);
 xPiyoProto.hoge = function(){alert('hoge');};
 Object.defineProperty(xPiyoProto, 'bar', {value: 5}); // readonly
 document.registerElement('x-piyo', {prototype: xPiyoProto});
-{% endhighlight %}
+```
 
 ### add properties in definition.
 
-{% highlight js %}
+```js
 var XPiyo = document.registerElement('x-piyo', {
 	prototype: Object.create(HTMLElement.prototype, {
   		bar: {
@@ -150,7 +150,7 @@ var XPiyo = document.registerElement('x-piyo', {
   		}
 	})
 });
-{% endhighlight %}
+```
   	
 ## Reference
 

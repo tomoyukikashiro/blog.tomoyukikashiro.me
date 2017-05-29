@@ -20,7 +20,7 @@ It force the method's invocation before each example.
 
 # Example
 
-{% highlight ruby %}
+```ruby
 require 'rails_helper'
 
 describe "let spec example" do
@@ -51,4 +51,4 @@ describe "let spec example" do
   end
 
 end
-{% endhighlight %}
+```

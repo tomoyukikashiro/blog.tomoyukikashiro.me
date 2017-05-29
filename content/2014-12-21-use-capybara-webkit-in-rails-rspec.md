@@ -10,14 +10,14 @@ If you want to do integration test you had better use `capybara-webkit` instead 
 
 ## Prepare Gems
 
-{% highlight ruby %}
+```ruby
 group :test do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'capybara-webkit'   # add capybara-webkit
   gem 'database_cleaner'  # add database cleaner
 end
-{% endhighlight %}
+```
 
 You need to add [database_cleaner](https://github.com/DatabaseCleaner/database_cleaner).
 It makes database clean every test case.
@@ -44,7 +44,7 @@ If you want to know why ? You should read this [article](http://devblog.avdi.org
 
 * set `Capybara.javascript_driver`.
 
-{% highlight ruby %}
+```ruby
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= 'test'
 require 'spec_helper'
@@ -52,27 +52,27 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 Capybara.javascript_driver = :webkit # add this line.
-{% endhighlight %}
+```
 
 * comment in to load `spec/support/**/*.rb` files.
 
-{% highlight ruby %}
+```ruby
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }  # comment in this line.
 
 # Checks for pending migrations before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
-{% endhighlight %}
+```
 
 * set `use_transactional_fixtures` to commit all queries in testcase. It makes capybara and capybara-webkit use same data.
 * If you want to know detail you should check this [article](http://devblog.avdi.org/2012/08/31/configuring-database_cleaner-with-rails-rspec-capybara-and-selenium/).
 
-{% highlight ruby %}
+```ruby
 # If you're not using ActiveRecord, or you'd prefer not to run each of your
 # examples within a transaction, remove the following line or assign false
 # instead of true.
 config.use_transactional_fixtures = false # set false
-{% endhighlight %}
+```
 
 ## Add Helper
 
@@ -84,7 +84,7 @@ config.use_transactional_fixtures = false # set false
 * add spec file as `/spec/features/**.rb`
 * add `js: true` option to scenario function
 
-{% highlight ruby %}
+```ruby
   feature "new todo title is inputed" do
     scenario "new todo should create in html" , js:true do
       visit "/"
@@ -92,13 +92,13 @@ config.use_transactional_fixtures = false # set false
       ....
     end
   end
-{% endhighlight %}
+```
 
 ## Ajax test
 
 * add `wait_for_ajax` function after ajax trigger(e.g. click)
 
-{% highlight ruby %}
+```ruby
   feature "todo's all-completed checkbox is clicked" do
     scenario "all todos should be deleted in html", js: true do
       visit "/"
@@ -107,7 +107,7 @@ config.use_transactional_fixtures = false # set false
       expect().to be XXXX
     end
   end
-{% endhighlight %}
+```
 
 ## Sample
 
@@ -117,29 +117,29 @@ I created integration test useing capybara-webkit.
 
 * clone and checkout
 
-{% highlight bash %}
+```bash
 git clone git@github.com:kashiro/todomvc_on_rails_fork.git
 cd todomvc_on_rails_fork
 git checkout feature/update
-{% endhighlight %}
+```
 
 * add qt for capybara-webkit
 
-{% highlight bash %}
+```bash
 brew install qt
-{% endhighlight %}
+```
 
 * update gems
 
-{% highlight bash %}
+```bash
 bundle install
-{% endhighlight %}
+```
 
 * execute test
 
-{% highlight bash %}
+```bash
 rspec spec
-{% endhighlight %}
+```
 
 ## Reference
 

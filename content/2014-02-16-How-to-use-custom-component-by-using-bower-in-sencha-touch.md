@@ -11,33 +11,33 @@ tags: sencha
 
 ## Create new app
 
-{% highlight bash %}
+```bash
 mkdir ${appname}
 cd ${appname}
 sencha -sdk {senchatouch_skd_path} generate app ${appname} ./
-{% endhighlight %}
+```
 
 
 ## Create .bowerrc
 
 Create `.bowerrc` to install component into `ux` folder.
 
-{% highlight bash %}
+```bash
 vi .bowerrc
-{% endhighlight %}
+```
 
-{% highlight json %}
+```json
 	{
  	 	"directory": "ux"
 	}
-{% endhighlight %}
+```
 
 
 ## Create bower.json
 
-{% highlight bash %}
+```bash
 bower init
-{% endhighlight %}
+```
 
 
 ## Install
@@ -45,9 +45,9 @@ bower init
 ※ Following operation is sample when you use [sencha-list-scroll-reset](https://github.com/kashiro/sencha-list-scroll-reset).
 
 
-{% highlight bash %}
+```bash
 	bower install --save sencha-list-scroll-reset
-{% endhighlight %}
+```
 
 ---
 
@@ -67,28 +67,28 @@ bower init
 
 Set class path to custom component in `app.js`.
 
-{% highlight bash %}
+```bash
 vi app/app.js
-{% endhighlight %}
+```
 	
 ---
 
 
-{% highlight js %}
+```js
 Ext.Loader.setConfig ({
     enabled: true ,
     paths: {
         'Ext.ux.touch.ListScrollReset': 'ux/touch/ListScrollReset.js'
     }
 });
-{% endhighlight %}
+```
 
 ### Use component
 
 Add class name in `requires` config.
 
 
-{% highlight js %}
+```js
 'use strict';
 Ext.define('SenchaListScrollReset.view.Main', {
     extend: 'Ext.Panel',
@@ -99,7 +99,7 @@ Ext.define('SenchaListScrollReset.view.Main', {
         'Ext.dataview.List',
         'Ext.data.Store'
     ],
-{% endhighlight %}
+```
 
 
 ### Settings for build your sencha touch app
@@ -107,13 +107,13 @@ Ext.define('SenchaListScrollReset.view.Main', {
 You should add settings to build you app.
 
 
-{% highlight bash %}
+```bash
 vi .sencha/app/sencha.cfg
-{% endhighlight %}
+```
 
 
 Add `,ux`.
 
-{% highlight bash %}
+```bash
 app.classpath=${app.dir}/app.js,${app.dir}/app,ux
-{% endhighlight %}
+```

@@ -9,7 +9,7 @@ You can not get $routeparams.key in `$routeProvider resolve section`.
 
 ## Example
 
-{% highlight js %}
+```js
   angular.module('app')
     .config(Router);
 
@@ -28,7 +28,7 @@ You can not get $routeparams.key in `$routeProvider resolve section`.
               }]
             }
           });
-{% endhighlight %}
+```
 
 ## Reason
 
@@ -36,7 +36,7 @@ In `$routeScope.$locationChangeSuccess` event, execute resolve section to get da
 
 ## Solution
 
-{% highlight js %}
+```js
   angular.module('app')
     .config(Router);
 
@@ -55,7 +55,7 @@ In `$routeScope.$locationChangeSuccess` event, execute resolve section to get da
               }]
             }
           });
-{% endhighlight %}
+```
 
 `$route.current` is updated in `$routeScope.$locationChangeStart` event which is fired before execute resolve section (`$routeScope.$locationChangeSuccess`)
 

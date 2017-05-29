@@ -15,20 +15,20 @@ You had better to combine all videos and request it only using Media Fragments U
 
 The format is below.
 
-{% highlight html %}
+```html
 <source type="video/webm" src="video.webm#[start],[end]">
-{% endhighlight %}
+```
 
 example
 
 This video will play from 3s to 5s.
 
-{% highlight html %}
+```html
 <video class="video" muted controls>
 	<source type="video/webm" src="http://tomoyukikashiro.me/sample/video/landscape.webm#3,5">
 	<source type="video/mp4" src="http://tomoyukikashiro.me/sample/video/landscape.mp4#3,5">
 </video>
-{% endhighlight %}
+```
 
 
 ## Deomo

@@ -16,7 +16,7 @@ if you have not read [session 1](http://blog.tomoyukikashiro.me/post/start-shado
 
 ### code:
 
-{% highlight html %}
+```html
 <div id="host">
 	<span>contents</span>
 </div>
@@ -28,7 +28,7 @@ if you have not read [session 1](http://blog.tomoyukikashiro.me/post/start-shado
 	root1.innerHTML = '<div>root1 inner</div>';
 	root2.innerHTML = '<div>root2 inner</div>';
 </script>
-{% endhighlight %}
+```
 
 ### result:
 
@@ -40,7 +40,7 @@ if you have not read [session 1](http://blog.tomoyukikashiro.me/post/start-shado
 
 ### code:
 
-{% highlight html %}
+```html
 <div id="host">
 	<h2>contents</h2>
 </div>
@@ -52,7 +52,7 @@ if you have not read [session 1](http://blog.tomoyukikashiro.me/post/start-shado
 	root1.innerHTML = '<div>Root 1</div><content></content>';
 	root2.innerHTML = '<div>Root 2</div><shadow></shadow>';
 </script>
-{% endhighlight %}
+```
 
 ### result:
 
@@ -69,7 +69,7 @@ if you have not read [session 1](http://blog.tomoyukikashiro.me/post/start-shado
 You can not get inner element of '<content>'.
 You have to use `content.getDistributedNodes`.
 
-{% highlight html %}
+```html
 <div id="host2">
 	<h2 id="title">title</h2>
 </div>
@@ -88,13 +88,13 @@ You have to use `content.getDistributedNodes`.
 	var content = root1.querySelector('content[select="#title"]');
 	console.log(content.getDistributedNodes()); // h2#title
 </script>
-{% endhighlight %}
+```
 
 ## element.getDestinationInsertionPoints()
 
 You can find insert point which the element insert into using `element.getDestinationInsertionPoints()`
 
-{% highlight html %}
+```html
 <div id="host2">
 	<h2 id="title">title</h2>
 </div>
@@ -111,7 +111,7 @@ You can find insert point which the element insert into using `element.getDestin
 	console.log(h2.getDestinationInsertionPoints()); // 
 	
 </script>
-{% endhighlight %}
+```
 
 ### result:
 
