@@ -18,7 +18,7 @@ FEED_ALL_ATOM = 'feed.xml'
 PLUGINS = ['sitemap',]
 SITEMAP = {
     'format': 'xml',
-    'exclude': ['categories.html', 'archives.html']
+    'exclude': ['categories.html',]
 }
 
 DELETE_OUTPUT_DIRECTORY = True
