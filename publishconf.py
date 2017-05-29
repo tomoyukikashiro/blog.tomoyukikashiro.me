@@ -13,12 +13,17 @@ from pelicanconf import *
 SITEURL = 'https://blog.tomoyukikashiro.me'
 RELATIVE_URLS = False
 
-FEED_ALL_ATOM = 'feeds/all.atom.xml'
-CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
+FEED_ALL_ATOM = 'feed.xml'
+
+PLUGINS = ['sitemap',]
+SITEMAP = {
+    'format': 'xml',
+    'exclude': ['categories.html', 'archives.html']
+}
 
 DELETE_OUTPUT_DIRECTORY = True
 
 # Following items are often useful when publishing
 
-#DISQUS_SITENAME = ""
-#GOOGLE_ANALYTICS = ""
+DISQUS_SITENAME = 'tkashiro'
+GOOGLE_ANALYTICS = 'UA-50867411-2'
