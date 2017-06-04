@@ -1,5 +1,6 @@
 date: 2015-09-27 00:00
 title: don't forget $digest in angular directive unit test
+summary: Explain a tips for angular directive test to call $digest
 slug: angular-directive-test
 tags: javascript,angularjs
 

@@ -1,5 +1,6 @@
 date: 2013-09-17 00:00
 title: How to add half image size attributes for Retina of IMG tag in html by using SublimeText2 Emmet Plugin
+summary: I'm gonna explain how to add half image size attributes for Retina of IMG tag in html by using SublimeText2 
 slug: How-to-add-half-image-size-attributes-for-Retina-by-using-SublimeText2-Emmet-Plugin
 tags: SublimeText,Emmet
 

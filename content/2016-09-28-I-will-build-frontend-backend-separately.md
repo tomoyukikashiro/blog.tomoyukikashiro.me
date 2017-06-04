@@ -1,5 +1,6 @@
 date: 2016-09-28 00:00
 title: I will build frontend and backend separately
+summary: I'm gonna introduce my django scaffold to allow you to manage fron-end back-end separately
 slug: I-will-build-frontend-backend-separately
 tags: javascript,python,django
 

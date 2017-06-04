@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% import 'macros.html' as macros %}
+
+{% block title %}{{ article.title|striptags|title }} | {{ SITENAME }}{% endblock title %}
+
+{% block meta %}
+  {{ super() }}
+  <meta name="description" content="{{ article.summary|striptags|truncate(SUMMARY_MAX_LENGTH) }}">
+  <link rel="canonical" href="{{ SITEURL }}/{{ article.url }}">
+{% endblock %}
+
+{% block content %}
+<article>
+  <header class="l-header header {{ macros.header_bg_class(article) }}">
+    <div class="header__container">
+      <h1 class="header__title"><a class="link-no-decoration" href="/{{ article.url }}" title="Permalink to {{ article.title|striptags|title }}">{{ article.title|striptags|title }}</a></h1>
+      <div class="header__meta">
+        <address class="header__author text-elegant">By {% for author in article.authors %}{{ author }} {% endfor %}</address>
+        <time class="header__publish-date text-elegant" datetime="{{ article.date.isoformat() }}"> on {{ article.locale_date }}</time>
+      </div>
+      {% if article.tags %}
+      <ul class="header__tags clearfix">
+        {% for tag in article.tags %}
+          <li class="header__tag tag"><i class="material-icons">label</i><a href="/{{ tag.url }}">{{ tag|upper }}</a></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  </header>
+  <div class="markdown-body body">
+    {{ article.content }}
+  </div>
+</article>
+<aside class="body">
+  {% include 'includes/disqus_script.html' %}
+</aside>
+{% endblock %}

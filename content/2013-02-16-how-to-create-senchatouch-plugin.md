@@ -1,5 +1,6 @@
 date: 2013-02-16 14:08
 title: How to create sencha plugin
+summary: I'm gonna explain how to create sencha plugin
 slug: how-to-create-senchatouch-plugin
 tags: sencha
 

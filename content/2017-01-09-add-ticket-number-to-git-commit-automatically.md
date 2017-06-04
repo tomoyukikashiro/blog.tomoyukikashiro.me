@@ -1,5 +1,6 @@
 date: 2017-01-9 00:00
 title: Add ticket number to git commit automatically
+summary: I'm gonna explain automation to add ticket number in your git commit
 slug: add-ticket-number-to-git-commit-automatically
 tags: git
 

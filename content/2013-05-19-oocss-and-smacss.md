@@ -1,5 +1,6 @@
 date: 2013-05-19 15:00
 title: OOCSS and SMACSS
+summary: What is OOCSS and SMACSS
 slug: oocss-and-smacs
 tags: css
 

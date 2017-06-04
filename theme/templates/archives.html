@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% import "macros.html" as macros with context %}
+
+{% block title %}ARTICLES | {{ SITENAME }}{% endblock title %}
+
+{% block meta %}
+  {{ super() }}
+  <meta name="description" content="ARCHIVES | {{ SITENAME }}">
+  <link rel="canonical" href="{{ SITEURL }}/{{ ARCHIVES_URL }}">
+  {% include 'includes/pagination_meta.html' %}
+{% endblock %}
+
+{% block content %}
+  <main>
+    <header class="l-header header header__bg-home">
+      <div class="header__container">
+        <h1 class="header__title"><a class="link-no-decoration" href="/{{ ARCHIVES_URL }}">{{ SITENAME }}<br>ARTICLES</a></h1>
+      </div>
+    </header>
+    <div class="body">
+      {% for article in articles_page.object_list %}
+        {{ macros.article_item(article) }}
+      {% endfor %}
+      {% if articles_page.has_other_pages() %}
+        {% include 'includes/pagination.html' %}
+      {% endif %}
+    </div>
+  </main>
+{% endblock content %}

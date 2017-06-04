@@ -1,0 +1,10 @@
+{% if DEFAULT_PAGINATION %}
+<p class="pagination clearfix">
+    {% if articles_page.has_previous() %}
+        <a class="link-no-decoration pagination__newer button" href="/{{ articles_previous_page.url }}">Newer</a>
+    {% endif %}
+    {% if articles_page.has_next() %}
+        <a class="link-no-decoration  pagination__older button" href="/{{ articles_next_page.url }}">Older</a>
+    {% endif %}
+</p>
+{% endif %}

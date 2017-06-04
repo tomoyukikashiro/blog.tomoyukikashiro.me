@@ -1,5 +1,6 @@
 date: 2015-06-11 00:00
 title: How long dose browser keep data in session
+summary: The duration of session is different between device so I'm gonna explain how long do they last 
 slug: how-long-dose-browser-keep-data-in-session
 tags: javascript,html
 
@@ -72,7 +73,7 @@ SessionStorage was not deleted afeter back to home screen and return browser win
 ### Expected result
 
 ||reload|new window|close|restart|
-|-----+------+------+-----+-----|
+|-----|------|------|-----|-----|
 |session cookie|●|✕|✕|✕|
 |permanent cookie|●|●|●|●|
 |session storage|●|✕|✕|✕|
@@ -81,7 +82,7 @@ SessionStorage was not deleted afeter back to home screen and return browser win
 ### Chrome
 
 ||reload|new window|close|restart|
-|-----+------+------+-----+-----|
+|-----|------|------|-----|-----|
 |session cookie|●|●?|●?|✕|
 |permanent cookie|●|●|●|●|
 |session storage|●|✕|✕|✕|
@@ -90,7 +91,7 @@ SessionStorage was not deleted afeter back to home screen and return browser win
 ### Firefox
 
 ||reload|new window|close|restart|
-|-----+------+------+-----+-----|
+|-----|------|------|-----|-----|
 |session cookie|●|●?|●?|✕|
 |permanent cookie|●|●|●|●|
 |session storage|●|✕|✕|✕|
@@ -99,7 +100,7 @@ SessionStorage was not deleted afeter back to home screen and return browser win
 ### Safari
 
 ||reload|new window|close|restart|
-|-----+------+------+-----+-----|
+|-----|------|------|-----|-----|
 |session cookie|●|●?|●?|✕|
 |permanent cookie|●|●|●|●|
 |session storage|●|✕|✕|✕|
@@ -108,7 +109,7 @@ SessionStorage was not deleted afeter back to home screen and return browser win
 ### iOS safari
 
 ||reload|new window|close|restart|
-|-----+------+------+-----+-----|
+|-----|------|------|-----|-----|
 |session cookie|●|●?|●?|✕|
 |permanent cookie|●|●|●|●|
 |session storage|●|✕|●?|✕|
@@ -117,7 +118,7 @@ SessionStorage was not deleted afeter back to home screen and return browser win
 ### iOS chrome
 
 ||reload|new window|close|restart|
-|-----+------+------+-----+-----|
+|-----|------|------|-----|-----|
 |session cookie|●|●?|●?|●?|
 |permanent cookie|●|●|●|●|
 |session storage|●|✕|●?|✕|

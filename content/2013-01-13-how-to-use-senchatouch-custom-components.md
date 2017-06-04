@@ -1,5 +1,6 @@
 date: 2013-01-13 12:30
 title: How to use sencha touch custom components(Ext.ux.touch)
+summary: I'm gonna explain how to use sencha touch custom components using Ext.ux.touch
 slug: how-to-use-senchatouch-custom-components
 tags: sencha
 
@@ -10,7 +11,7 @@ There are so many custom components for sencha touch.
 * [sencha market](https://market.sencha.com/)
 * [sencha try](http://try.sencha.com/touch/2.1.0/)
 
-If you want to use those awsome custom components in your app, you should add some configations in **app.js** and **.sencha** when developing or build apps.
+If you want to use those awesome custom components in your app, you should add some configations in **app.js** and **.sencha** when developing or build apps.
 
 
 # How to...

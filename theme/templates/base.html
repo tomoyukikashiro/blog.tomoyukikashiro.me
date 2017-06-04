@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% block head %}
+    <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+
+    {% block meta %}
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% endblock %}
+
+    {% if FEED_RSS %}
+      <link href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+    {% endif %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.6.0/github-markdown.min.css">
+    <link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}" />
+    <link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/css/pygment.css" />
+  {% endblock head %}
+  {% include 'includes/analytics.html' %}
+</head>
+<body>
+  <nav class="l-nav">
+    <ul class="nav">
+      {% for title, link in MENUITEMS %}
+        <li class="nav__item"><a href="{{ link }}">{{ title|upper }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <div class="l-content">
+    {% block content %}{% endblock %}
+  </div>
+  <footer class="l-footer footer">
+    <p class="footer__item"><small>Copyright © {{ AUTHOR }} {{ CURRENTYEAR }}</small></p>
+    <address class="footer__item"><a class="link-no-decoration" href="{{ CONTACT[0] }}">{{ CONTACT[1] }}</a></address>
+    <p class="footer__item">Theme by <a class="link-no-decoration" href="https://tomoyukikashiro.me" target="_blank">Tomoyuki Kashiro</a></p>
+  </footer>
+</body>
+</html>

@@ -1,5 +1,6 @@
 date: 2013-06-16 00:00
 title: HTM5 prefetch and prerendering
+summary: What's prefetch and prerendering in html
 slug: html5-prefetch-and-prerendering
 tags: webapi
 

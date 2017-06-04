@@ -10,20 +10,11 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
-SITEURL = 'https://blog.tomoyukikashiro.me'
 RELATIVE_URLS = False
-
-FEED_ALL_ATOM = 'feed.xml'
-
-PLUGINS = ['sitemap',]
-SITEMAP = {
-    'format': 'xml',
-    'exclude': ['categories.html',]
-}
+DISQUS_SITENAME = 'tkashiro'
+GOOGLE_ANALYTICS = 'UA-50867411-2'
+SITEURL = 'https://blog.tomoyukikashiro.me'
 
 DELETE_OUTPUT_DIRECTORY = True
 
 # Following items are often useful when publishing
-
-DISQUS_SITENAME = 'tkashiro'
-GOOGLE_ANALYTICS = 'UA-50867411-2'

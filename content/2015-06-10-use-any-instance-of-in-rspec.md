@@ -1,5 +1,6 @@
 date: 2015-06-10 00:00
 title: use any_instance_of in rspec
+summary: tips of rails stub which is called any_instance_of
 slug: use-any-instance-of-in-rspec
 tags: ruby,rails,rspec
 

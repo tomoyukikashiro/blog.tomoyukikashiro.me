@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% import "macros.html" as macros with context %}
+
+{% block title %}TAGS | {{ SITENAME }}{% endblock title %}
+
+{% block meta %}
+  {{ super() }}
+  <meta name="description" content="TAGS | {{ SITENAME }}">
+  <link rel="canonical" href="{{ SITEURL }}/{{ TAGS_URL }}">
+{% endblock %}
+
+{% block content %}
+  <main>
+    <header class="l-header header header__bg-home">
+      <div class="header__container">
+        <h1 class="header__title"><a class="link-no-decoration" href="/{{ TAGS_URL }}">{{ SITENAME }}<br>TAGS</a></h1>
+      </div>
+    </header>
+    <div class="body">
+      {%- for tag, articles in tags|sort %}
+        <section class="section">
+          <h1 class="section__title"><i class="material-icons section__title-icon">label_outline</i><a href="/{{ tag.url }}">{{ tag|upper }}</a> ({{ articles|count }})</h1>
+          {% for article in articles %}
+            {{ macros.article_item(article) }}
+          {% endfor %}
+        </section>
+      {% endfor %}
+    </div>
+  </main>
+{% endblock content %}

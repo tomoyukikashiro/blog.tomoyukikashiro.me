@@ -1,5 +1,6 @@
 date: 2013-07-07 00:00
 title: W3C Technical Report Process
+summary: What is W3C Technical Report Process
 slug: w3c-technical-report-process
 tags: w3c 
 

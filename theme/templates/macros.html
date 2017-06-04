@@ -1,0 +1,15 @@
+{% macro header_bg_class(article) %}
+  {% set num = article.date.day % 7 %}
+  header__bg-{{ num }}
+{% endmacro %}
+
+{% macro article_item(article) %}
+  <section class="article-item">
+    <h2 class="article-item__title"><a class="link-no-decoration" href="/{{ article.url }}" title="Permalink to {{ article.title|striptags|title }}">{{ article.title|striptags|title }}</a> </h2>
+    <p class="article-item__summary">{{ article.summary|striptags|truncate(SUMMARY_MAX_LENGTH) }}</p>
+    <footer class="article-item__publish-date text-elegant">
+      <time datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }} </time>
+    </footer>
+  </section>
+{% endmacro %}
+

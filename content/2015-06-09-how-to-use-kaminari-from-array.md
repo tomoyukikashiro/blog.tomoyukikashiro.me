@@ -1,5 +1,6 @@
 date: 2015-06-09 00:00
 title: how to use kaminari from array
+summary: I always forget way of use rails pagination library (kaminari) with array
 slug: how-to-use-kaminari-from-array
 tags: ruby,rails
 
