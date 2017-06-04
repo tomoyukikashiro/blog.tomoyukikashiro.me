@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from datetime import date
 
 AUTHOR = 'Tomoyuki Kashiro'
+PROFILE_URL = 'https://tomoyukikashiro.me/'
 SITENAME = "TOMOYUKI KASHIRO's Blog"
 SITEURL = ''
 SITEDESCRIPTION = 'Web developer Tomoyuki Kashiro\'s Blog.'
@@ -29,13 +30,15 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+TWITTER_ACCOUNT = 'tomoyukikashiro'
+
 # Blogroll
 LINKS = (('home', 'https://tomoyukikashiro.me/'),
          ('resume', 'https://tomoyukikashiro.me/resume/'))
 
 # Social widget
 SOCIAL = (('github', 'https://github.com/tomoyukikashiro'),
-          ('twitter', 'https://twitter.com/tomoyukikashiro'))
+          ('twitter', 'https://twitter.com/{}'.format(TWITTER_ACCOUNT)))
 
 DEFAULT_PAGINATION = 10
 

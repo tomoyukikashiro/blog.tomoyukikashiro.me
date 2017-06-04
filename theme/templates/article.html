@@ -1,19 +1,25 @@
 {% extends "base.html" %}
 {% import 'macros.html' as macros %}
 
-{% block title %}{{ article.title|striptags|title }} | {{ SITENAME }}{% endblock title %}
+{% set title %}{{ article.title|striptags|title }} | {{ SITENAME }}{% endset %}
+{% set description %}{{ article.summary|striptags|truncate(SUMMARY_MAX_LENGTH) }}{% endset %}
+{% set url %}{{ SITEURL }}/{{ article.url }}{% endset %}
+{% set image %}{{ macros.header_bg_url(article) }}{% endset %}
+
+{% block title %}{{ title }}{% endblock title %}
 
 {% block meta %}
   {{ super() }}
-  <meta name="description" content="{{ article.summary|striptags|truncate(SUMMARY_MAX_LENGTH) }}">
-  <link rel="canonical" href="{{ SITEURL }}/{{ article.url }}">
+  <meta name="description" content="{{ description }}">
+  {{ macros.og_metas(title=title, description=description, type='article', url=url, image=image, tags=article.tags, publishd=article.date.isoformat(), authors=article.authors ) }}
+  <link rel="canonical" href="{{ url }}">
 {% endblock %}
 
 {% block content %}
 <article>
   <header class="l-header header {{ macros.header_bg_class(article) }}">
     <div class="header__container">
-      <h1 class="header__title"><a class="link-no-decoration" href="/{{ article.url }}" title="Permalink to {{ article.title|striptags|title }}">{{ article.title|striptags|title }}</a></h1>
+      <h1 class="header__title"><a class="link-no-decoration" href="{{ url }}" title="Permalink to {{ article.title|striptags|title }}">{{ article.title|striptags|title }}</a></h1>
       <div class="header__meta">
         <address class="header__author text-elegant">By {% for author in article.authors %}{{ author }} {% endfor %}</address>
         <time class="header__publish-date text-elegant" datetime="{{ article.date.isoformat() }}"> on {{ article.locale_date }}</time>

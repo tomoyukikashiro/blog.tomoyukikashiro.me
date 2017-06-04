@@ -1,17 +1,23 @@
 {% extends "base.html" %}
 {% import "macros.html" as macros with context %}
 
+{% set title %}{{ SITENAME }}{% endset %}
+{% set description %}{{ SITEDESCRIPTION }}{% endset %}
+{% set url %}{{ SITEURL }}/{% endset %}
+{% set image %}{{ macros.header_bg_url() }}{% endset %}
+
 {% block meta %}
   {{ super() }}
-  <meta name="description" content="{{ SITEDESCRIPTION }}">
-  <link rel="canonical" href="{{ SITEURL }}/">
+  <meta name="description" content="{{ description }}">
+  {{ macros.og_metas(title=title, description=description, type='website', url=url, image=image) }}
+  <link rel="canonical" href="{{ url }}">
 {% endblock %}
 
 {% block content %}
   <main>
     <header class="l-header header header__bg-home">
       <div class="header__container">
-        <h1 class="header__title"><a class="link-no-decoration" href="/">{{ SITENAME }}</a></h1>
+        <h1 class="header__title"><a class="link-no-decoration" href="/">{{ title }}</a></h1>
       </div>
     </header>
     <div class="body">

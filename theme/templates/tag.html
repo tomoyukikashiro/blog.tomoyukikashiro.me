@@ -1,19 +1,25 @@
 {% extends "base.html" %}
 {% import "macros.html" as macros with context %}
 
-{% block title %}{{ tag.name }} TAG | {{ SITENAME }}{% endblock title %}
+{% set title %}{{ tag.name }} TAG | {{ SITENAME }}{% endset %}
+{% set description %}{{ tag.name|upper }} TAG | {{ SITENAME }}{% endset %}
+{% set url %}{{ SITEURL }}/{{ tag.url }}{% endset %}
+{% set image %}{{ macros.header_bg_url() }}{% endset %}
+
+{% block title %}{{ title }}{% endblock title %}
 
 {% block meta %}
   {{ super() }}
-  <meta name="description" content="{{ tag.name|upper }} TAG | {{ SITENAME }}">
-  <link rel="canonical" href="{{ SITEURL }}/{{ tag.url }}">
+  <meta name="description" content="{{ description }}">
+  {{ macros.og_metas(title=title, description=description, type='website', url=url, image=image) }}
+  <link rel="canonical" href="{{ url }}">
 {% endblock %}
 
 {% block content %}
   <main>
     <header class="l-header header header__bg-home">
       <div class="header__container">
-        <h1 class="header__title"><a class="link-no-decoration" href="/{{ tag.url }}">{{ SITENAME }}<br><i class="material-icons header__title-icon">label</i>{{ tag.name|upper }} TAG</a></h1>
+        <h1 class="header__title"><a class="link-no-decoration" href="{{ url }}">{{ SITENAME }}<br><i class="material-icons header__title-icon">label</i>{{ tag.name|upper }} TAG</a></h1>
       </div>
     </header>
     <div class="body">

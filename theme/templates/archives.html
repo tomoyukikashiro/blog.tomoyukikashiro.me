@@ -1,12 +1,18 @@
 {% extends "base.html" %}
 {% import "macros.html" as macros with context %}
 
-{% block title %}ARTICLES | {{ SITENAME }}{% endblock title %}
+{% set title %}ARTICLES | {{ SITENAME }}{% endset %}
+{% set description %}ARCHIVES | {{ SITENAME }}{% endset %}
+{% set url %}{{ SITEURL }}/{{ ARCHIVES_URL }}{% endset %}
+{% set image %}{{ macros.header_bg_url() }}{% endset %}
+
+{% block title %}{{ title }}{% endblock title %}
 
 {% block meta %}
   {{ super() }}
-  <meta name="description" content="ARCHIVES | {{ SITENAME }}">
-  <link rel="canonical" href="{{ SITEURL }}/{{ ARCHIVES_URL }}">
+  <meta name="description" content="{{ description }}">
+  {{ macros.og_metas(title=title, description=description, type='website', url=url, image=image) }}
+  <link rel="canonical" href="{{ url }}">
   {% include 'includes/pagination_meta.html' %}
 {% endblock %}
 
@@ -14,7 +20,7 @@
   <main>
     <header class="l-header header header__bg-home">
       <div class="header__container">
-        <h1 class="header__title"><a class="link-no-decoration" href="/{{ ARCHIVES_URL }}">{{ SITENAME }}<br>ARTICLES</a></h1>
+        <h1 class="header__title"><a class="link-no-decoration" href="{{ url }}">{{ SITENAME }}<br>ARTICLES</a></h1>
       </div>
     </header>
     <div class="body">
