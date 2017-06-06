@@ -156,9 +156,18 @@ a:visited {
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center var(--navigation-height);
-    background-attachment: fixed;
+    background-position: center;
 }
+/*
+ * May, 2017 android google chrome does not support background-attachment: fixed
+ * and also can not work code below...
+@supports (background-attachment: fixed){
+    .header {
+        background-position: center var(--navigation-height);
+        background-attachment: fixed;
+    }
+}
+*/
 .header:before {
     position: absolute;
     top: 0;
