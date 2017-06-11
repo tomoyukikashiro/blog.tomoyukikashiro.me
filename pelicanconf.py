@@ -17,6 +17,11 @@ AUTHOR_SAVE_AS = ''
 PAGINATED_DIRECT_TEMPLATES = ['index', 'archives']
 
 PATH = 'content'
+STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/CNAME']
+EXTRA_PATH_METADATA = {
+    'extra/robots.txt': {'path': 'robots.txt'},
+    'extra/CNAME': {'path': 'CNAME'}
+}
 PLUGIN_PATHS = ['pelican-plugins',]
 
 TIMEZONE = 'Asia/Tokyo'
@@ -46,7 +51,7 @@ DEFAULT_PAGINATION = 10
 #RELATIVE_URLS = True
 
 THEME = 'theme'
-THEME_STATIC_DIR = 'static'
+THEME_STATIC_DIR = 'theme_static'
 CSS_FILE = 'main.css'
 ARCHIVES_SAVE_AS = 'articles/index.html'
 ARCHIVES_URL = 'articles/'
@@ -81,5 +86,7 @@ TAGS_URL = 'tags/'
 TAGS_SAVE_AS = 'tags/index.html'
 TAG_URL = 'tag/{slug}/'
 TAG_SAVE_AS = 'tag/{slug}/index.html'
+AMP_PUBLISHER_LOGO = 'images/amp_publisher_logo.png'
+
 
 

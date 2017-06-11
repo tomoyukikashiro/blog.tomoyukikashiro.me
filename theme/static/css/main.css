@@ -178,14 +178,14 @@ a:visited {
     height: 100%;
     background-color: rgba(0,0,0, 0.3);
 }
-.header__bg-0 {background-image: url('/static/images/0.jpg');}
-.header__bg-1 {background-image: url('/static/images/1.jpg');}
-.header__bg-2 {background-image: url('/static/images/2.jpg');}
-.header__bg-3 {background-image: url('/static/images/3.jpg');}
-.header__bg-4 {background-image: url('/static/images/4.jpg');}
-.header__bg-5 {background-image: url('/static/images/5.jpg');}
-.header__bg-6 {background-image: url('/static/images/6.jpg');}
-.header__bg-home {background-image: url('/static/images/home.jpg');}
+.header__bg-0 {background-image: url('/theme_static/images/0.jpg');}
+.header__bg-1 {background-image: url('/theme_static/images/1.jpg');}
+.header__bg-2 {background-image: url('/theme_static/images/2.jpg');}
+.header__bg-3 {background-image: url('/theme_static/images/3.jpg');}
+.header__bg-4 {background-image: url('/theme_static/images/4.jpg');}
+.header__bg-5 {background-image: url('/theme_static/images/5.jpg');}
+.header__bg-6 {background-image: url('/theme_static/images/6.jpg');}
+.header__bg-home {background-image: url('/theme_static/images/home.jpg');}
 .header__container {
     margin: 0 auto;
     min-width: var(--body-min-width);

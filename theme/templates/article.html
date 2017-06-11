@@ -16,6 +16,8 @@
 {% endblock %}
 
 {% block content %}
+{{ macros.json_ld_article_bread_crumb(article=article) }}
+{{ macros.json_ld_article(article) }}
 <article>
   <header class="l-header header {{ macros.header_bg_class(article) }}">
     <div class="header__container">

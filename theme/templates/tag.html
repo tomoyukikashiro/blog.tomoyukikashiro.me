@@ -16,6 +16,8 @@
 {% endblock %}
 
 {% block content %}
+  {{ macros.json_ld_tag_bread_crumb(tag) }}
+  {{ macros.json_ld_carousels(articles_page.object_list ) }}
   <main>
     <header class="l-header header header__bg-home">
       <div class="header__container">
