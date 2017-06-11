@@ -17,11 +17,7 @@ AUTHOR_SAVE_AS = ''
 PAGINATED_DIRECT_TEMPLATES = ['index', 'archives']
 
 PATH = 'content'
-STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/CNAME']
-EXTRA_PATH_METADATA = {
-    'extra/robots.txt': {'path': 'robots.txt'},
-    'extra/CNAME': {'path': 'CNAME'}
-}
+STATIC_PATHS = ['images',]
 PLUGIN_PATHS = ['pelican-plugins',]
 
 TIMEZONE = 'Asia/Tokyo'
@@ -88,5 +84,9 @@ TAG_URL = 'tag/{slug}/'
 TAG_SAVE_AS = 'tag/{slug}/index.html'
 AMP_PUBLISHER_LOGO = 'images/amp_publisher_logo.png'
 
-
-
+# http://realfavicongenerator.net/favicon_result?file_id=p1bicfjicq10jdsdsf2m1giukjl6#.WT2xDxPyvXE
+FAVICONS = (('32x32', '/favicon-32x32.png'), ('16x16', '/favicon-16x16.png'), ('48x48', '/favicon.ico'))
+APPLE_TOUCH_ICON = (('180x180', '/apple-touch-icon.png'), )
+MANIFEST_JSON = '/manifest.json'
+MASK_ICON = ('/safari-pinned-tab.svg', '#ff5722')
+THEME_COLOR = '#ffffff'
