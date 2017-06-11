@@ -1,6 +1,6 @@
 date: 2014-02-16 19:11
 title: How to use custom component by using bower in sencha touch
-slug: How-to-use-custom-component-by-using-bower-in-sencha-touch
+slug: how-to-use-custom-component-by-using-bower-in-sencha-touch
 tags: sencha
 
 ## Prerequisite

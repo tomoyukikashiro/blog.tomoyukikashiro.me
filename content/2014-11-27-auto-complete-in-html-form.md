@@ -1,6 +1,6 @@
 date: 2014-11-27 00:00
 title: AutoComplete in html form
-slgu: auto-complete-in-html-form
+slug: auto-complete-in-html-form
 tags: html
 
 
