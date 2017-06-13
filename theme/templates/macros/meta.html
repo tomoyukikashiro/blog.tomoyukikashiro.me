@@ -1,0 +1,34 @@
+{% macro og_metas(title, description, type, url, image=None, tags=None, publishd=None, authors=None) %}
+  {# BASIC #}
+  <meta property="og:title" content="{{ title|trim }}">
+  <meta property="og:type" content="{{ type|trim }}">
+  <meta property="og:image" content="{{ image|trim }}">
+  <meta property="og:url" content="{{ url|trim }}">
+
+  {# OPTIONAL #}
+  <meta property="og:description" content="{{ description|trim }}">
+  <meta property="og:locale" content="{{ DEFAULT_LANG|trim }}">
+  <meta property="og:site_name" content="{{ SITENAME|trim }}">
+
+  {# og:type:article #}
+  {% if publishd %}
+    <meta property="article:published_time" content="{{ publishd|trim }}">
+  {% endif %}
+  {% if authors %}
+    {% for author in authors %}
+      <meta property="profile:username" content="{{ author|trim }}">
+    {% endfor %}
+  {% endif %}
+  {% if tags %}
+    {% for tag in tags %}
+      <meta property="article:tag" content="{{ tag.name|trim }}">
+    {% endfor %}
+  {% endif %}
+
+  {# twitter #}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@{{ TWITTER_ACCOUNT|trim }}">
+  <meta name="twitter:title" content="{{ title|trim }}">
+  <meta name="twitter:description" content="{{ description|trim }}">
+  <meta name="twitter:image" content="{{ image|trim }}">
+{% endmacro %}

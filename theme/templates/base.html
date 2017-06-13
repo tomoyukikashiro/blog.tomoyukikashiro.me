@@ -1,4 +1,4 @@
-{% import "macros.html" as macros with context %}
+{% import "macros/json_ld.html" as json_ld_macros with context %}
 
 <!DOCTYPE html>
 <html>
@@ -27,7 +27,9 @@
   {% include 'includes/analytics.html' %}
 </head>
 <body>
-  {{ macros.json_ld_site_name() }}
+  {% block json_ld %}
+    {{ json_ld_macros.site_name() }}
+  {% endblock %}
   <nav class="l-nav">
     <ul class="nav">
       {% for title, link in MENUITEMS %}
