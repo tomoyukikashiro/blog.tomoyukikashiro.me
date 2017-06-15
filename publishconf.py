@@ -11,8 +11,6 @@ sys.path.append(os.curdir)
 from pelicanconf import *
 
 RELATIVE_URLS = False
-DISQUS_SITENAME = 'tkashiro'
-GOOGLE_ANALYTICS = 'UA-50867411-2'
 SITEURL = 'https://blog.tomoyukikashiro.me'
 
 DELETE_OUTPUT_DIRECTORY = True
