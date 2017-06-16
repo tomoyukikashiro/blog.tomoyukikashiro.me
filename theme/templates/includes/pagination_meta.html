@@ -1,0 +1,8 @@
+{% if DEFAULT_PAGINATION %}
+  {% if articles_page.has_previous() %}
+    <link rel="prev" href="{{ SITEURL }}/{{ articles_previous_page.url }}" />
+  {% endif %}
+  {% if articles_page.has_next() %}
+    <link rel="next" href="{{ SITEURL }}/{{ articles_next_page.url }}" />
+  {% endif %}
+{% endif %}

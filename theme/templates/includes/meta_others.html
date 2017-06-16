@@ -1,0 +1,12 @@
+{% for ati in APPLE_TOUCH_ICON %}
+<link rel="apple-touch-icon" sizes="{{ ati[0] }}" href="{{ ati[1] }}">
+{% endfor %}
+{% if MANIFEST_JSON %}
+  <link rel="manifest" href="{{ MANIFEST_JSON }}">
+{% endif %}
+{% if MASK_ICON %}
+  <link rel="mask-icon" href="{{ MASK_ICON[0] }}" color="{{ MASK_ICON[1] }}">
+{% endif %}
+{% if THEME_COLOR %}
+  <meta name="theme-color" content="{{ THEME_COLOR }}">
+{% endif %}

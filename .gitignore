@@ -1,5 +1,4 @@
-_site
-.sass-cache
-.vendor
-.bundle
-_build
+.idea
+*.pid
+*.pyc
+output
