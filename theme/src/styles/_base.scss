@@ -1,0 +1,26 @@
+body {
+    font-family: $font-base, $font-sans-serif;
+    color: $color-primary-text;
+}
+* {
+    //Instead of the line below you could use @include box-sizing($bs)
+    box-sizing: border-box;
+    &:before {
+        //Instead of the line below you could use @include box-sizing($bs)
+        box-sizing: border-box;
+    }
+    &:after {
+        //Instead of the line below you could use @include box-sizing($bs)
+        box-sizing: border-box;
+    }
+}
+a {
+    color: $color-primary;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+    &:visited {
+        color: $color-primary;
+    }
+}

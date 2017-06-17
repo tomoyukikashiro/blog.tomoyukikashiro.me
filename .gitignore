@@ -2,3 +2,7 @@
 *.pid
 *.pyc
 output
+*.log
+node_modules
+
+theme/static/styles/main.css
