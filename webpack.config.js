@@ -1,12 +1,14 @@
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   entry: {
-    main: path.join(__dirname, "theme/src/styles/main.scss")
+    main: path.join(__dirname, "theme/src/styles/main.scss"),
+    'amp-main': path.join(__dirname, "theme/src/styles/amp-main.scss")
   },
   output: {
-    path: path.join(__dirname, 'theme/static/styles/'),
+    path: path.join(__dirname, 'theme/src/styles/'),
     filename: '[name].css'
   },
   module: {
@@ -21,6 +23,10 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('main.css')
+    new ExtractTextPlugin('[name].css'),
+    new CopyWebpackPlugin([
+      {from: 'theme/src/styles/main.css', to: '../../material/static/styles/main.css'},
+      {from: 'theme/src/styles/amp-main.css', to: '../../amp/static/styles/amp-main.css'}
+    ])
   ]
 };

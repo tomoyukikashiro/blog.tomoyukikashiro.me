@@ -1,0 +1,29 @@
+{% import "macros/json_ld.html" as json_ld_macros with context %}
+
+<!DOCTYPE html>
+<html amp>
+<head>
+  <meta charset="utf-8" />
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  {% block meta %}{% endblock %}
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  <style amp-custom>
+    {% include 'styles/font-roboto.css' %}
+    {% include 'styles/material-icons.css' %}
+    {% include 'styles/reset.css' %}
+    {% include 'styles/amp-main.css' %}
+    {% include 'styles/pygment.css' %}
+    {% include 'styles/github-markdown.css' %}
+  </style>
+  {% block json_ld %}
+    {{ json_ld_macros.site_name() }}
+  {% endblock %}
+</head>
+<body>
+  {% include 'includes/header.html' %}
+  {% block content %}{% endblock %}
+  {% include 'includes/footer.html' %}
+</body>
+</html>

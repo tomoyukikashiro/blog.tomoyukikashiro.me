@@ -73,10 +73,12 @@ DEFAULT_LANG = 'en'
 TRANSLATION_FEED_ATOM = None
 TRANSLATION_FEED_RSS = None
 
+## Jinja2
+EXTRA_TEMPLATES_PATHS = ['theme/templates']
 
 ## Theme
-THEME = 'theme'
-THEME_STATIC_DIR = 'theme_static'
+THEME = 'theme/material'
+THEME_STATIC_DIR = 'material-theme'
 CSS_FILE = 'main.css'
 TWITTER_USERNAME = 'tomoyukikashiro'
 DISQUS_SITENAME = 'tkashiro'

@@ -255,12 +255,6 @@ a {
   .nav__item + .nav__item {
     margin-left: 25px; }
 
-.pagination__newer {
-  float: left; }
-
-.pagination__older {
-  float: right; }
-
 .tag {
   display: inline-flex; }
   .tag a {

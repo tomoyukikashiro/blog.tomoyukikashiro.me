@@ -5,4 +5,5 @@ output
 *.log
 node_modules
 
-theme/static/styles/main.css
+theme/material/static/styles/main.css
+theme/material/static/styles/amp-main.css

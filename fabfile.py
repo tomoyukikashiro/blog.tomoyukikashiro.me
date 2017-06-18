@@ -13,9 +13,17 @@ DEPLOY_PATH = env.deploy_path
 # Port for `serve`
 PORT = 8000
 
+
+def getconf(type=None, publish=False):
+    if type == 'amp':
+        return 'amp_publishconf.py' if publish else 'amp_pelicanconf.py'
+    else:
+        return 'publishconf.py' if publish else 'pelicanconf.py'
+
 def watch():
     """Automatically regenerate site upon file modification"""
-    local('pelican -r -s pelicanconf.py')
+    local('pelican -r -s {}'.format(getconf()))
+    local('pelican -r -s {}'.format(getconf(type='amp')))
 
 def serve():
     """Serve site at http://localhost:8000/"""
@@ -32,5 +40,6 @@ def serve():
 def publish():
     """Build production version of site"""
     local('npm run build')
-    local('pelican -s publishconf.py')
+    local('pelican -s {}'.format(getconf(publish=True)))
+    local('pelican -s {}'.format(getconf(type='amp', publish=True)))
     local('if test -d content/extra; then cp content/extra/* output/; fi')
