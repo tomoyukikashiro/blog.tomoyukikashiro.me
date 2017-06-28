@@ -4,7 +4,7 @@
 {% import 'macros/json_ld.html' as json_id_macros with context %}
 
 {% set title %}{{ article.title|striptags|title }} | {{ SITENAME }}{% endset %}
-{% set description %}{{ article.summary|striptags|truncate(SUMMARY_MAX_LENGTH) }}{% endset %}
+{% set description %}{{ article.summary|striptags|truncate(SUMMARY_MAX_LENGTH)|replace('"', '') }}{% endset %}
 {% set url %}{{ SITEURL }}/{{ article.url }}{% endset %}
 {% set amp_url %}{{ SITEURL }}/amp/{{ article.url }}{% endset %}
 {% set image %}{{ contents_macros.header_bg_url(article) }}{% endset %}

@@ -6,7 +6,7 @@
   <meta property="og:url" content="{{ url|trim }}">
 
   {# OPTIONAL #}
-  <meta property="og:description" content="{{ description|trim }}">
+  <meta property="og:description" content="{{ description|trim|replace('"', '') }}">
   <meta property="og:locale" content="{{ DEFAULT_LANG|trim }}">
   <meta property="og:site_name" content="{{ SITENAME|trim }}">
 
@@ -29,6 +29,6 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:creator" content="@{{ TWITTER_USERNAME|trim }}">
   <meta name="twitter:title" content="{{ title|trim }}">
-  <meta name="twitter:description" content="{{ description|trim }}">
+  <meta name="twitter:description" content="{{ description|trim|replace('"', '') }}">
   <meta name="twitter:image" content="{{ image|trim }}">
 {% endmacro %}

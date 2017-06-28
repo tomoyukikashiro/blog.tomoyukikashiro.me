@@ -15,7 +15,7 @@ MARKDOWN = {
 }
 PATH = 'content'
 PLUGINS = ['sitemap',]
-PLUGIN_PATHS = ['pelican-plugins',]
+PLUGIN_PATHS = ['plugins',]
 SITEMAP = {
     'format': 'xml'
 }
