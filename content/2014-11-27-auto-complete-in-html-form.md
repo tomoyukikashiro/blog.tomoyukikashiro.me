@@ -49,16 +49,8 @@ You can check `autocomplete` value in `whatwg` specification. (this specificatio
 
 * user click button to call autocomplete.
 * browser show dialog to input card and address information.
-
-![screen](https://dl.dropboxusercontent.com/u/2553817/Apps/scriptogram/resource/2014-11-27/input.png)
-
 * after save it, information you need is inputed automatically from saved data.
-
-![screen](https://dl.dropboxusercontent.com/u/2553817/Apps/scriptogram/resource/2014-11-27/auto.png)
-
 * if this is second visit you only select data from dialog.
-
-![screen](https://dl.dropboxusercontent.com/u/2553817/Apps/scriptogram/resource/2014-11-27/select.png)
 
 ### sample page
 

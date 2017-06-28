@@ -13,8 +13,6 @@ So child controllers can not get any event from parent controller when parent co
 
 This is simple [sample](http://jsbin.com/nafuferado/4/edit?html,js,console,output).
 
-<a class="jsbin-embed" href="http://jsbin.com/nafuferado/4/embed?html,js,console,output">JS Bin on jsbin.com</a><script src="http://static.jsbin.com/js/embed.min.js?3.35.0"></script>
-
 Controller's code is really simple. They outpu their name in conole after initialized.
 In this sample, controller are declared from `thirdController`, `secondController`, `firstController` in order.
 

@@ -55,16 +55,15 @@ Result
  
  	Hi! My name is Bob
  	
- * `<content></content>` is [insertion point](http://www.html5rocks.com/tutorials/webcomponents/shadowdom-301/#toc-distributed-nodes) to show host(#nameTag) contents(Bob, Male, London). you can select value from host tag by using select attribute. (e.g. <content select=".sex"></content>) but you can select only top level tag in host tag.
+ * `<content></content>` is [insertion point](http://www.html5rocks.com/tutorials/webcomponents/shadowdom-301/#toc-distributed-nodes) to show host(#nameTag) contents(Bob, Male, London). you can select value from host tag by using select attribute. (e.g. `<content select=".sex"></content>`) but you can select only top level tag in host tag.
  * you can get `#nameTag` element using `document.querySelectorAll()` but you can not get `name`, `sex`, and `live` values. it is hidden from `window.document`.
 
 > NOTICE:
 > 
-> Distributed nodes are elements that render at an insertion point (a <content> element). The <content> element allows you to select nodes from the Light DOM and render them at predefined locations in your Shadow DOM. They're not logically in the Shadow DOM; they're still children of the host element. Insertion points are just a rendering thing.
+> Distributed nodes are elements that render at an insertion point (a `<content>` element). The `<content>` element allows you to select nodes from the Light DOM and render them at predefined locations in your Shadow DOM. They're not logically in the Shadow DOM; they're still children of the host element. Insertion points are just a rendering thing.
 >
 > [HTML5Rocks - Styling distributed nodes - ](http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom-201/#toc-style-disbtributed-nodes)
 >
-> ![screenshot](https://dl.dropboxusercontent.com/u/2553817/Apps/scriptogram/resource/2014-10-29/screenshot.png)
 
 ## CSS style encapsulation
 
@@ -228,8 +227,14 @@ body /deep/ .name1{
 
 ## Result 
 
-<p data-height="443" data-theme-id="9575" data-slug-hash="DsvzC" data-default-tab="result" data-user="Tkashiro" class='codepen'>See the Pen <a href='http://codepen.io/Tkashiro/pen/DsvzC/'>Shadow Dom Test</a> by Tomoyuki kashiro (<a href='http://codepen.io/Tkashiro'>@Tkashiro</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-<script async src="//codepen.io/assets/embed/ei.js"></script>
+<iframe
+    layout="responsive"
+    width="200"
+    height='300'
+    sandbox='allow-scripts'
+    src='//codepen.io/Tkashiro/embed/DsvzC/?height=300&theme-id=9575&default-tab=html,result&embed-version=2'
+    frameborder='0'>
+</iframe>
 
 ## Reference
 

@@ -16,8 +16,6 @@ I will introduce you this utility JavaScript Library to tracking facebook event 
 
 ## GaTrackingFbEvent
 
-[![Build Status](https://travis-ci.org/kashiro/GaTrackingFbEvent.png?branch=master)](https://travis-ci.org/kashiro/GaTrackingFbEvent)
-
 Utility Class of tracking some Facebook events by using Google Analyitcs
 
 ## Outline
@@ -103,8 +101,6 @@ window.fbAsyncInit = function(){
 
 1. access to Google Analytics
 2. `Traffic Sources -> Social -> Plugins -> URL -> Social Source and Action`
-
-![Google Analytics Screenshot](https://raw.github.com/kashiro/GaTrackingFbEvent/master/resources/screenshot.png)
 
 ## Notice
 

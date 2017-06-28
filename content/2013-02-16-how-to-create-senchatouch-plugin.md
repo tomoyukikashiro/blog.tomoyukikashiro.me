@@ -170,7 +170,12 @@ sencha app build production
 * Submit
 
 ## About it
-![senchamarket top](https://pbs.twimg.com/media/BCE6hsDCMAAIlMx.png)
+<img
+    layout="responsive"
+    width="599"
+    height="393"
+    alt="senchamarket top"
+    src="https://pbs.twimg.com/media/BCE6hsDCMAAIlMx.png">
 
 https://market.sencha.com/
 
@@ -181,19 +186,34 @@ Enter those information
 * screenshot
 * license
 
-![regist plugin](https://pbs.twimg.com/media/BCE7egNCAAAOWEx.png)
+<img
+    layout="responsive"
+    width="599"
+    height="520"
+    alt="regist plugin"
+    src="https://pbs.twimg.com/media/BCE7egNCAAAOWEx.png">
 
 ## Apply (Under examination)
 
-![screenshot](https://pbs.twimg.com/media/BCE8jaYCQAIEfuz.png)
+<img
+    layout="responsive"
+    width="598"
+    height="109"
+    alt="screenshot"
+    src="https://pbs.twimg.com/media/BCE8jaYCQAIEfuz.png">
 
 ## Apply (Approval)
 ＼(^o^)／
 
-![screenshot](https://pbs.twimg.com/media/BCuZjG1CIAAVU0k.png)
+<img
+    layout="responsive"
+    width="594"
+    height="109"
+    alt="screenshot"
+    src="https://pbs.twimg.com/media/BCuZjG1CIAAVU0k.png">
 
 
-参考
+Reference
 ----------
 * [multistate button](https://github.com/kashiro/sencha-multistate-button)
 * [image grid list](https://github.com/kashiro/sencha-image-grid-list)
