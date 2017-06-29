@@ -13,6 +13,7 @@ script:
   - npm run test
 deploy:
   provider: pages
+  local_dir: output
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   on:
