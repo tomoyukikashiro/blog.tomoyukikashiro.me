@@ -127,5 +127,12 @@ var list = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19],
 console.log(list);
 console.log(&#39;index of tartget(&#39; + target + &#39;) is &#39; + result);
 </code></pre>
-<p>See the Pen <a href='http://codepen.io/Tkashiro/pen/bNGrpN/'>Binary search algorithm in JavaScript</a> by Tomoyuki kashiro (<a href='http://codepen.io/Tkashiro'>@Tkashiro</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+<iframe 
+    sandbox='allow-scripts'
+    layout='responsive'
+    width='200'
+    height='300'
+    src='//codepen.io/Tkashiro/embed/bNGrpN/?height=300&theme-id=9575&default-tab=result&embed-version=2'
+    frameborder='0'>
+</iframe>

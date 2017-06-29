@@ -95,5 +95,11 @@ console.log(&#39;before : &#39; + before);
 var after = sortByMin(before);
 console.log(&#39;after : &#39; + after);
 </code></pre>
-<p>See the Pen <a href='http://codepen.io/Tkashiro/pen/LEYJBX/'>Simple sort algorithm in JavaScrip</a> by Tomoyuki kashiro (<a href='http://codepen.io/Tkashiro'>@Tkashiro</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+<iframe
+    sandbox='allow-scripts'
+    layout="responsive"
+    width="200"
+    height='300'
+    src='//codepen.io/Tkashiro/embed/LEYJBX/?height=300&theme-id=9575&default-tab=result&embed-version=2'
+    frameborder='0'></iframe>

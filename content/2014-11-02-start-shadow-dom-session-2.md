@@ -30,11 +30,6 @@ if you have not read [session 1](http://blog.tomoyukikashiro.me/post/start-shado
 </script>
 ```
 
-### result:
-
-![screenshot](https://dl.dropboxusercontent.com/u/2553817/Apps/scriptogram/resource/2014-11-02/code.png)
-
-![screenshot](https://dl.dropboxusercontent.com/u/2553817/Apps/scriptogram/resource/2014-11-02/result.png)
 
 ## Shadow Insertion Points
 
@@ -60,13 +55,9 @@ if you have not read [session 1](http://blog.tomoyukikashiro.me/post/start-shado
 * root1 insert Shadow Insertion Points of `root2`
 * content insert `<content>` of root1
 	
-![screenshot](https://dl.dropboxusercontent.com/u/2553817/Apps/scriptogram/resource/2014-11-02/code2.png)
-
-![screenshot](https://dl.dropboxusercontent.com/u/2553817/Apps/scriptogram/resource/2014-11-02/result2.png)
-
 ## content.getDistributedNodes()
 
-You can not get inner element of '<content>'.
+You can not get inner element of `<content>`.
 You have to use `content.getDistributedNodes`.
 
 ```html
@@ -117,7 +108,6 @@ You can find insert point which the element insert into using `element.getDestin
 
 This means that `h2#title` is in `<content>` in `<shadow>`.
 
-![screenshot](https://dl.dropboxusercontent.com/u/2553817/Apps/scriptogram/resource/2014-11-02/getDestinationInsertionPoints.png)
 
 ## Reference
 
