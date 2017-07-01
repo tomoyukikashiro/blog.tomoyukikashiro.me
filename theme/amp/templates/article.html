@@ -23,6 +23,10 @@
   {{ json_id_macros.article(article) }}
 {% endblock %}
 
+{% block before_content %}
+  {% include 'includes/googleanalytics.html' %}
+{% endblock %}
+
 {% block content %}
   <article>
     <header class="l-header header {{ contents_macros.header_bg_class(article) }}">
