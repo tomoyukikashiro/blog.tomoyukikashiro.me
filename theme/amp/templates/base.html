@@ -5,6 +5,7 @@
 <head>
   <meta charset="utf-8" />
   <script id="amp_script" async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
   <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   {% block meta %}{% endblock %}
@@ -22,6 +23,7 @@
   {% endblock %}
 </head>
 <body>
+  {% block before_content %}{% endblock %}
   {% include 'includes/header.html' %}
   {% block content %}{% endblock %}
   {% include 'includes/footer.html' %}
