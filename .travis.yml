@@ -14,7 +14,7 @@ before_script:
   - fab publish
   - cd output && git add --ignore-removal . && git commit -m 'deploy for test' && git push origin master -f && cd -
 script:
-  - npm test
+  - npm test $TEST_SITE_URL
 deploy:
   provider: pages
   local_dir: output

@@ -14,15 +14,12 @@
     "style-loader": "^0.18.2",
     "webpack": "^2.6.1"
   },
-  "config": {
-    "testsite": "https://blog-tomoyukikashiro.herokuapp.com/index.html"
-  },
   "scripts": {
     "test": "npm run test_amp && npm run test_psi",
     "build": "webpack --config webpack.config.js",
     "watch": "webpack --config webpack.config.js --watch",
     "test_amp": "amphtml-validator output/amp/post/**/*.html",
-    "test_psi": "psi $npm_package_config_testsite --threshold 80 --strategy mobile"
+    "test_psi": "psi $npm_package_config_testsite --threshold 60 --strategy mobile"
   },
   "repository": {
     "type": "git",
