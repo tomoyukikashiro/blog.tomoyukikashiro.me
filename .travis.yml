@@ -1,3 +1,4 @@
+sudo: required
 language: python
 python:
   - "2.7"
@@ -6,11 +7,14 @@ install:
   - nvm install node
   - nvm alias default node
   - npm install
+  - scripts/setup_heroku.sh
+  - git clone $TEST_SITE_GIT_REMOTE output
 before_script:
   - npm run build
   - fab publish
+  - cd output && git add --ignore-removal . && git commit -m 'deploy for test' && git push origin master -f && cd -
 script:
-  - npm run test
+  - npm test
 deploy:
   provider: pages
   local_dir: output
@@ -18,4 +22,6 @@ deploy:
   github_token: $GITHUB_TOKEN
   on:
     branch: master
+after_script:
+  - heroku keys:clear
 
