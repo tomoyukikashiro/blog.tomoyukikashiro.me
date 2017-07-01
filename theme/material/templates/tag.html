@@ -5,7 +5,8 @@
 
 {% set title %}{{ tag.name }} TAG | {{ SITENAME }}{% endset %}
 {% set description %}{{ tag.name|upper }} TAG | {{ SITENAME }}{% endset %}
-{% set url %}{{ SITEURL }}/{{ tag.url }}{% endset %}
+{% set url %}/{{ tag.url }}{% endset %}
+{% set full_url %}{{ SITEURL }}/{{ tag.url }}{% endset %}
 {% set image %}{{ contents_macros.header_bg_url() }}{% endset %}
 
 {% block title %}{{ title }}{% endblock title %}
@@ -13,7 +14,7 @@
 {% block meta %}
   {{ super() }}
   <meta name="description" content="{{ description }}">
-  {{ meta_macros.og_metas(title=title, description=description, type='website', url=url, image=image) }}
+  {{ meta_macros.og_metas(title=title, description=description, type='website', url=full_url, image=image) }}
   <link rel="canonical" href="{{ url }}">
 {% endblock %}
 
