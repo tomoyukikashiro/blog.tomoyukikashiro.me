@@ -5,7 +5,8 @@
 
 {% set title %}ARTICLES | {{ SITENAME }}{% endset %}
 {% set description %}ARCHIVES | {{ SITENAME }}{% endset %}
-{% set url %}{{ SITEURL }}/{{ ARCHIVES_URL }}{% endset %}
+{% set url %}/{{ ARCHIVES_URL }}{% endset %}
+{% set full_url %}{{ SITEURL }}/{{ ARCHIVES_URL }}{% endset %}
 {% set image %}{{ contents_macros.header_bg_url() }}{% endset %}
 
 {% block title %}{{ title }}{% endblock title %}
@@ -13,7 +14,7 @@
 {% block meta %}
   {{ super() }}
   <meta name="description" content="{{ description }}">
-  {{ meta_macros.og_metas(title=title, description=description, type='website', url=url, image=image) }}
+  {{ meta_macros.og_metas(title=title, description=description, type='website', url=full_url, image=image) }}
   <link rel="canonical" href="{{ url }}">
   {% include 'includes/pagination_meta.html' %}
 {% endblock %}

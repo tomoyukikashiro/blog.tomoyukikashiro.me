@@ -9,15 +9,17 @@
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^2.1.2",
     "node-sass": "^4.5.3",
+    "psi": "^3.0.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "webpack": "^2.6.1"
   },
   "scripts": {
-    "test": "npm run test_amp",
+    "test": "npm run test_amp && npm run test_psi",
     "build": "webpack --config webpack.config.js",
     "watch": "webpack --config webpack.config.js --watch",
-    "test_amp": "amphtml-validator output/amp/post/**/*.html"
+    "test_amp": "amphtml-validator output/amp/post/**/*.html",
+    "test_psi": "psi $npm_package_config_testsite --threshold 60 --strategy mobile"
   },
   "repository": {
     "type": "git",

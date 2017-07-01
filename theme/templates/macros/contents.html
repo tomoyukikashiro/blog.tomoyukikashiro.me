@@ -6,9 +6,9 @@
 {% macro header_bg_url(article=None) %}
   {% if article %}
     {% set num = article.date.day % 7 %}
-    {{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/{{ num }}.jpg
+    /{{ THEME_STATIC_DIR }}/images/{{ num }}.jpg
   {% else %}
-    {{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/home.jpg
+    /{{ THEME_STATIC_DIR }}/images/home.jpg
   {% endif %}
 {% endmacro %}
 
