@@ -48,18 +48,11 @@ You can see travis CI settings for repository like below.
 
 You need those settings in `Environment Variables` section.
 
-- GITHUB_TOKEN
 - HEROKU_API_KEY
 - TEST_SITE_GIT_REMOTE
 - TEST_SITE_URL
 
 <img src="https://i.gyazo.com/87e20559c8cb8e514c1eedff9925d5b6.png" alt="travis settings screen" width="1673" height="366" layout="responsive">
-
-### GITHUB_TOKEN
-
-You can find it in github repository settings.
-
-> https://github.com/${account_name}/${repository_name}/settings/installations
 
 ### HEROKU_API_KEY
 
