@@ -268,3 +268,6 @@ a {
     align-self: center;
     text-decoration: none;
     border-bottom: 1px dotted; }
+
+.markdown-body ol, .markdown-body ul {
+  list-style: disc; }
