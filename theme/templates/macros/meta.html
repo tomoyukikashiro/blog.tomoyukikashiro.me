@@ -2,7 +2,7 @@
   {# BASIC #}
   <meta property="og:title" content="{{ title|trim }}">
   <meta property="og:type" content="{{ type|trim }}">
-  <meta property="og:image" content="{{ image|trim }}">
+  <meta property="og:image" content="{{ SITEURL }}{{ image|trim }}">
   <meta property="og:url" content="{{ url|trim }}">
 
   {# OPTIONAL #}
@@ -30,5 +30,5 @@
   <meta name="twitter:creator" content="@{{ TWITTER_USERNAME|trim }}">
   <meta name="twitter:title" content="{{ title|trim }}">
   <meta name="twitter:description" content="{{ description|trim|replace('"', '') }}">
-  <meta name="twitter:image" content="{{ image|trim }}">
+  <meta name="twitter:image" content="{{ SITEURL }}{{ image|trim }}">
 {% endmacro %}
