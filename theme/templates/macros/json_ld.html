@@ -23,7 +23,7 @@
         "item": {
           "@id": "{{ SITEURL }}/",
           "name": "HOME",
-          "image": "{{ contents_macros.header_bg_url()|trim }}"
+          "image": "{{ SITEURL }}{{ contents_macros.header_bg_url()|trim }}"
         }
       }
     ]
@@ -45,7 +45,7 @@
     "headline": "{{ article.title|striptags|title|truncate(110) }}",
     "image": {
       "@type": "ImageObject",
-      "url": "{{ contents_macros.header_bg_url(article)|trim }}",
+      "url": "{{ SITEURL }}{{ contents_macros.header_bg_url(article)|trim }}",
       "height": 900,
       "width": 1600
     },
@@ -89,7 +89,7 @@
         "item": {
           "@id": "{{ SITEURL }}/{{ ARCHIVES_URL }}",
           "name": "articles",
-          "image": "{{ contents_macros.header_bg_url()|trim }}"
+          "image": "{{ SITEURL }}{{ contents_macros.header_bg_url()|trim }}"
         }
       }{% if article %},
       {
@@ -98,7 +98,7 @@
         "item": {
           "@id": "{{ SITEURL }}/{{ article.url }}",
           "name": "{{ article.title|striptags|title }}",
-          "image": "{{ contents_macros.header_bg_url(article)|trim }}"
+          "image": "{{ SITEURL }}{{ contents_macros.header_bg_url(article)|trim }}"
         }
       }{% endif %}
     ]
@@ -118,7 +118,7 @@
         "item": {
           "@id": "{{ SITEURL }}/{{ TAGS_URL }}",
           "name": "tags",
-          "image": "{{ contents_macros.header_bg_url()|trim }}"
+          "image": "{{ SITEURL }}{{ contents_macros.header_bg_url()|trim }}"
         }
       }{% if tag %},
       {
