@@ -1,5 +1,8 @@
 {% import "macros/json_ld.html" as json_ld_macros with context %}
 
+{% set css_file %}/{{ THEME_STATIC_DIR }}/styles/{{ CSS_FILE }}{% endset %}
+{% set css_pygment %}/{{ THEME_STATIC_DIR }}/styles/pygment.css{% endset %}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,8 +24,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.6.0/github-markdown.min.css">
-    <link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/styles/{{ CSS_FILE }}" />
-    <link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/styles/pygment.css" />
+    <link rel="stylesheet" href="{{ css_file|static }}" />
+    <link rel="stylesheet" href="{{ css_pygment|static }}" />
   {% endblock head %}
   {% block json_ld %}
     {{ json_ld_macros.site_name() }}

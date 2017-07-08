@@ -12,7 +12,7 @@ PLUGINS = []
 
 OUTPUT_PATH = 'output/amp'
 
-EXTRA_TEMPLATES_PATHS = EXTRA_TEMPLATES_PATHS + ['theme/amp/static']
+EXTRA_TEMPLATES_PATHS = EXTRA_TEMPLATES_PATHS + ['theme/amp/static', 'theme/dist/']
 
 DIRECT_TEMPLATES = []
 PAGINATED_DIRECT_TEMPLATES = []

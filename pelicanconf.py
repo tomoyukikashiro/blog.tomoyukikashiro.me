@@ -2,6 +2,10 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 from datetime import date
+import sys
+sys.path.append('./theme/templates')
+import filters
+
 
 ### Basic settings
 MARKDOWN = {
@@ -74,7 +78,8 @@ TRANSLATION_FEED_ATOM = None
 TRANSLATION_FEED_RSS = None
 
 ## Jinja2
-EXTRA_TEMPLATES_PATHS = ['theme/templates']
+EXTRA_TEMPLATES_PATHS = ['theme/templates', ]
+JINJA_FILTERS = {'static': filters.static}
 
 ## Theme
 THEME = 'theme/material'

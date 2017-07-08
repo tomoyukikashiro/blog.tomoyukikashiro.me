@@ -43,4 +43,4 @@ def publish():
     local('pelican -s {}'.format(getconf(publish=True)))
     local('pelican -s {}'.format(getconf(type='amp', publish=True)))
     local("./scripts/amp_tag_replace.py 'output/amp/post/*/*.html'")
-    local('if test -d content/extra; then cp content/extra/* output/; fi')
+    local('./scripts/static_copy.sh')
