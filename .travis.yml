@@ -13,6 +13,7 @@ before_script:
   - npm run build
   - fab publish
   - cd output && git add --ignore-removal . && git commit -m 'deploy for test' && git push origin master -f && cd -
+  - sleep 3
 script:
   - npm test $TEST_SITE_URL
 deploy:

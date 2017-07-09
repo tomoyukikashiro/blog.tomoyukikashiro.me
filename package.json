@@ -24,7 +24,7 @@
     "clean": "if test -d $npm_package_config_outputdir; then rm -r $npm_package_config_outputdir; fi",
     "watch": "webpack --config webpack.config.js --watch",
     "test_amp": "amphtml-validator output/amp/post/**/*.html",
-    "test_psi": "psi --threshold 60 --strategy mobile"
+    "test_psi": "psi --threshold 70 --strategy mobile"
   },
   "repository": {
     "type": "git",
