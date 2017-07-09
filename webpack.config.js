@@ -10,6 +10,8 @@ const output = {
   filename: IS_PROD ? '[name].[chunkhash].css' : '[name].css'
 };
 
+const assetFilename = IS_PROD ? '[name].[hash].[ext]' : '[name].[ext]';
+
 var plugins = [];
 if(IS_PROD) {
   plugins.push(new ExtractTextPlugin('[name].[chunkhash].css'));
@@ -42,6 +44,10 @@ module.exports = {
           fallback: 'style-loader',
           use: ['css-loader']
         })
+      },
+      {
+        test: /\.(jpg|png)$/,
+        use: 'file-loader?publicPath=/material-theme/images/&name=' + assetFilename
       }
     ]
   },
