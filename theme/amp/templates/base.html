@@ -14,8 +14,8 @@
     {% include 'styles/font-roboto.css' %}
     {% include 'styles/material-icons.css' %}
     {% include 'styles/reset.css' %}
-    {% include 'styles/amp-main.css' %}
-    {% include 'styles/pygment.css' %}
+    {% include 'amp-main.css'|static %}
+    {% include 'pygment.css'|static %}
     {% include 'styles/github-markdown.css' %}
   </style>
   {% block json_ld %}
@@ -25,7 +25,9 @@
 <body>
   {% block before_content %}{% endblock %}
   {% include 'includes/header.html' %}
-  {% block content %}{% endblock %}
+  <div class="l-content">
+    {% block content %}{% endblock %}
+  </div>
   {% include 'includes/footer.html' %}
 </body>
 </html>

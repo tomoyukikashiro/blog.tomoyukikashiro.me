@@ -5,10 +5,4 @@ output
 *.log
 node_modules
 
-theme/material/static/styles/main.css
-theme/amp/static/styles/amp-main.css
-
-# todo how to exlude these
-#      if I do that build is failed
-# theme/src/styles/main.css
-# theme/src/styles/amp-main.css
+theme/dist
