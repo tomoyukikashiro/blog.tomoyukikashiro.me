@@ -1,3 +1,6 @@
+@import "~reset-css";
+@import "~github-markdown";
+
 @import "variable";
 
 @import "base";
@@ -12,3 +15,4 @@
 @import "tags";
 
 @import "markdown";
+@import "pygment.css";
