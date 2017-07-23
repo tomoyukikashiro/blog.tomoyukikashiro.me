@@ -34,5 +34,9 @@
   "bugs": {
     "url": "https://github.com/tomoyukikashiro/blog.tomoyukikashiro.me/issues"
   },
-  "homepage": "https://github.com/tomoyukikashiro/blog.tomoyukikashiro.me#readme"
+  "homepage": "https://github.com/tomoyukikashiro/blog.tomoyukikashiro.me#readme",
+  "dependencies": {
+    "github-markdown-css": "^2.8.0",
+    "reset-css": "^2.2.0"
+  }
 }
