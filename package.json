@@ -5,24 +5,23 @@
   "main": "",
   "devDependencies": {
     "amphtml-validator": "^1.0.20",
+    "clean-webpack-plugin": "^0.1.16",
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^0.11.2",
+    "html-loader": "^0.4.5",
+    "image-webpack-loader": "^3.3.1",
     "node-sass": "^4.5.3",
     "psi": "^3.0.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "webpack": "^2.6.1",
-    "webpack-manifest-plugin": "^1.1.0"
-  },
-  "config": {
-    "outputdir": "theme/dist"
+    "webpack-manifest-plugin": "^1.1.0",
+    "webpack-merge": "^4.1.0"
   },
   "scripts": {
     "test": "npm run test_amp && npm run test_psi",
-    "build": "npm run clean && NODE_ENV=production webpack --config webpack.config.js",
-    "clean": "if test -d $npm_package_config_outputdir; then rm -r $npm_package_config_outputdir; fi",
-    "watch": "webpack --config webpack.config.js --watch",
+    "build": "webpack -p --config webpack.prod.js",
     "test_amp": "amphtml-validator output/amp/post/**/*.html",
     "test_psi": "psi --threshold 70 --strategy mobile"
   },
