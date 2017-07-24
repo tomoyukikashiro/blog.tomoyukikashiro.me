@@ -12,12 +12,6 @@ module.exports = {
   output: {
     path: outPutPath
   },
-  resolve: {
-    alias: {
-      'reset-css': '../../../node_modules/reset-css/_reset.scss',
-      'github-markdown': '../../../node_modules/github-markdown-css/github-markdown.css'
-    }
-  },
   module: {
     rules: [
       {
