@@ -7,6 +7,7 @@ const outPutPath = path.resolve(__dirname, './theme/dist/');
 module.exports = {
   entry: {
     main: './theme/src/scripts/main.js',
+    font: './theme/src/scripts/font.js',
     'amp-main': './theme/src/styles/amp-main.scss'
   },
   output: {

@@ -1,5 +1,6 @@
 {% import "macros/json_ld.html" as json_ld_macros with context %}
 
+{% set js_font_file %}/{{ THEME_STATIC_DIR }}/scripts/font.js{% endset %}
 {% set css_file %}/{{ THEME_STATIC_DIR }}/styles/{{ CSS_FILE }}{% endset %}
 {% set css_pygment %}/{{ THEME_STATIC_DIR }}/styles/pygment.css{% endset %}
 
@@ -20,8 +21,9 @@
     {% if FEED_RSS %}
       <link href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
     {% endif %}
+
+    <script async src="{{ js_font_file|static }}"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300">
     <link rel="stylesheet" href="{{ css_file|static }}" />
   {% endblock head %}
   {% block json_ld %}
