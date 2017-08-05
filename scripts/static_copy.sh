@@ -6,4 +6,5 @@ fi
 
 # todo get 'material-theme' from settings
 cp theme/dist/*.css output/material-theme/styles/
+cp theme/dist/*.js output/material-theme/scripts/
 cp theme/dist/*.jpg output/material-theme/images/
