@@ -1,0 +1,24 @@
+.header__bg_0 {
+  background-image: var(--hero-image-0);
+}
+.header__bg_1 {
+  background-image: var(--hero-image-1);
+}
+.header__bg_2 {
+  background-image: var(--hero-image-2);
+}
+.header__bg_3 {
+  background-image: var(--hero-image-3);
+}
+.header__bg_4 {
+  background-image: var(--hero-image-4);
+}
+.header__bg_5 {
+  background-image: var(--hero-image-5);
+}
+.header__bg_6 {
+  background-image: var(--hero-image-6);
+}
+.header__bg_home {
+  background-image: var(--hero-image-7);
+}
