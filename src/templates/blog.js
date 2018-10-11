@@ -17,18 +17,19 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteMeatadata = this.props.data.site.siteMetadata
-
+    const date = new Date(post.frontmatter.date)
+    
     return (
       <Layout>
         <Helmet>
           <title>{ post.frontmatter.title }</title>
-          <meta name="description" content={ post.frontmatter.summary } />
+          <meta name="description" content={ post.frontmatter.summary || siteMeatadata.description } />
           <link rel="canonical" href={ `/post/${post.frontmatter.slug}/` } />
           <link rel="amphtml" href={ `${siteMeatadata.ampUrl}/post/${post.frontmatter.slug}` } />
         </Helmet>
         <MetaSocial
           title={post.frontmatter.title }
-          description={ post.frontmatter.summary }
+          description={ post.frontmatter.summary || siteMeatadata.description }
           type="article"
           url={ `${siteMeatadata.siteUrl}/post/${post.frontmatter.slug}/` }
           image={ headerBgUrl(new Date(post.frontmatter.date).getDate()) }
@@ -41,7 +42,7 @@ class BlogPostTemplate extends React.Component {
           <Header klass={headerBgClass(new Date(post.frontmatter.date).getDate())} text={post.frontmatter.title} link={`/post/${ post.frontmatter.slug }/`}>
             <div className={ HeaderStyles.header__meta }>
               <address className={ `${ HeaderStyles.header__author } text-elegant` }>By { siteMeatadata.author }</address>
-              <time className={ `${ HeaderStyles.header__publish_date } text-elegant` } dateTime={ new Date(post.frontmatter.date).toISOString() }> on { moment(post.frontmatter.date).format('dddd LL')  }</time>
+              <time className={ `${ HeaderStyles.header__publish_date } text-elegant` } dateTime={ date.toISOString() }> on { moment(date.toISOString()).format('dddd LL')  }</time>
             </div>
             { post.frontmatter.tags
               ? <ul className={ `${ HeaderStyles.header__tags } clearfix` }>
@@ -73,6 +74,7 @@ export const pageQuery = graphql`
         siteUrl
         ampUrl
         author
+        description
       }
     }
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {

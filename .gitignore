@@ -5,6 +5,3 @@ public
 .intermediate-representation/
 .cache/
 yarn.lock
-src/pages/
-!src/pages/index.js
-!src/pages/tags.js
