@@ -8,6 +8,7 @@ import { headerBgUrl, headerBgClass } from '../utils/image'
 import ArticleBreadCrumb from '../components/json_ld/ArticleBreadCrumb'
 import Article from '../components/json_ld/Article'
 import Header from '../components/Header'
+import moment from 'moment'
 
 import HeaderStyles from '../components/Header.module.css'
 import LabelSvg from '../assets/images/label.svg'
@@ -40,7 +41,7 @@ class BlogPostTemplate extends React.Component {
           <Header klass={headerBgClass(new Date(post.frontmatter.date).getDate())} text={post.frontmatter.title} link={`/post/${ post.frontmatter.slug }/`}>
             <div className={ HeaderStyles.header__meta }>
               <address className={ `${ HeaderStyles.header__author } text-elegant` }>By { siteMeatadata.author }</address>
-              <time className={ `${ HeaderStyles.header__publish_date } text-elegant` } dateTime={ new Date(post.frontmatter.date).toISOString() }> at { new Date(post.frontmatter.date).toLocaleDateString('en-US')  }</time>
+              <time className={ `${ HeaderStyles.header__publish_date } text-elegant` } dateTime={ new Date(post.frontmatter.date).toISOString() }> on { moment(post.frontmatter.date).format('dddd LL')  }</time>
             </div>
             { post.frontmatter.tags
               ? <ul className={ `${ HeaderStyles.header__tags } clearfix` }>
