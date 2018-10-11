@@ -1,5 +1,0 @@
-pelican
-markdown
-mdx_del_ins
-fabric
-beautifulsoup4
