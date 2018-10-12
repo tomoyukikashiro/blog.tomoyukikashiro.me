@@ -9,6 +9,7 @@ import ArticleBreadCrumb from '../components/json_ld/ArticleBreadCrumb'
 import Article from '../components/json_ld/Article'
 import Header from '../components/Header'
 import moment from 'moment'
+import Disqus from '../components/Disqus'
 
 import HeaderStyles from '../components/Header.module.css'
 import LabelSvg from '../assets/images/label.svg'
@@ -60,6 +61,12 @@ class BlogPostTemplate extends React.Component {
           </Header>
           <div className="markdown-body body" dangerouslySetInnerHTML={{ __html: post.html }}></div>
         </article>
+        <aside className="body">
+          <Disqus
+            siteName={siteMeatadata.disqusSiteName}
+            siteUrl={siteMeatadata.siteUrl}
+            path={`post/${post.frontmatter.slug}`}></Disqus>
+        </aside>
       </Layout>
     )
   }
@@ -75,6 +82,7 @@ export const pageQuery = graphql`
         ampUrl
         author
         description
+        disqusSiteName
       }
     }
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
