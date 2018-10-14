@@ -1,6 +1,7 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import { headerBgUrl } from '../../utils/image'
+import Helmet from 'react-helmet'
 
 const ArticleBreadCrumb = ({ post }) => (
   <StaticQuery
@@ -14,9 +15,10 @@ const ArticleBreadCrumb = ({ post }) => (
       }
     `}
     render={ ({site: { siteMetadata }} ) => (
-      <script type="application/ld+json">
-        {
-          `{
+      <Helmet>
+        <script type="application/ld+json">
+          {
+            `{
             "@context": "http://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
@@ -40,8 +42,9 @@ const ArticleBreadCrumb = ({ post }) => (
               }
             ]
           }`
-        }
-      </script>
+          }
+        </script>
+      </Helmet>
     )}
   />
 )
