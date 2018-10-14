@@ -2,7 +2,7 @@ import React from "react"
 import Helmet from 'react-helmet'
 import { Link, graphql } from "gatsby"
 import Layout from '../components/Layout'
-import TagsBreadCrumb from '../components/json_ld/TagsBreadCrumb'
+import TagsBreadCrumb from '../components/ld_json/TagsBreadCrumb'
 import MetaSocial from '../components/MetaSocial'
 import {headerBgUrl} from '../utils/image'
 import Header from '../components/Header'

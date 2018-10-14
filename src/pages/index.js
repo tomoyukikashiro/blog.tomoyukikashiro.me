@@ -6,7 +6,7 @@ import Helmet from 'react-helmet'
 import Layout from '../components/Layout'
 import MetaSocial from '../components/MetaSocial'
 import { headerBgUrl } from '../utils/image'
-import HomeBreadCrumb from '../components/json_ld/HomeBreadCrumb'
+import HomeBreadCrumb from '../components/ld_json/HomeBreadCrumb'
 import Article from '../components/Article'
 import Header from '../components/Header'
 

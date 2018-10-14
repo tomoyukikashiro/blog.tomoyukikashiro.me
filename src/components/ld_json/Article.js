@@ -31,7 +31,7 @@ const Article = ({ post }) => (
               "headline": "${ truncate(post.summary, { length: 110 }) }",
               "image": {
                 "@type": "ImageObject",
-                "url": "${ siteMetadata.siteUrl }${ headerBgUrl(new Date(post.date).getDate()) }"
+                "url": "${ siteMetadata.siteUrl }${ headerBgUrl(new Date(post.date).getDate()) }",
                 "height": 900,
                 "width": 1600
               },
