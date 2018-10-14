@@ -48,7 +48,9 @@ module.exports = {
         head: true
       },
     },
-    `gatsby-plugin-feed`,
+    {
+      resolve: `gatsby-plugin-sitemap`
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: 'gatsby-plugin-typography',

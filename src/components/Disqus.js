@@ -1,15 +1,20 @@
 import React from 'react'
 
 class Disqus extends React.Component {
-  componentWillMount () {
-    window.disqus_shortname = this.props.siteName
-    const s = document.createElement('script'); s.async = true;
-    s.type = 'text/javascript';
-    s.src = 'https://' + window.disqus_shortname + '.disqus.com/count.js';
-    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  constructor(props) {
+    super(props);
+    this.state = {}
   }
+  
   componentDidMount () {
-    const self = this
+    const self = this;
+    (function () {
+      window.disqus_shortname = self.props.siteName;
+      const s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = 'https://' + window.disqus_shortname + '.disqus.com/count.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    })()
     /**
      *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
      *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
