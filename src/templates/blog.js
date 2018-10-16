@@ -14,11 +14,38 @@ import Disqus from '../components/Disqus'
 import HeaderStyles from '../components/Header.module.css'
 import LabelSvg from '../assets/images/label.svg'
 
-class BlogPostTemplate extends React.Component {
+export const BlogPostTemplate = ({author, date, title, slug, tags, html}) => {
+  const _date = new Date(date)
+  return (
+    <article>
+      <Header klass={headerBgClass(_date.getDate())} text={title} link={`/post/${ slug }/`}>
+        <div className={ HeaderStyles.header__meta }>
+          <address className={ `${ HeaderStyles.header__author } text-elegant` }>By { author }</address>
+          <time className={ `${ HeaderStyles.header__publish_date } text-elegant` } dateTime={ _date.toISOString() }> on { moment(_date.toISOString()).format('dddd LL')  }</time>
+        </div>
+        { tags
+          ? <ul className={ `${ HeaderStyles.header__tags } clearfix` }>
+            {
+              tags.map(tag => (
+                <li className={ `${ HeaderStyles.header__tag } tag` } key={ tag.toLowerCase() }>
+                  <i><LabelSvg className={HeaderStyles.header__title_icon} /></i>
+                  <Link to={ `/tag/${ tag.toLowerCase() }` }>{ tag.toUpperCase() }</Link>
+                </li>
+              ))
+            }
+          </ul>
+          : null
+        }
+      </Header>
+      <div className="markdown-body body" dangerouslySetInnerHTML={{ __html: html }}></div>
+    </article>
+  )
+}
+
+class BlogPost extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteMeatadata = this.props.data.site.siteMetadata
-    const date = new Date(post.frontmatter.date)
     
     return (
       <Layout>
@@ -39,28 +66,13 @@ class BlogPostTemplate extends React.Component {
         />
         <ArticleBreadCrumb post={post.frontmatter} />
         <Article post={post.frontmatter} />
-        <article>
-          <Header klass={headerBgClass(new Date(post.frontmatter.date).getDate())} text={post.frontmatter.title} link={`/post/${ post.frontmatter.slug }/`}>
-            <div className={ HeaderStyles.header__meta }>
-              <address className={ `${ HeaderStyles.header__author } text-elegant` }>By { siteMeatadata.author }</address>
-              <time className={ `${ HeaderStyles.header__publish_date } text-elegant` } dateTime={ date.toISOString() }> on { moment(date.toISOString()).format('dddd LL')  }</time>
-            </div>
-            { post.frontmatter.tags
-              ? <ul className={ `${ HeaderStyles.header__tags } clearfix` }>
-                {
-                  post.frontmatter.tags.map(tag => (
-                    <li className={ `${ HeaderStyles.header__tag } tag` } key={ tag.toLowerCase() }>
-                      <i><LabelSvg className={HeaderStyles.header__title_icon} /></i>
-                      <Link to={ `/tag/${ tag.toLowerCase() }` }>{ tag.toUpperCase() }</Link>
-                    </li>
-                  ))
-                }
-              </ul>
-              : null
-            }
-          </Header>
-          <div className="markdown-body body" dangerouslySetInnerHTML={{ __html: post.html }}></div>
-        </article>
+        <BlogPostTemplate
+          author={siteMeatadata.author}
+          date={post.frontmatter.date}
+          title={post.frontmatter.title}
+          slug={post.frontmatter.slug}
+          tags={post.frontmatter.tags}
+          html={post.html} />
         <aside className="body">
           <Disqus
             siteName={siteMeatadata.disqusSiteName}
@@ -72,7 +84,7 @@ class BlogPostTemplate extends React.Component {
   }
 }
 
-export default BlogPostTemplate
+export default BlogPost
 
 export const pageQuery = graphql`
   query ($slug: String!) {

@@ -4,7 +4,7 @@ const _ = require("lodash")
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
-  const blogPostTemplate = path.resolve("src/templates/blog.js")
+  const BlogPost = path.resolve("src/templates/blog.js")
   const tagTemplate = path.resolve("src/templates/tags.js")
 
   return graphql(`
@@ -34,7 +34,7 @@ exports.createPages = ({ actions, graphql }) => {
     posts.forEach(({ node }) => {
       createPage({
         path: `/post/${node.frontmatter.slug}`,
-        component: blogPostTemplate,
+        component: BlogPost,
         context: {
           slug: node.frontmatter.slug,
         },
