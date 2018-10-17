@@ -14,7 +14,7 @@ import Disqus from '../components/Disqus'
 import HeaderStyles from '../components/Header.module.css'
 import LabelSvg from '../assets/images/label.svg'
 
-export const BlogPostTemplate = ({author, date, title, slug, tags, html}) => {
+export const BlogPostTemplate = ({author, date, title, slug, tags, html, content}) => {
   const _date = new Date(date)
   return (
     <article>
@@ -37,7 +37,10 @@ export const BlogPostTemplate = ({author, date, title, slug, tags, html}) => {
           : null
         }
       </Header>
-      <div className="markdown-body body" dangerouslySetInnerHTML={{ __html: html }}></div>
+      { content
+        ? <div className="markdown-body body">{ content }</div>
+        : <div className="markdown-body body" dangerouslySetInnerHTML={{ __html: html }}></div>
+      }
     </article>
   )
 }
