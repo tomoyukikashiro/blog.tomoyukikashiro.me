@@ -23,7 +23,7 @@ https://code.google.com/p/google-api-javascript-client/
 5. click `Credential` menu in left column.
 6. copy `client ID` in `Client ID for web application` section.
 
-<img width="427" height="166" alt="screenshot" src="http://kashiro.github.io/google-calendar-api-sample/images/create-app.png">
+<img width="427" height="166" alt="screenshot" src="https://kashiro.github.io/google-calendar-api-sample/images/create-app.png">
 
 ### Create HTML
 

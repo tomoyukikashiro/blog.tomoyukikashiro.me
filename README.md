@@ -5,12 +5,17 @@ https://blog.tomoyukikashiro.me/
 ## Install
 
 ```bash
-$ pip install -r requirements.txt
-$ npm install
+$ npm intall
+$ npm run dev
 ```
 
 ## Build
 
 ```bash
-$ fab publish
+$ npm run build
+```
+
+## Test
+```bash
+$ npm test
 ```
