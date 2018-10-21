@@ -55,8 +55,8 @@ class BlogPost extends React.Component {
         <Helmet>
           <title>{ post.frontmatter.title }</title>
           <meta name="description" content={ post.frontmatter.summary || siteMeatadata.description } />
-          <link rel="canonical" href={ `/post/${post.frontmatter.slug}/` } />
-          <link rel="amphtml" href={ `${siteMeatadata.ampUrl}/post/${post.frontmatter.slug}` } />
+          <link rel="canonical" href={ `${siteMeatadata.siteUrl}/post/${post.frontmatter.slug}/` } />
+          <link rel="amphtml" href={ `${siteMeatadata.ampUrl}/post/${post.frontmatter.slug}/` } />
         </Helmet>
         <MetaSocial
           title={post.frontmatter.title }
