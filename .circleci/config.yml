@@ -10,17 +10,19 @@ jobs:
           name: Update npm
           command: 'sudo npm install -g npm@latest'
       - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: dependency-cache-{{ checksum "regular/package.json" }}
       - run:
           name: Install npm
           command: npm install
+          working_directory: regular
       - run:
           name: Gatsby build
           command: npm run build
+          working_directory: regular
       - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: dependency-cache-{{ checksum "regular/package.json" }}
           paths:
-            - node_modules
+            - regular/node_modules
   test:
     docker:
       - image: circleci/node:8.12.0-browsers
@@ -30,17 +32,19 @@ jobs:
           name: Update npm
           command: 'sudo npm install -g npm@latest'
       - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: dependency-cache-{{ checksum "regular/package.json" }}
       - run:
           name: Install npm
           command: npm install
+          working_directory: regular
       - run:
           name: Test
           command: npm test
+          working_directory: regular
       - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: dependency-cache-{{ checksum "regular/package.json" }}
           paths:
-          - node_modules
+          - regular/node_modules
 
 workflows:
   version: 2
