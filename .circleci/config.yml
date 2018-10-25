@@ -44,8 +44,7 @@ jobs:
       - save_cache:
           key: dependency-cache-{{ checksum "regular/package.json" }}
           paths:
-          - regular/node_modules
-
+            - regular/node_modules
 workflows:
   version: 2
   build_and_test:
