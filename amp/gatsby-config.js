@@ -5,9 +5,7 @@ module.exports = {
     description: 'Web developer Tomoyuki Kashiro\'s Blog.',
     siteUrl: 'https://blog.tomoyukikashiro.me',
     profileUrl: 'https://tomoyukikashiro.me',
-    twitterUserName: 'tomoyukikashiro',
-    ampUrl: 'https://amp.tomoyukikashiro.me',
-    disqusSiteName: 'tkashiro'
+    twitterUserName: 'tomoyukikashiro'
   },
   plugins: [
     {
@@ -42,13 +40,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: `UA-50867411-2`,
-        head: true
-      },
-    },
-    {
       resolve: `gatsby-plugin-sitemap`
     },
     `gatsby-plugin-react-helmet`,
@@ -65,12 +56,6 @@ module.exports = {
           include: /assets/
         }
       }
-    },
-    {
-      resolve: 'gatsby-plugin-netlify-cms',
-      options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
-      },
     },
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],

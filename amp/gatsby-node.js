@@ -1,5 +1,7 @@
 const path = require("path")
-const _ = require("lodash")
+const glob = require("glob")
+const fs = require("fs")
+const ampify = require('ampify')
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
@@ -39,5 +41,14 @@ exports.createPages = ({ actions, graphql }) => {
         },
       })
     })
+  })
+}
+
+exports.onPostBuild = () => {
+  const htmls = glob.sync('./public/post/**/index.html', {})
+  htmls.forEach(html => {
+     const buffer = fs.readFileSync(path.join(__dirname, html))
+     const amp = ampify(buffer.toString(), {cwd: './'})
+     fs.writeFileSync(path.join(__dirname, html), amp)
   })
 }
