@@ -3,13 +3,11 @@ import Helmet from 'react-helmet'
 import { Link,graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
-import MetaSocial from '../components/MetaSocial'
-import { headerBgUrl, headerBgClass } from '../utils/image'
+import { headerBgClass } from '../utils/image'
 import ArticleBreadCrumb from '../components/ld_json/ArticleBreadCrumb'
 import Article from '../components/ld_json/Article'
 import Header from '../components/Header'
 import moment from 'moment'
-import Disqus from '../components/Disqus'
 
 import HeaderStyles from '../components/Header.module.css'
 import LabelSvg from '../assets/images/label.svg'
@@ -56,17 +54,7 @@ class BlogPost extends React.Component {
           <title>{ post.frontmatter.title }</title>
           <meta name="description" content={ post.frontmatter.summary || siteMeatadata.description } />
           <link rel="canonical" href={ `${siteMeatadata.siteUrl}/post/${post.frontmatter.slug}/` } />
-          <link rel="amphtml" href={ `${siteMeatadata.ampUrl}/post/${post.frontmatter.slug}/` } />
         </Helmet>
-        <MetaSocial
-          title={post.frontmatter.title }
-          description={ post.frontmatter.summary || siteMeatadata.description }
-          type="article"
-          url={ `${siteMeatadata.siteUrl}/post/${post.frontmatter.slug}/` }
-          image={ headerBgUrl(new Date(post.frontmatter.date).getDate()) }
-          tags={ post.frontmatter.tags }
-          published={ new Date(post.frontmatter.date) }
-        />
         <ArticleBreadCrumb post={post.frontmatter} />
         <Article post={post.frontmatter} />
         <BlogPostTemplate
@@ -76,12 +64,6 @@ class BlogPost extends React.Component {
           slug={post.frontmatter.slug}
           tags={post.frontmatter.tags}
           html={post.html} />
-        <aside className="body">
-          <Disqus
-            siteName={siteMeatadata.disqusSiteName}
-            siteUrl={siteMeatadata.siteUrl}
-            path={`post/${post.frontmatter.slug}`}></Disqus>
-        </aside>
       </Layout>
     )
   }
@@ -94,10 +76,8 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         siteUrl
-        ampUrl
         author
         description
-        disqusSiteName
       }
     }
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
