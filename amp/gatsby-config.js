@@ -4,6 +4,7 @@ module.exports = {
     author: 'Tomoyuki Kashiro',
     description: 'Web developer Tomoyuki Kashiro\'s Blog.',
     siteUrl: 'https://blog.tomoyukikashiro.me',
+    ampUrl: 'https://amp.tomoyukikashiro.me',
     profileUrl: 'https://tomoyukikashiro.me',
     twitterUserName: 'tomoyukikashiro'
   },

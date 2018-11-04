@@ -3,7 +3,8 @@ import Helmet from 'react-helmet'
 import { Link,graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
-import { headerBgClass } from '../utils/image'
+import MetaSocial from '../components/MetaSocial'
+import { headerBgUrl, headerBgClass } from '../utils/image'
 import ArticleBreadCrumb from '../components/ld_json/ArticleBreadCrumb'
 import Article from '../components/ld_json/Article'
 import Header from '../components/Header'
@@ -55,6 +56,15 @@ class BlogPost extends React.Component {
           <meta name="description" content={ post.frontmatter.summary || siteMeatadata.description } />
           <link rel="canonical" href={ `${siteMeatadata.siteUrl}/post/${post.frontmatter.slug}/` } />
         </Helmet>
+        <MetaSocial
+          title={post.frontmatter.title }
+          description={ post.frontmatter.summary || siteMeatadata.description }
+          type="article"
+          url={ `${siteMeatadata.siteUrl}/post/${post.frontmatter.slug}/` }
+          image={ headerBgUrl(new Date(post.frontmatter.date).getDate()) }
+          tags={ post.frontmatter.tags }
+          published={ new Date(post.frontmatter.date) }
+        />
         <ArticleBreadCrumb post={post.frontmatter} />
         <Article post={post.frontmatter} />
         <BlogPostTemplate
