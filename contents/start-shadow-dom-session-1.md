@@ -228,15 +228,7 @@ body /deep/ .name1{
 ```
 
 ## Result 
-
-<iframe
-    layout="responsive"
-    width="200"
-    height='300'
-    sandbox='allow-scripts'
-    src='//codepen.io/Tkashiro/embed/DsvzC/?height=300&theme-id=9575&default-tab=html,result&embed-version=2'
-    frameborder='0'>
-</iframe>
+https://codepen.io/Tkashiro/embed/DsvzC/?height=300&theme-id=9575&default-tab=html,result&embed-version=2
 
 ## Reference
 

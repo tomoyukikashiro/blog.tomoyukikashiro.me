@@ -80,11 +80,5 @@ console.log('before : ' + before);
 var after = bubbleSort(before);
 console.log('after : ' + after);
 </code></pre>
-<iframe
-    sandbox='allow-scripts'
-    layout='responsive'
-    width='200'
-    height='300'
-    src='//codepen.io/Tkashiro/embed/wBvEYG/?height=300&theme-id=9575&default-tab=result&embed-version=2'
-    frameborder='0'>
-</iframe>
+
+http://codepen.io/Tkashiro/embed/wBvEYG/?height=300&theme-id=9575&default-tab=result&embed-version=2
