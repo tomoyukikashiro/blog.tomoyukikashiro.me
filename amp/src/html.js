@@ -12,6 +12,8 @@ export default class HTML extends React.Component {
           <meta name="google-site-verification" content="F0csCPag4kfg-qefukr_0b2yJxXNbTtaJ11Cv7pVUcU" />
           {this.props.headComponents}
           <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+        </head>
+        <body {...this.props.bodyAttributes}>
           <amp-analytics type="googleanalytics">
             <script
               type="application/json"
@@ -19,8 +21,6 @@ export default class HTML extends React.Component {
                 __html: JSON.stringify(analyticsConfig)
               }} />
           </amp-analytics>
-        </head>
-        <body {...this.props.bodyAttributes}>
           {this.props.preBodyComponents}
           <div
             key={`body`}

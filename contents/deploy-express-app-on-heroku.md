@@ -83,10 +83,11 @@ Write follows text.
 heroku create ${appname}
 ```
 	
-
-> Creating ${appname}… done, stack is cedar
-> http://${appname}.herokuapp.com/ | git@heroku.com:${appname}.git
-> Git remote heroku added
+```bash
+Creating ${appname}… done, stack is cedar
+http://${appname}.herokuapp.com/ | git@heroku.com:${appname}.git
+Git remote heroku added
+```
 
 ### 9. push Express app code to heroku git repository
 

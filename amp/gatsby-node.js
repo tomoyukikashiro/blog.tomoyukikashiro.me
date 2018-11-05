@@ -46,6 +46,7 @@ exports.createPages = ({ actions, graphql }) => {
 
 exports.onPostBuild = () => {
   const htmls = glob.sync('./public/post/**/index.html', {})
+  htmls.push('./public/index.html')
   htmls.forEach(html => {
      const buffer = fs.readFileSync(path.join(__dirname, html))
      const amp = ampify(buffer.toString(), {cwd: './'})

@@ -175,11 +175,4 @@ result = hashSearch(target, data);
 console.log(&#39;index of tartget(&#39; + target + &#39;) is &#39; + result);
 </code></pre>
 
-<iframe
-    sandbox='allow-scripts'
-    layout='responsive'
-    width='200'
-    height='300'
-    src='//codepen.io/Tkashiro/embed/xbxjeQ/?height=300&theme-id=9575&default-tab=result&embed-version=2'
-    frameborder='0'>
-</iframe>
+https://codepen.io/Tkashiro/embed/xbxjeQ/?height=300&theme-id=9575&default-tab=result&embed-version=2
