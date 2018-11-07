@@ -42,11 +42,11 @@
     "typography-theme-kirkham": "^0.16.3"
   },
   "devDependencies": {
-    "amphtml-validator": "^1.0.23",
-    "eslint": "^4.19.1",
-    "eslint-plugin-react": "^7.11.1",
-    "gh-pages": "^1.2.0",
-    "prettier": "^1.14.2"
+    "amphtml-validator": "1.0.23",
+    "eslint": "4.19.1",
+    "eslint-plugin-react": "7.11.1",
+    "gh-pages": "1.2.0",
+    "prettier": "1.14.2"
   },
   "homepage": "https://github.com/tomoyukikashiro/blog.tomoyukikashiro.me#readme",
   "keywords": [
