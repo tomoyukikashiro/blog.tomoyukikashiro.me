@@ -34,7 +34,7 @@ const Tags = ({ pageContext, data }) => {
       />
       <TagsBreadCrumb tag={tag} />
       <main>
-        <Header klass="header__bg_home" text={ title } link={`${ siteUrl }/tag/${ tag.toLowerCase() }/`}>
+        <Header klass="header__bg_home" text={ title } link={`tag/${ tag.toLowerCase() }/`}>
           <i className={ `material-icons ${HeaderStyles.header__title_icon}` }>label</i>{ tag.toUpperCase() } TAG
         </Header>
         <div className="body">
@@ -51,7 +51,7 @@ export const pageQuery = graphql`
   query($tag: String) {
     site {
       siteMetadata {
-        title
+        title,
       }
     }
     allMarkdownRemark(
