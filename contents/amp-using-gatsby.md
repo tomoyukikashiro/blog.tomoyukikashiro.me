@@ -1,5 +1,5 @@
 ---
-title: AMP using Gatsby
+title: AMP ⚡ using Gatsby
 slug: amp-using-gatsby
 tags:
   - amp
@@ -31,6 +31,84 @@ $ npm start
 
 ## Make it AMP !
 
+### Add plugin
 ```bash
 $ npm install --save gatsby-plugin-html2amp
 ```
+
+Set plugin configuration to `gatsby-config.js` at bottom of file.
+
+```js
+{
+  resolve: 'gatsby-plugin-html2amp',
+  options: {
+    files: ['**/*.html'],
+    dist: 'public/amp'
+  }
+}
+```
+
+### Modify blog post template
+
+To make your post page valid as AMP add `canonical` in `<head>`
+
+***src/templates/blog-post.js***
+```js
+export const pageQuery = graphql`
+  query BlogPostBySlug($slug: String!) {
+    site {
+      siteMetadata {
+        title
+        author
+      }
+    }
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      id
+      excerpt
+      html
+      fields { // ⚡ Add this fields.slug into Graphql
+        slug
+      }
+      frontmatter {
+        title
+        date(formatString: "MMMM DD, YYYY")
+      }
+    }
+  }
+`
+```
+
+then add canonical
+
+***src/templates/blog-post.js***
+```js
+<Helmet
+  htmlAttributes={{ lang: 'en' }}
+  meta={[{ name: 'description', content: siteDescription }]}
+  title={`${post.frontmatter.title} | ${siteTitle}`}>
+  <link rel="canonical" href={`${post.fields.slug}`} /> // ⚡ Add canonical
+</Helmet>
+```
+
+### Generate
+
+```bash
+$ npm run build
+```
+
+Now you can see AMP source at `public/amp` ⚡
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
