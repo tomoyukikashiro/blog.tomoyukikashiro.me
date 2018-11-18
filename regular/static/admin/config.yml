@@ -9,7 +9,7 @@ publish_mode: editorial_workflow
 collections:
   - name: "article"
     label: "Article"
-    folder: "src/../contents"
+    folder: "../contents"
     create: true
     slug: "{{slug}}"
     fields:
