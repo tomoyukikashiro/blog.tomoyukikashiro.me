@@ -58,6 +58,13 @@ module.exports = {
         }
       }
     },
+    {
+      resolve: 'gatsby-plugin-html2amp',
+      options: {
+        files: ['post/**/index.html', 'index.html'],
+        gaConfigPath: 'gaConfig.json'
+      }
+    },
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
 }

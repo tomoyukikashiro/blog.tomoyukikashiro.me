@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 
 export default class HTML extends React.Component {
   render() {
-    const analyticsConfig = { "vars": { "account": "UA-50867411-3"}, "triggers": {"trackPageview": {"on": "visible", "request": "pageview"}}}
     return (
       <html {...this.props.htmlAttributes}>
         <head>
@@ -11,16 +10,8 @@ export default class HTML extends React.Component {
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
           <meta name="google-site-verification" content="F0csCPag4kfg-qefukr_0b2yJxXNbTtaJ11Cv7pVUcU" />
           {this.props.headComponents}
-          <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
         </head>
         <body {...this.props.bodyAttributes}>
-          <amp-analytics type="googleanalytics">
-            <script
-              type="application/json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify(analyticsConfig)
-              }} />
-          </amp-analytics>
           {this.props.preBodyComponents}
           <div
             key={`body`}
