@@ -67,6 +67,29 @@ module.exports = {
       }
     },
     {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Tomoyuki Kashiro\'s Blog',
+        start_url: 'TK Blog',
+        background_color: '#ffffff',
+        theme_color: '#ffffff',
+        display: 'standalone',
+        legacy: true,
+        icons: [
+          {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+          },
+          {
+            "src": "/android-chrome-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+          }
+        ],
+      },
+    },
+    {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,
