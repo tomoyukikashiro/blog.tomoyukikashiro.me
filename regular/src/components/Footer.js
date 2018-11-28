@@ -23,7 +23,7 @@ const Footer = () => (
         <address className={ FooterStyles.footer__item }>
           <a className="link-no-decoration" href={ siteMetadata.profileUrl }>{ siteMetadata.author }</a>
         </address>
-        <p className={ FooterStyles.footer__item }>Theme by <a className="link-no-decoration" href={ siteMetadata.profileUrl } target="_blank">{ siteMetadata.author }</a></p>
+        <p className={ FooterStyles.footer__item }>Theme by <a className="link-no-decoration" href={ siteMetadata.profileUrl } rel="noopener" target="_blank">{ siteMetadata.author }</a></p>
       </footer>
     )}/>
 )

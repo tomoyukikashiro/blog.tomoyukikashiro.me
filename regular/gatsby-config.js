@@ -70,7 +70,8 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'Tomoyuki Kashiro\'s Blog',
-        start_url: 'TK Blog',
+        start_url: 'index.html?utm_source=homescreen',
+        short_name: 'TK Blog',
         background_color: '#ffffff',
         theme_color: '#ffffff',
         display: 'standalone',
@@ -95,6 +96,7 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
+    'gatsby-plugin-offline',
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
 }

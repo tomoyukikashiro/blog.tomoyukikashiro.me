@@ -17,6 +17,7 @@ class BlogIndex extends React.Component {
       this,
       'props.data.site.siteMetadata.description'
     )
+    const siteUrl = get(this, 'props.data.site.siteMetadata.siteUrl')
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
 
     return (
@@ -24,7 +25,7 @@ class BlogIndex extends React.Component {
         <Helmet>
           <title>{ siteTitle }</title>
           <meta name="description" content={ siteDescription } />
-          <link rel="canonical" href="/" />
+          <link rel="canonical" href={`${siteUrl}/`} />
         </Helmet>
         <MetaSocial
           title={ siteTitle }
@@ -53,6 +54,7 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         description
+        siteUrl
       }
     }
     allMarkdownRemark(
