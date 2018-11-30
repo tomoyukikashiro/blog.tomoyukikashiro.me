@@ -62,7 +62,12 @@ module.exports = {
       resolve: 'gatsby-plugin-html2amp',
       options: {
         files: ['post/**/index.html', 'index.html'],
-        gaConfigPath: 'gaConfig.json'
+        gaConfigPath: 'gaConfig.json',
+        serviceWorker: {
+          src: 'https://blog.tomoyukikashiro.me/sw.js',
+          'data-iframe-src': 'https://blog.tomoyukikashiro.me/amp-install-serviceworker.html',
+          layout: 'nodisplay'
+        }
       }
     },
     'gatsby-plugin-netlify', // make sure to keep it last in the array
