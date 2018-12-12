@@ -14,48 +14,75 @@ import Disqus from '../components/Disqus'
 import HeaderStyles from '../components/Header.module.css'
 import LabelSvg from '../assets/images/label.svg'
 
-export const BlogPostTemplate = ({author, date, title, slug, tags, html, content}) => {
-  const _date = new Date(date)
-  return (
-    <article>
-      <Header klass={headerBgClass(_date.getDate())} text={title} link={`/post/${ slug }/`}>
-        <div className={ HeaderStyles.header__meta }>
-          <address className={ `${ HeaderStyles.header__author } text-elegant` }>By { author }</address>
-          <time className={ `${ HeaderStyles.header__publish_date } text-elegant` } dateTime={ _date.toISOString() }> on { moment(_date.toISOString()).format('dddd LL')  }</time>
+export class BlogPostTemplate extends React.Component {
+  state = {
+    ShareButtonContainer: null,
+    ShareButton: null
+  }
+  
+  componentDidMount() {
+    if (!navigator.share) return
+    import(/* webpackChunkName: "sharebutton" */ '../components/ShareButton')
+      .then(module => {
+        this.setState({
+          ShareButtonContainer: module.ShareButtonContainer,
+          ShareButton: module.ShareButton
+        })
+      })
+  }
+
+  render () {
+    const {author, date, title, slug, tags, html, content, url} = this.props
+    const {ShareButtonContainer, ShareButton} = this.state
+    const _date = new Date(date)
+    return (
+      <article>
+        <Header klass={headerBgClass(_date.getDate())} text={title} link={`/post/${ slug }/`}>
+          <div className={ HeaderStyles.header__meta }>
+            <address className={ `${ HeaderStyles.header__author } text-elegant` }>By { author }</address>
+            <time className={ `${ HeaderStyles.header__publish_date } text-elegant` } dateTime={ _date.toISOString() }> on { moment(_date.toISOString()).format('dddd LL')  }</time>
+          </div>
+          { tags
+            ? <ul className={ `${ HeaderStyles.header__tags } clearfix` }>
+              {
+                tags.map(tag => (
+                  <li className={ `${ HeaderStyles.header__tag } tag` } key={ tag.toLowerCase() }>
+                    <i><LabelSvg className={HeaderStyles.header__title_icon} /></i>
+                    <Link to={ `/tag/${ tag.toLowerCase() }` }>{ tag.toUpperCase() }</Link>
+                  </li>
+                ))
+              }
+            </ul>
+            : null
+          }
+        </Header>
+        <div className="markdown-body body">
+          { content
+            ? <div>{ content }</div>
+            : <div dangerouslySetInnerHTML={{ __html: html }}></div>
+          }
+          { ShareButtonContainer && ShareButton
+            ? <ShareButtonContainer><ShareButton url={url} title={title}/></ShareButtonContainer>
+            : null
+          }
         </div>
-        { tags
-          ? <ul className={ `${ HeaderStyles.header__tags } clearfix` }>
-            {
-              tags.map(tag => (
-                <li className={ `${ HeaderStyles.header__tag } tag` } key={ tag.toLowerCase() }>
-                  <i><LabelSvg className={HeaderStyles.header__title_icon} /></i>
-                  <Link to={ `/tag/${ tag.toLowerCase() }` }>{ tag.toUpperCase() }</Link>
-                </li>
-              ))
-            }
-          </ul>
-          : null
-        }
-      </Header>
-      { content
-        ? <div className="markdown-body body">{ content }</div>
-        : <div className="markdown-body body" dangerouslySetInnerHTML={{ __html: html }}></div>
-      }
-    </article>
-  )
+      </article>
+    )
+  }
 }
 
 class BlogPost extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteMeatadata = this.props.data.site.siteMetadata
+    const canonicalUrl = `${siteMeatadata.siteUrl}/post/${post.frontmatter.slug}/`
     
     return (
       <Layout>
         <Helmet>
           <title>{ post.frontmatter.title }</title>
           <meta name="description" content={ post.frontmatter.summary || siteMeatadata.description } />
-          <link rel="canonical" href={ `${siteMeatadata.siteUrl}/post/${post.frontmatter.slug}/` } />
+          <link rel="canonical" href={ canonicalUrl } />
           <link rel="amphtml" href={ `${siteMeatadata.ampUrl}/post/${post.frontmatter.slug}/` } />
         </Helmet>
         <MetaSocial
@@ -75,6 +102,7 @@ class BlogPost extends React.Component {
           title={post.frontmatter.title}
           slug={post.frontmatter.slug}
           tags={post.frontmatter.tags}
+          url={canonicalUrl}
           html={post.html} />
         <aside className="body">
           <Disqus
