@@ -1,0 +1,40 @@
+.shareButton {
+  border-radius: 50%;
+  background-color: var(--color-primary-dark);
+  border: none;
+  width: 60px;
+  height: 60px;
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.shareButton:active {
+  opacity: 0.9;
+}
+
+.shareButton__icon {
+  fill: #fff;
+  width: 30px;
+  height: 30px;
+}
+
+.shareButton__container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.shareButton__inner {
+  min-width: var(--width-body-min);
+  max-width: var(--width-body-max);
+  margin: 0 auto;
+  position: relative;
+}
+
+.shareButton__layout {
+  position: absolute;
+  bottom: 50px;
+  right: 25px;
+}
