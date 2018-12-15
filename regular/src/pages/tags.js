@@ -9,44 +9,49 @@ import Header from '../components/Header'
 
 import HeaderStyles from '../components/Header.module.css'
 import LabelSvg from '../assets/images/label.svg'
+import Site from '../../../lib/site'
 
 const TagsPage = ({
   data: {
     allMarkdownRemark: { group },
     site: { siteMetadata }
   },
-}) => (
-  <Layout>
-    <Helmet>
-      <title>TAGS | { siteMetadata.title }</title>
-      <meta name="description" content={`TAGS | ${ siteMetadata.title }`} />
-      <link rel="canonical" href="/tags/" />
-    </Helmet>
-    <MetaSocial
-      title={ `TAGS | ${ siteMetadata.title }` }
-      description={ `TAGS | ${ siteMetadata.title }` }
-      type="website"
-      url={ `${ siteMetadata.siteUrl }/tags/` }
-      image={ headerBgUrl() }
-    />
-    <TagsBreadCrumb />
-    <main>
-      <Header klass="header__bg_home" text={siteMetadata.title} link="/tags/">
-        <h2 className={HeaderStyles.header__subtitle}>TAGS</h2>
-      </Header>
-      <div className="body">
-        { group.map(tag => (
-          <section className="section" key={ tag.fieldValue }>
-            <h1 className="section__title">
-              <i><LabelSvg/></i>
-              <Link to={ `/tag/${tag.fieldValue.toLowerCase()}/` }>{ tag.fieldValue.toUpperCase() }</Link> ({ tag.totalCount })
-            </h1>
-          </section>
-        )) }
-      </div>
-    </main>
-  </Layout>
-)
+}) => {
+  const site = new Site(siteMetadata)
+  return (
+    <Layout site={site}>
+      <Helmet>
+        <title>{ site.tagsPageTitle }</title>
+        <meta name="description" content={ site.tagsPageDescription }/>
+        <link rel="canonical" href={ `${site.tagsPageUrl}/` } />
+      </Helmet>
+      <MetaSocial
+        site={ site }
+        title={ site.tagsPageTitle }
+        description={ site.tagsPageDescription }
+        type={ site.type }
+        url={ `${site.tagsPageUrl}/` }
+        image={ headerBgUrl() }
+      />
+      <TagsBreadCrumb site={site} />
+      <main>
+        <Header klass="header__bg_home" text={ site.title } link="/tags/">
+          <h2 className={HeaderStyles.header__subtitle}>TAGS</h2>
+        </Header>
+        <div className="body">
+          {group.map(tag => (
+            <section className="section" key={ tag.fieldValue }>
+              <h1 className="section__title">
+                <i><LabelSvg/></i>
+                <Link to={ `/tag/${tag.fieldValue.toLowerCase()}/ `}>{ tag.fieldValue.toUpperCase() }</Link> ({ tag.totalCount })
+              </h1>
+            </section>
+          ))}
+        </div>
+      </main>
+    </Layout>
+  )
+}
 
 export default TagsPage
 
@@ -55,7 +60,13 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        author
+        description
         siteUrl
+        profileUrl
+        twitterUserName
+        ampUrl
+        disqusSiteName
       }
     }
     allMarkdownRemark(

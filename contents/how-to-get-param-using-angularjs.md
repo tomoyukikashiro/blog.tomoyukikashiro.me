@@ -2,6 +2,7 @@
 date: 2015-06-06
 title: how to get params using angularjs
 slug: how-to-get-param-using-angularjs
+lang: en-US
 tags: [angularjs]
 ---
 

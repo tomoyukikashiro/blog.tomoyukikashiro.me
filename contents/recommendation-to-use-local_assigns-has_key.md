@@ -2,6 +2,7 @@
 date: 2015-06-04
 title: Recommendation to use local_assigns.has_key?
 slug: recommendation-to-use-local_assigns-has_key
+lang: en-US
 tags: [rails,ruby,erb]
 ---
 

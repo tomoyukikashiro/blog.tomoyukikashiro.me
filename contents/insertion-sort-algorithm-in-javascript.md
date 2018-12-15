@@ -2,6 +2,7 @@
 date: 2014-11-17
 title: Insertion sort algorithm in JavaScript
 slug: insertion-sort-algorithm-in-javascript
+lang: en-US
 tags: [algorithm]
 ---
 

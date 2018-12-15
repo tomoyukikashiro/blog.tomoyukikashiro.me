@@ -2,6 +2,7 @@
 date: 2014-11-30
 title: How to set :active style to button in mobile
 slug: how-to-set-active-style-to-button-in-mobile
+lang: en-US
 tags: [css]
 ---
 

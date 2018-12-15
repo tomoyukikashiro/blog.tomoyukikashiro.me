@@ -2,6 +2,7 @@
 date: 2014-11-15
 title: Binary search algorithm in JavaScript
 slug: binary-search-algorithm-in-javascript
+lang: en-US
 tags: [algorithm]
 ---
 

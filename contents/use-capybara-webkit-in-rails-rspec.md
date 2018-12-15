@@ -2,6 +2,7 @@
 date: 2014-12-21
 title: Use Capybara-webkit in Rails RSpec
 slug: use-capybara-webkit-in-rails-rspec
+lang: en-US
 tags: [rails,ruby,rspec,capybara]
 ---
 

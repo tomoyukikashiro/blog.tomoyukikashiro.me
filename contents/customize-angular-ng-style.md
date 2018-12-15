@@ -2,6 +2,7 @@
 date: 2015-05-17
 title: Customize AngularJS ng-style
 slug: customize-angular-ng-style
+lang: en-US
 tags: [angularjs,css,javascript]
 ---
 

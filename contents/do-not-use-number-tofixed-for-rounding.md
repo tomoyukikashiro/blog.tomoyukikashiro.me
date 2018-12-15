@@ -2,6 +2,7 @@
 date: 2018-11-18
 title: Do not use Number.toFixed for Rounding
 slug: do-not-use-number-tofixed-for-rounding
+lang: en-US
 tags: [javascript]
 ---
 

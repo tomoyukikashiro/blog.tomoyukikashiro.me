@@ -2,6 +2,7 @@
 date: 2014-11-15
 title: Hashing search algorithm in JavaScript
 slug: hashing-search-algorithm-in-javascript
+lang: en-US
 tags: [algorithm]
 ---
 
