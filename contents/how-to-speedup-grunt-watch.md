@@ -2,6 +2,7 @@
 date: 2014-02-24
 title: How to speedup Grunt watch task
 slug: how-to-speedup-grunt-watch
+lang: en-US
 tags: [grunt]
 ---
 

@@ -2,6 +2,7 @@
 date: 2014-05-05
 title: Manage Async Animation by using jQuery.DeferredPipeline
 slug: Manage-async-animation
+lang: en-US
 tags: [jquery,animation]
 ---
 

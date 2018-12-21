@@ -3,6 +3,7 @@ date: 2017-06-29
 title: What you should care about markdown for AMP
 summary: I'll explain what you need to care about markdown for AMP expecially IMG, IFRAME
 slug: what-you-should-care-about-markdown-for-amp
+lang: en-US
 tags: [amp,markdown]
 ---
 

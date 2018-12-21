@@ -2,6 +2,7 @@
 date: 2014-11-01
 title: Getting Start HTML Import
 slug: start-html-import
+lang: en-US
 tags: [webcomponent]
 ---
 

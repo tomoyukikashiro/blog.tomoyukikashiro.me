@@ -2,6 +2,7 @@
 date: 2014-11-14
 title: Linear search algorithm in JavaScript
 slug: linear-search-algorithm-in-javascript
+lang: en-US
 tags: [algorithm]
 ---
 

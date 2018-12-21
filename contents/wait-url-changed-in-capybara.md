@@ -2,6 +2,7 @@
 date: 2015-05-08
 title: How to wait url changing in feature test using capybara
 slug: wait-url-changed-in-capybara
+lang: en-US
 tags: [test,capybara,rails]
 ---
 

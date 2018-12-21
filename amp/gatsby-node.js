@@ -16,6 +16,7 @@ exports.createPages = ({ actions, graphql }) => {
             frontmatter {
               slug
               tags
+              lang
             }
           }
         }
@@ -30,11 +31,24 @@ exports.createPages = ({ actions, graphql }) => {
 
     // Create post detail pages
     posts.forEach(({ node }) => {
+      const langPath = node.frontmatter.lang.trim() === 'ja' ? '/ja/' : '/'
+      const _path = `/post${langPath}${node.frontmatter.slug.trim()}`
+
+      const hasAlternate = !!posts.find(({ node }) => {
+        const _node = node
+        return _node.frontmatter.slug.trim() === node.frontmatter.slug.trim() &&
+        _node.frontmatter.lang.trim() === node.frontmatter.lang.trim() === 'ja' ? 'en-US' : 'ja'
+      })
+      
+      console.log(_path)
+
       createPage({
-        path: `/post/${node.frontmatter.slug}`,
+        path: _path,
         component: BlogPost,
         context: {
-          slug: node.frontmatter.slug,
+          slug: node.frontmatter.slug.trim(),
+          lang: node.frontmatter.lang.trim(),
+          hasAlternate
         },
       })
     })

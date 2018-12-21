@@ -2,6 +2,7 @@
 date: 2014-11-18
 title: Quick sort algorithm in JavaScript
 slug: quick-sort-algorithm-in-javascript
+lang: en-US
 tags: [algorithm]
 ---
 

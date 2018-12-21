@@ -2,6 +2,7 @@
 date: 2015-05-14
 title: Things to be aware of when change Capybara default_wait_time
 slug: things-to-be-aware-of-when-change-capybara_default_wait_time
+lang: en-US
 tags: [TDD,rails,rspec,capybara,test]
 ---
 

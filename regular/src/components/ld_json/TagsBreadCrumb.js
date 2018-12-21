@@ -1,51 +1,37 @@
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
 import { headerBgUrl } from '../../utils/image'
 import Helmet from 'react-helmet'
 
-const TagsBreadCrumb = ({ tag }) => (
-  <StaticQuery
-    query={ graphql`
-      query {
-        site {
-          siteMetadata {
-            siteUrl
-          }
-        }
+const TagsBreadCrumb = ({ tag, site }) => (
+  <Helmet>
+    <script type="application/ld+json">
+      {
+        `{
+           "@context": "http://schema.org",
+           "@type": "BreadcrumbList",
+           "itemListElement": [
+             {
+               "@type": "ListItem",
+               "position": 1,
+               "item": {
+                 "@id": "${ site.url }/tags/",
+                 "name": "tags",
+                 "image": "${ site.url }${ headerBgUrl() }"
+               }
+             }${ tag ? `,
+             {
+               "@type": "ListItem",
+               "position": 2,
+               "item": {
+                 "@id": "${site.url}/tag/${tag.toLowerCase()}/",
+                 "name": "${tag.toUpperCase()}"
+               }
+             }` : ''}
+           ]
+        }`
       }
-    `}
-    render={ ({site: { siteMetadata }} ) => (
-      <Helmet>
-        <script type="application/ld+json">
-          {
-            `{
-               "@context": "http://schema.org",
-               "@type": "BreadcrumbList",
-               "itemListElement": [
-                 {
-                   "@type": "ListItem",
-                   "position": 1,
-                   "item": {
-                     "@id": "${ siteMetadata.siteUrl }/tags/",
-                     "name": "tags",
-                     "image": "${ siteMetadata.siteUrl }${ headerBgUrl() }"
-                   }
-                 }${ tag ? `,
-                 {
-                   "@type": "ListItem",
-                   "position": 2,
-                   "item": {
-                     "@id": "${siteMetadata.siteUrl}/tag/${tag.toLowerCase()}/",
-                     "name": "${tag.toUpperCase()}"
-                   }
-                 }` : ''}
-               ]
-            }`
-          }
-        </script>
-      </Helmet>
-    )}
-  />
+    </script>
+  </Helmet>
 )
 
 export default TagsBreadCrumb

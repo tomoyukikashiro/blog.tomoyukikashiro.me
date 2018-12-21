@@ -2,6 +2,7 @@
 date: 2015-05-10
 title: Capybara method and matchers which is frequently used
 slug: capybara-method-or-matchers-which-is-frequently-use
+lang: en-US
 tags: [test,capybara,rails]
 ---
 

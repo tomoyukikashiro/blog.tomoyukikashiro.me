@@ -2,6 +2,7 @@
 date: 2014-11-02
 title: Getting Start Shadow Dom Session 2
 slug: start-shadow-dom-session-2
+lang: en-US
 tags: [webcomponent]
 ---
 

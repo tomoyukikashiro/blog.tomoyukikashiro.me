@@ -8,11 +8,13 @@ import { headerBgUrl, headerBgClass } from '../utils/image'
 import ArticleBreadCrumb from '../components/ld_json/ArticleBreadCrumb'
 import Article from '../components/ld_json/Article'
 import Header from '../components/Header'
-import moment from 'moment'
 import Disqus from '../components/Disqus'
 
 import HeaderStyles from '../components/Header.module.css'
 import LabelSvg from '../assets/images/label.svg'
+import Site from '../../../lib/site'
+import Post from '../../../lib/post'
+
 
 export class BlogPostTemplate extends React.Component {
   state = {
@@ -32,23 +34,22 @@ export class BlogPostTemplate extends React.Component {
   }
 
   render () {
-    const {author, date, title, slug, tags, html, content, url} = this.props
+    const post = new Post({frontmatter: this.props, html: this.props.html})
     const {ShareButtonContainer, ShareButton} = this.state
-    const _date = new Date(date)
     return (
       <article>
-        <Header klass={headerBgClass(_date.getDate())} text={title} link={`/post/${ slug }/`}>
+        <Header klass={headerBgClass(post.date.getDate())} text={ post.title } link={ `${post.path()}/` }>
           <div className={ HeaderStyles.header__meta }>
-            <address className={ `${ HeaderStyles.header__author } text-elegant` }>By { author }</address>
-            <time className={ `${ HeaderStyles.header__publish_date } text-elegant` } dateTime={ _date.toISOString() }> on { moment(_date.toISOString()).format('dddd LL')  }</time>
+            <address className={ `${ HeaderStyles.header__author } text-elegant` }>By { this.props.author }</address>
+            <time className={ `${ HeaderStyles.header__publish_date } text-elegant` } dateTime={ post.isoDate }> on { post.formatDate }</time>
           </div>
-          { tags
+          { post.hasTags
             ? <ul className={ `${ HeaderStyles.header__tags } clearfix` }>
               {
-                tags.map(tag => (
-                  <li className={ `${ HeaderStyles.header__tag } tag` } key={ tag.toLowerCase() }>
+                post.tags.map(tag => (
+                  <li className={ `${ HeaderStyles.header__tag } tag` } key={ tag }>
                     <i><LabelSvg className={HeaderStyles.header__title_icon} /></i>
-                    <Link to={ `/tag/${ tag.toLowerCase() }` }>{ tag.toUpperCase() }</Link>
+                    <Link to={ `/tag/${tag}/` }>{ tag.toUpperCase() }</Link>
                   </li>
                 ))
               }
@@ -57,12 +58,12 @@ export class BlogPostTemplate extends React.Component {
           }
         </Header>
         <div className="markdown-body body">
-          { content
-            ? <div>{ content }</div>
-            : <div dangerouslySetInnerHTML={{ __html: html }}></div>
+          { this.props.content
+            ? <div>{ this.props.content }</div>
+            : <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
           }
           { ShareButtonContainer && ShareButton
-            ? <ShareButtonContainer><ShareButton url={url} title={title}/></ShareButtonContainer>
+            ? <ShareButtonContainer><ShareButton url={ this.props.url } title={ post.title }/></ShareButtonContainer>
             : null
           }
         </div>
@@ -73,42 +74,46 @@ export class BlogPostTemplate extends React.Component {
 
 class BlogPost extends React.Component {
   render() {
-    const post = this.props.data.markdownRemark
-    const siteMeatadata = this.props.data.site.siteMetadata
-    const canonicalUrl = `${siteMeatadata.siteUrl}/post/${post.frontmatter.slug}/`
+    const post = new Post(this.props.data.markdownRemark)
+    const site = new Site(this.props.data.site.siteMetadata)
+    const hasAlternate = this.props.pageContext.hasAlternate || false
     
     return (
-      <Layout>
+      <Layout site={site}>
         <Helmet>
-          <title>{ post.frontmatter.title }</title>
-          <meta name="description" content={ post.frontmatter.summary || siteMeatadata.description } />
-          <link rel="canonical" href={ canonicalUrl } />
-          <link rel="amphtml" href={ `${siteMeatadata.ampUrl}/post/${post.frontmatter.slug}/` } />
+          <title>{ post.title }</title>
+          <meta name="description" content={ site.postPageDescription(post) } />
+          <link rel="amphtml" href={ site.canonicalPostAmpUrl(post) } />
+          { hasAlternate ? <link rel="canonical" href={ site.canonicalPostEnUrl(post) } /> : <link rel="canonical" href={ site.canonicalPostUrl(post) } />}
+          { hasAlternate ? <link rel="alternate" href={ site.canonicalPostAlternativeLangUrl(post) } hrefLang={ post.alternativeLang } />: ''}
         </Helmet>
         <MetaSocial
-          title={post.frontmatter.title }
-          description={ post.frontmatter.summary || siteMeatadata.description }
-          type="article"
-          url={ `${siteMeatadata.siteUrl}/post/${post.frontmatter.slug}/` }
-          image={ headerBgUrl(new Date(post.frontmatter.date).getDate()) }
-          tags={ post.frontmatter.tags }
-          published={ new Date(post.frontmatter.date) }
+          site={ site }
+          title={ post.title }
+          description={ post.summary || site.description }
+          type={ post.type }
+          url={ site.canonicalPostUrl(post) }
+          image={ headerBgUrl(post.date.getDate()) }
+          tags={ post.tags }
+          published={ post.isoDate }
+          lang={ post.lang }
         />
-        <ArticleBreadCrumb post={post.frontmatter} />
-        <Article post={post.frontmatter} />
+        <ArticleBreadCrumb post={ post } site={site} />
+        <Article post={ post } site={site} />
         <BlogPostTemplate
-          author={siteMeatadata.author}
-          date={post.frontmatter.date}
-          title={post.frontmatter.title}
-          slug={post.frontmatter.slug}
-          tags={post.frontmatter.tags}
-          url={canonicalUrl}
-          html={post.html} />
+          author={ site.author }
+          date={ `${post.date}` }
+          title={ post.title }
+          slug={ post.slug }
+          lang={ post.lang }
+          tags={ post.tags }
+          url={ site.canonicalPostUrl(post) }
+          html={ post.html } />
         <aside className="body">
           <Disqus
-            siteName={siteMeatadata.disqusSiteName}
-            siteUrl={siteMeatadata.siteUrl}
-            path={`post/${post.frontmatter.slug}`}></Disqus>
+            siteName={ site.disqusSiteName }
+            siteUrl={ site.url }
+            path={ post.path() }></Disqus>
         </aside>
       </Layout>
     )
@@ -118,17 +123,20 @@ class BlogPost extends React.Component {
 export default BlogPost
 
 export const pageQuery = graphql`
-  query ($slug: String!) {
+  query ($slug: String!, $lang: String!) {
     site {
       siteMetadata {
-        siteUrl
-        ampUrl
+        title
         author
         description
+        siteUrl
+        profileUrl
+        twitterUserName
+        ampUrl
         disqusSiteName
       }
     }
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+    markdownRemark(frontmatter: { slug: { eq: $slug }, lang: { eq: $lang } }) {
       id
       excerpt
       html
@@ -137,6 +145,7 @@ export const pageQuery = graphql`
         slug
         summary
         tags
+        lang
         date(formatString: "MMMM DD, YYYY")
       }
     }

@@ -2,6 +2,7 @@
 date: 2014-02-23
 title: Google Calendar API Sample
 slug: google-calendar-api-sample
+lang: en-US
 tags: [googlecalendar]
 ---
 

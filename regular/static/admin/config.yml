@@ -7,8 +7,8 @@ public_folder: /images
 publish_mode: editorial_workflow
 
 collections:
-  - name: "article"
-    label: "Article"
+  - label: "Article in English"
+    name: "article"
     folder: "contents"
     create: true
     slug: "{{slug}}"

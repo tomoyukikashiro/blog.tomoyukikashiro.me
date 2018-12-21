@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 
@@ -9,36 +9,35 @@ import { headerBgUrl } from '../utils/image'
 import HomeBreadCrumb from '../components/ld_json/HomeBreadCrumb'
 import Article from '../components/Article'
 import Header from '../components/Header'
+import Post from '../../../lib/post'
+import Site from '../../../lib/site'
 
 class BlogIndex extends React.Component {
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const siteDescription = get(
-      this,
-      'props.data.site.siteMetadata.description'
-    )
-    const siteUrl = get(this, 'props.data.site.siteMetadata.siteUrl')
-    const posts = get(this, 'props.data.allMarkdownRemark.edges')
+    const site = new Site(this.props.data.site.siteMetadata)
+    let posts = get(this, 'props.data.allMarkdownRemark.edges')
+    posts = posts.map(({ node }) => new Post(node))
 
     return (
-      <Layout>
+      <Layout site={site}>
         <Helmet>
-          <title>{ siteTitle }</title>
-          <meta name="description" content={ siteDescription } />
-          <link rel="canonical" href={`${siteUrl}/`} />
+          <title>{ site.title }</title>
+          <meta name="description" content={ site.description } />
+          <link rel="canonical" href={`${site.url}/`} />
         </Helmet>
         <MetaSocial
-          title={ siteTitle }
-          description={ siteDescription }
-          type="website"
-          url="/"
+          site={ site }
+          title={ site.title }
+          description={ site.description }
+          type={ site.type }
+          url={ `${site.url}/` }
           image={ headerBgUrl() }
         />
-        <HomeBreadCrumb />
+        <HomeBreadCrumb site={ site } />
         <main>
-          <Header klass="header__bg_home" text={siteTitle} link="/" />
+          <Header klass="header__bg_home" text={ site.title } link="/" />
           <div className="body">
-            { posts.map(({ node }) => <Article key={ node.frontmatter.slug } node={ node } />) }
+            { posts.map(post => <Article key={ post.key } post={ post } />) }
           </div>
         </main>
       </Layout>
@@ -53,8 +52,13 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        author
         description
         siteUrl
+        profileUrl
+        twitterUserName
+        ampUrl
+        disqusSiteName
       }
     }
     allMarkdownRemark(
@@ -68,6 +72,7 @@ export const pageQuery = graphql`
             slug
             date(formatString: "DD MMMM, YYYY")
             title
+            lang
             summary
           }
         }
