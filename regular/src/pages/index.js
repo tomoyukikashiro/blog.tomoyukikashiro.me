@@ -9,8 +9,8 @@ import { headerBgUrl } from '../utils/image'
 import HomeBreadCrumb from '../components/ld_json/HomeBreadCrumb'
 import Article from '../components/Article'
 import Header from '../components/Header'
-import Post from '../../../lib/post'
-import Site from '../../../lib/site'
+import Post from '../utils/post'
+import Site from '../utils/site'
 
 class BlogIndex extends React.Component {
   render() {

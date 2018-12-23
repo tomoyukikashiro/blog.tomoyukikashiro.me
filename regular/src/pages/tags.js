@@ -9,7 +9,7 @@ import Header from '../components/Header'
 
 import HeaderStyles from '../components/Header.module.css'
 import LabelSvg from '../assets/images/label.svg'
-import Site from '../../../lib/site'
+import Site from '../utils/site'
 
 const TagsPage = ({
   data: {

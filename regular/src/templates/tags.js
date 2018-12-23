@@ -9,8 +9,8 @@ import { headerBgUrl } from '../utils/image'
 import Article from '../components/Article'
 import Header from '../components/Header'
 import HeaderStyles from '../components/Header.module.css'
-import Site from '../../../lib/site'
-import Post from '../../../lib/post'
+import Site from '../utils/site'
+import Post from '../utils/post'
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext

@@ -12,8 +12,8 @@ import Disqus from '../components/Disqus'
 
 import HeaderStyles from '../components/Header.module.css'
 import LabelSvg from '../assets/images/label.svg'
-import Site from '../../../lib/site'
-import Post from '../../../lib/post'
+import Site from '../utils/site'
+import Post from '../utils/post'
 
 
 export class BlogPostTemplate extends React.Component {

@@ -34,12 +34,13 @@ export default class Site {
   }
 
   tagPageDescription(tag, totalCount) {
-    return `${this.tagPagePrefix(tag, totalCount)} TAG | ${this.title}`
+    return `${this.tagPagePrefix(tag, totalCount)} TAG | ${this.description}`
   }
   
   postPageDescription(post) {
-    return `${post.summary} ${this.description}` 
+    return post.summary
   }
+  
   
   // --- url ---
   
@@ -72,7 +73,7 @@ export default class Site {
   }
   
   tagPageUrl(tag) {
-    return `${this.url}/tag/${tag.toLowerCase()}`
+    return `${this.url}/tag/${tag.toLowerCase()}/`
   }
   
   get profileUrl() {
