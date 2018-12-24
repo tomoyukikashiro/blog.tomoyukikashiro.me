@@ -8,14 +8,28 @@ publish_mode: editorial_workflow
 
 collections:
   - label: "Article in English"
-    name: "article"
+    name: "article_english"
     folder: "contents"
     create: true
     slug: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Language", name: "lang", widget: "hidden", default: "en-US"}
       - {label: "Slug", name: "slug", widget: "string"}
       - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "summary", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
+  - label: "Article in Japanese"
+    name: "article_japanese"
+    folder: "contents/ja"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Language", name: "lang", widget: "hidden", default: "ja"}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Description", name: "summary", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}     

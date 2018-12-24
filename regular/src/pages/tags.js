@@ -11,6 +11,25 @@ import HeaderStyles from '../components/Header.module.css'
 import LabelSvg from '../assets/images/label.svg'
 import Site from '../utils/site'
 
+export const TagsPageHead = ({ site }) => (
+  <React.Fragment>
+    <Helmet>
+      <title>{ site.tagsPageTitle }</title>
+      <meta name="description" content={ site.tagsPageDescription }/>
+      <link rel="canonical" href={ `${site.tagsPageUrl}/` } />
+    </Helmet>
+    <MetaSocial
+      site={ site }
+      title={ site.tagsPageTitle }
+      description={ site.tagsPageDescription }
+      type={ site.type }
+      url={ `${site.tagsPageUrl}/` }
+      image={ headerBgUrl() }
+    />
+    <TagsBreadCrumb site={site} />
+  </React.Fragment>
+)
+
 const TagsPage = ({
   data: {
     allMarkdownRemark: { group },
@@ -20,20 +39,7 @@ const TagsPage = ({
   const site = new Site(siteMetadata)
   return (
     <Layout site={site}>
-      <Helmet>
-        <title>{ site.tagsPageTitle }</title>
-        <meta name="description" content={ site.tagsPageDescription }/>
-        <link rel="canonical" href={ `${site.tagsPageUrl}/` } />
-      </Helmet>
-      <MetaSocial
-        site={ site }
-        title={ site.tagsPageTitle }
-        description={ site.tagsPageDescription }
-        type={ site.type }
-        url={ `${site.tagsPageUrl}/` }
-        image={ headerBgUrl() }
-      />
-      <TagsBreadCrumb site={site} />
+      <TagsPageHead site={site} /> 
       <main>
         <Header klass="header__bg_home" text={ site.title } link="/tags/">
           <h2 className={HeaderStyles.header__subtitle}>TAGS</h2>
