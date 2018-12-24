@@ -11,8 +11,8 @@ import Header from '../components/Header'
 
 import HeaderStyles from '../components/Header.module.css'
 import LabelSvg from '../assets/images/label.svg'
-import Site from '../../../lib/site'
-import Post from '../../../lib/post'
+import Site from '../../../regular/src/utils/site'
+import Post from '../../../regular/src/utils/post'
 
 export const BlogPostTemplate = props => {
   const post = new Post({frontmatter: props, html: props.html})

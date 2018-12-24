@@ -47,10 +47,18 @@
     "typography-theme-kirkham": "^0.16.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "babel-plugin-dynamic-import-node": "^2.2.0",
+    "babel-preset-gatsby": "^0.1.6",
     "eslint": "5.9.0",
     "eslint-plugin-react": "7.11.1",
     "gh-pages": "2.0.1",
-    "prettier": "1.15.3"
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^23.6.0",
+    "prettier": "1.15.3",
+    "react-test-renderer": "^16.7.0"
   },
   "homepage": "https://github.com/tomoyukikashiro/blog.tomoyukikashiro.me#readme",
   "keywords": [
@@ -64,7 +72,8 @@
   "scripts": {
     "dev": "gatsby develop",
     "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
-    "test": "npm run lint",
+    "unit": "jest",
+    "test": "npm run lint && npm run unit",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
     "develop": "gatsby develop",
     "build": "gatsby build",

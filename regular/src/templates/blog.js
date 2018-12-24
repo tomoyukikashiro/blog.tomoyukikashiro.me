@@ -12,18 +12,42 @@ import Disqus from '../components/Disqus'
 
 import HeaderStyles from '../components/Header.module.css'
 import LabelSvg from '../assets/images/label.svg'
-import Site from '../../../lib/site'
-import Post from '../../../lib/post'
+import Site from '../utils/site'
+import Post from '../utils/post'
 
+export const BlogPostHead = ({ post, site, hasAlternate = false}) => (
+  <React.Fragment>
+    <Helmet>
+      <title>{ post.title }</title>
+      <meta name="description" content={ site.postPageDescription(post) } />
+      <link rel="amphtml" href={ site.canonicalPostAmpUrl(post) } />
+      <link rel="canonical" href={ site.canonicalPostUrl(post) } />
+      { hasAlternate ? <link rel="alternate" href={ site.canonicalPostAlternativeLangUrl(post) } hrefLang={ post.alternativeLang } />: ''}
+    </Helmet>
+    <MetaSocial
+      site={ site }
+      title={ post.title }
+      description={ post.summary || site.description }
+      type={ post.type }
+      url={ site.canonicalPostUrl(post) }
+      image={ headerBgUrl(post.date.getDate()) }
+      tags={ post.tags }
+      published={ post.isoDate }
+      lang={ post.lang }
+    />
+    <ArticleBreadCrumb post={ post } site={site} />
+    <Article post={ post } site={site} />
+  </React.Fragment>
+)
 
 export class BlogPostTemplate extends React.Component {
   state = {
     ShareButtonContainer: null,
     ShareButton: null
   }
-  
+
   componentDidMount() {
-    if (!navigator.share) return
+    if (!navigator || !navigator.share) return
     import(/* webpackChunkName: "sharebutton" */ '../components/ShareButton')
       .then(module => {
         this.setState({
@@ -80,26 +104,7 @@ class BlogPost extends React.Component {
     
     return (
       <Layout site={site}>
-        <Helmet>
-          <title>{ post.title }</title>
-          <meta name="description" content={ site.postPageDescription(post) } />
-          <link rel="amphtml" href={ site.canonicalPostAmpUrl(post) } />
-          { hasAlternate ? <link rel="canonical" href={ site.canonicalPostEnUrl(post) } /> : <link rel="canonical" href={ site.canonicalPostUrl(post) } />}
-          { hasAlternate ? <link rel="alternate" href={ site.canonicalPostAlternativeLangUrl(post) } hrefLang={ post.alternativeLang } />: ''}
-        </Helmet>
-        <MetaSocial
-          site={ site }
-          title={ post.title }
-          description={ post.summary || site.description }
-          type={ post.type }
-          url={ site.canonicalPostUrl(post) }
-          image={ headerBgUrl(post.date.getDate()) }
-          tags={ post.tags }
-          published={ post.isoDate }
-          lang={ post.lang }
-        />
-        <ArticleBreadCrumb post={ post } site={site} />
-        <Article post={ post } site={site} />
+        <BlogPostHead site={site} post={post} hasAlternate={hasAlternate} />
         <BlogPostTemplate
           author={ site.author }
           date={ `${post.date}` }

@@ -9,8 +9,28 @@ import { headerBgUrl } from '../utils/image'
 import HomeBreadCrumb from '../components/ld_json/HomeBreadCrumb'
 import Article from '../components/Article'
 import Header from '../components/Header'
-import Post from '../../../lib/post'
-import Site from '../../../lib/site'
+import Post from '../utils/post'
+import Site from '../utils/site'
+
+export const BlogIndexHead = ({ site }) => (
+  <React.Fragment>
+    <Helmet>
+      <title>{ site.title }</title>
+      <meta name="description" content={ site.description } />
+      <link rel="canonical" href={`${site.url}/`} />
+    </Helmet>
+    <MetaSocial
+      site={ site }
+      title={ site.title }
+      description={ site.description }
+      type={ site.type }
+      url={ `${site.url}/` }
+      image={ headerBgUrl() }
+    />
+    <HomeBreadCrumb site={ site } />
+  </React.Fragment>
+)
+
 
 class BlogIndex extends React.Component {
   render() {
@@ -20,20 +40,7 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout site={site}>
-        <Helmet>
-          <title>{ site.title }</title>
-          <meta name="description" content={ site.description } />
-          <link rel="canonical" href={`${site.url}/`} />
-        </Helmet>
-        <MetaSocial
-          site={ site }
-          title={ site.title }
-          description={ site.description }
-          type={ site.type }
-          url={ `${site.url}/` }
-          image={ headerBgUrl() }
-        />
-        <HomeBreadCrumb site={ site } />
+        <BlogIndexHead site={ site } />
         <main>
           <Header klass="header__bg_home" text={ site.title } link="/" />
           <div className="body">
