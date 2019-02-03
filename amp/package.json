@@ -23,7 +23,7 @@
     "gatsby-source-filesystem": "^2.0.1",
     "gatsby-transformer-remark": "^2.1.1",
     "gatsby-transformer-sharp": "^2.1.1",
-    "github-markdown-css": "^2.10.0",
+    "github-markdown-css": "^3.0.0",
     "glob": "^7.1.3",
     "immutable": "^3.8.2",
     "lodash": "^4.17.11",
@@ -44,9 +44,9 @@
   "devDependencies": {
     "amphtml-validator": "1.0.23",
     "eslint": "5.13.0",
-    "eslint-plugin-react": "7.11.1",
+    "eslint-plugin-react": "7.12.4",
     "gh-pages": "2.0.1",
-    "prettier": "1.16.3"
+    "prettier": "1.16.4"
   },
   "homepage": "https://github.com/tomoyukikashiro/blog.tomoyukikashiro.me#readme",
   "keywords": [
