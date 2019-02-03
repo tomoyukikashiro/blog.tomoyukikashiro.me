@@ -26,7 +26,7 @@ jobs:
   build_amp:
     working_directory: ~/repo
     docker:
-      - image: circleci/node:8.14.0-browsers
+      - image: circleci/node:8.14.1-browsers
     steps:
       - checkout
       - run:
