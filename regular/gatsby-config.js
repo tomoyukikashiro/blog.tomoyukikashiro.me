@@ -49,6 +49,52 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(edge => {
+                const { slug, lang } = edge.node.frontmatter
+                const langPath = lang === 'ja' ? '/ja/' : '/'
+                const path = `/post${langPath}${slug}`
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + path,
+                  guid: site.siteMetadata.siteUrl + path,
+                  custom_elements: [{ "content:encoded": edge.node.html }],
+                })
+              })
+            },
+            query: `
+            {
+              allMarkdownRemark(
+                limit: 1000,
+                sort: { order: DESC, fields: [frontmatter___date] }
+              ) {
+                edges {
+                  node {
+                    excerpt
+                    html
+                    frontmatter {
+                      title
+                      date
+                      slug
+                      lang
+                    }
+                  }
+                }
+              }
+            }
+          `,
+            output: "/rss.xml",
+            title: "Tomoyuki Kashiro's blog RSS Feed",
+          }
+        ]
+      }
+    },
+    {
       resolve: `gatsby-plugin-sitemap`
     },
     `gatsby-plugin-react-helmet`,
