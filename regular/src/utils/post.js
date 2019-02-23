@@ -84,6 +84,10 @@ export default class Post {
   get html() {
     return this.node.html
   }
+  
+  get canonicalUrl() {
+    return this.node.frontmatter.canonicalUrl
+  }
 }
   
 

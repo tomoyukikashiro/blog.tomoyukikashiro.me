@@ -53,6 +53,7 @@ export default class Site {
   }
   
   canonicalPostUrl(post, lang) {
+    if (post.canonicalUrl) return post.canonicalUrl
     return `${this.url}${post.path(lang)}/`
   }
  
