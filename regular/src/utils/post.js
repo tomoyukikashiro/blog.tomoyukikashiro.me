@@ -20,6 +20,7 @@ export default class Post {
   }
 
   get date() {
+    if (!this.node.frontmatter.date) return
     return new Date(this.node.frontmatter.date.trim())
   }
   
