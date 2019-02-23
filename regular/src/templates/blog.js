@@ -8,6 +8,7 @@ import { headerBgUrl, headerBgClass } from '../utils/image'
 import ArticleBreadCrumb from '../components/ld_json/ArticleBreadCrumb'
 import Article from '../components/ld_json/Article'
 import Header from '../components/Header'
+import FooterStyle from './BlogFooter.module.css'
 
 import HeaderStyles from '../components/Header.module.css'
 import LabelSvg from '../assets/images/label.svg'
@@ -38,6 +39,14 @@ export const BlogPostHead = ({ post, site, hasAlternate = false}) => (
     <Article post={ post } site={site} />
   </React.Fragment>
 )
+
+export const BlogPostFooter = ({ url, twitterUserName }) => {
+  const tweet = encodeURIComponent(`.@${twitterUserName} Feel free to ask question :)  `)
+  const tweetUrl = `https://twitter.com/intent/tweet?text=${tweet}&url=${encodeURIComponent(url)}` 
+  return (
+    <div className={FooterStyle.l_blog_footer}>This blog doesn't have comment function <br/> so feel free to contact me via <a href={tweetUrl} target="_blank">Twitter</a></div>
+  )
+}
 
 export class BlogPostTemplate extends React.Component {
   state = {
@@ -113,6 +122,7 @@ class BlogPost extends React.Component {
           tags={ post.tags }
           url={ site.canonicalPostUrl(post) }
           html={ post.html } />
+        <BlogPostFooter url={site.canonicalPostEnUrl(post)} twitterUserName={site.twitterUserName}/>
       </Layout>
     )
   }
