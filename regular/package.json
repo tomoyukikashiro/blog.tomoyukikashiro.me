@@ -31,7 +31,6 @@
     "github-markdown-css": "^3.0.1",
     "immutable": "^3.8.2",
     "lodash": "^4.17.11",
-    "moment": "^2.22.2",
     "netlify-cms": "^2.2.0",
     "netlify-cms-lib-auth": "^2.0.5",
     "prismjs": "^1.15.0",

@@ -50,7 +50,7 @@ describe('Post', function () {
     const date = '2018-12-23'
     const node = {frontmatter: {date}}
     it('should return formatted date', function () {
-      expect(new Post(node).formatDate).toEqual('Sunday December 23, 2018')
+      expect(new Post(node).formatDate).toEqual('Sunday, December 23, 2018')
     })
   })
 
