@@ -41,11 +41,11 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-tagmanager`,
       options: {
-        trackingId: `UA-50867411-2`,
-        head: true
-      },
+        id: "GTM-5WXKGHD",
+        includeInDevelopment: true
+      }
     },
     {
       resolve: `gatsby-plugin-feed`,
