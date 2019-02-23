@@ -67,15 +67,15 @@ class BlogPost extends React.Component {
         <Helmet>
           <title>{ post.title }</title>
           <meta name="description" content={ site.postPageDescription(post) } />
-          <link rel="canonical" href={ site.canonicalPostUrl(post) } />
-          { hasAlternate ? <link rel="alternate" href={ site.canonicalPostAlternativeLangUrl(post) } hrefLang={ post.alternativeLang } />: ''}
+          <link rel="canonical" href={ site.postUrl(post) } />
+          { hasAlternate ? <link rel="alternate" href={ site.postAlternativeLangUrl(post) } hrefLang={ post.alternativeLang } />: ''}
         </Helmet>
         <MetaSocial
           site={ site }
           title={ post.title }
           description={ post.summary || site.description }
           type={ post.type }
-          url={ site.canonicalPostUrl(post) }
+          url={ site.postUrl(post) }
           image={ headerBgUrl(post.date.getDate()) }
           tags={ post.tags }
           published={ post.isoDate }
@@ -90,9 +90,9 @@ class BlogPost extends React.Component {
           slug={ post.slug }
           lang={ post.lang }
           tags={ post.tags }
-          url={ site.canonicalPostUrl(post) }
+          url={ site.postUrl(post) }
           html={ post.html } />
-        <BlogPostFooter url={site.canonicalPostEnUrl(post)} twitterUserName={site.twitterUserName}/>
+        <BlogPostFooter url={site.postEnUrl(post)} twitterUserName={site.twitterUserName}/>
       </Layout>
     )
   }
