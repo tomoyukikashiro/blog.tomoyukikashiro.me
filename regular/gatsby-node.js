@@ -19,6 +19,7 @@ exports.createPages = ({ actions, graphql }) => {
               slug
               tags
               lang
+              canonicalUrl
             }
           }
         }
@@ -48,6 +49,7 @@ exports.createPages = ({ actions, graphql }) => {
         context: {
           slug: node.frontmatter.slug.trim(),
           lang: node.frontmatter.lang.trim(),
+          canonicalUrl: node.frontmatter.canonicalUrl,
           hasAlternate
         },
       })

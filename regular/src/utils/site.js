@@ -52,16 +52,21 @@ export default class Site {
     return this.meta.ampUrl
   }
   
-  canonicalPostUrl(post, lang) {
+  postUrl(post, lang) {
     return `${this.url}${post.path(lang)}/`
   }
- 
-  canonicalPostEnUrl(post) {
-    return this.canonicalPostUrl(post, Post.LANGS.EN)
+  
+  postEnUrl(post) {
+    return this.postUrl(post, Post.LANGS.EN)
   }
   
-  canonicalPostAlternativeLangUrl(post) {
-    return this.canonicalPostUrl(post, post.alternativeLang)
+  postAlternativeLangUrl(post) {
+    return this.postUrl(post, post.alternativeLang)
+  }
+  
+  canonicalPostUrl(post, lang) {
+    if (post.canonicalUrl) return post.canonicalUrl
+    return this.postUrl(post, lang)
   }
   
   canonicalPostAmpUrl(post) {
@@ -93,10 +98,4 @@ export default class Site {
   get twitterUserName() {
     return this.meta.twitterUserName
   }
- 
-  get disqusSiteName() {
-    return this.meta.disqusSiteName
-  }
-  
-
 }

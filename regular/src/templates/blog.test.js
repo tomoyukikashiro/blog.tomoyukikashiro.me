@@ -7,7 +7,8 @@ describe('BlogPostHead', function () {
   const site = {
     postPageDescription: () => ('post description'),
     canonicalPostAmpUrl: () => ('https://amp.example.com'),
-    canonicalPostUrl: () => ('https://example.com'),
+    postUrl: () => ('https://example.com'),
+    canonicalPostUrl: () => ('https://canonical.example.com'),
     title: 'test site title',
     url: 'https://example.com',
     author: 'test author',
@@ -41,7 +42,7 @@ describe('BlogPostHead', function () {
     })
   })
   describe('When hasAlternate is true', function () {
-    site.canonicalPostAlternativeLangUrl = () => ('https://example.com/post/ja/test-slug/')
+    site.postAlternativeLangUrl = () => ('https://example.com/post/ja/test-slug/')
     post.alternativeLang = 'ja'
     it('BlogPostHead render correctly', function (done) {
       renderer.create(<BlogPostHead site={ site } post={post} hasAlternate={true}/>).toJSON()

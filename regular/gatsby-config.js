@@ -6,8 +6,7 @@ module.exports = {
     siteUrl: 'https://blog.tomoyukikashiro.me',
     profileUrl: 'https://tomoyukikashiro.me',
     twitterUserName: 'tomoyukikashiro',
-    ampUrl: 'https://amp.tomoyukikashiro.me',
-    disqusSiteName: 'tkashiro'
+    ampUrl: 'https://amp.tomoyukikashiro.me'
   },
   plugins: [
     {
@@ -42,11 +41,11 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-tagmanager`,
       options: {
-        trackingId: `UA-50867411-2`,
-        head: true
-      },
+        id: "GTM-5WXKGHD",
+        includeInDevelopment: true
+      }
     },
     {
       resolve: `gatsby-plugin-feed`,

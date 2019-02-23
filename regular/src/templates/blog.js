@@ -8,7 +8,7 @@ import { headerBgUrl, headerBgClass } from '../utils/image'
 import ArticleBreadCrumb from '../components/ld_json/ArticleBreadCrumb'
 import Article from '../components/ld_json/Article'
 import Header from '../components/Header'
-import Disqus from '../components/Disqus'
+import FooterStyle from './BlogFooter.module.css'
 
 import HeaderStyles from '../components/Header.module.css'
 import LabelSvg from '../assets/images/label.svg'
@@ -22,14 +22,14 @@ export const BlogPostHead = ({ post, site, hasAlternate = false}) => (
       <meta name="description" content={ site.postPageDescription(post) } />
       <link rel="amphtml" href={ site.canonicalPostAmpUrl(post) } />
       <link rel="canonical" href={ site.canonicalPostUrl(post) } />
-      { hasAlternate ? <link rel="alternate" href={ site.canonicalPostAlternativeLangUrl(post) } hrefLang={ post.alternativeLang } />: ''}
+      { hasAlternate ? <link rel="alternate" href={ site.postAlternativeLangUrl(post) } hrefLang={ post.alternativeLang } />: ''}
     </Helmet>
     <MetaSocial
       site={ site }
       title={ post.title }
       description={ post.summary || site.description }
       type={ post.type }
-      url={ site.canonicalPostUrl(post) }
+      url={ site.postUrl(post) }
       image={ headerBgUrl(post.date.getDate()) }
       tags={ post.tags }
       published={ post.isoDate }
@@ -39,6 +39,14 @@ export const BlogPostHead = ({ post, site, hasAlternate = false}) => (
     <Article post={ post } site={site} />
   </React.Fragment>
 )
+
+export const BlogPostFooter = ({ url, twitterUserName }) => {
+  const tweet = encodeURIComponent(`.@${twitterUserName} Feel free to ask question :)  `)
+  const tweetUrl = `https://twitter.com/intent/tweet?text=${tweet}&url=${encodeURIComponent(url)}` 
+  return (
+    <div className={FooterStyle.l_blog_footer}>This blog doesn't have comment function <br/> so feel free to contact me via <a href={tweetUrl} target="_blank">Twitter</a></div>
+  )
+}
 
 export class BlogPostTemplate extends React.Component {
   state = {
@@ -112,14 +120,9 @@ class BlogPost extends React.Component {
           slug={ post.slug }
           lang={ post.lang }
           tags={ post.tags }
-          url={ site.canonicalPostUrl(post) }
+          url={ site.postUrl(post) }
           html={ post.html } />
-        <aside className="body">
-          <Disqus
-            siteName={ site.disqusSiteName }
-            siteUrl={ site.url }
-            path={ post.path() }></Disqus>
-        </aside>
+        <BlogPostFooter url={site.postEnUrl(post)} twitterUserName={site.twitterUserName}/>
       </Layout>
     )
   }
@@ -138,7 +141,6 @@ export const pageQuery = graphql`
         profileUrl
         twitterUserName
         ampUrl
-        disqusSiteName
       }
     }
     markdownRemark(frontmatter: { slug: { eq: $slug }, lang: { eq: $lang } }) {
@@ -151,6 +153,7 @@ export const pageQuery = graphql`
         summary
         tags
         lang
+        canonicalUrl
         date(formatString: "MMMM DD, YYYY")
       }
     }

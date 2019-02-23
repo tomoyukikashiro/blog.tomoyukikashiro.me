@@ -8,6 +8,7 @@ module.exports = {
   ],
   "globals": {
     "graphql": false,
+    "dataLayer": true
   },
   "parser": "babel-eslint", 
   "parserOptions": {

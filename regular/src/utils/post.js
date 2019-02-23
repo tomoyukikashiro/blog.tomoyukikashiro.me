@@ -1,4 +1,4 @@
-import moment from 'moment'
+// import moment from 'moment'
 
 export default class Post {
 
@@ -20,6 +20,7 @@ export default class Post {
   }
 
   get date() {
+    if (!this.node.frontmatter.date) return
     return new Date(this.node.frontmatter.date.trim())
   }
   
@@ -32,7 +33,8 @@ export default class Post {
   }
   
   get formatDate() {
-    return moment(this.date.toISOString()).format('dddd LL')
+    return this.date.toLocaleString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
+    // return moment(this.date.toISOString()).format('dddd LL')
   }
   
   get summary() {
@@ -82,6 +84,10 @@ export default class Post {
   
   get html() {
     return this.node.html
+  }
+  
+  get canonicalUrl() {
+    return this.node.frontmatter.canonicalUrl
   }
 }
   
