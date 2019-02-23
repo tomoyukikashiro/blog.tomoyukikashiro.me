@@ -78,33 +78,33 @@ describe('Site', function () {
     })
   })
 
-  describe('.canonicalPostUrl', function () {
+  describe('.postUrl', function () {
     const meta = {siteUrl: 'https://example.com'}
     const site = new Site(meta)
     const node = {frontmatter: {slug: 'test-slug', lang: 'ja'}}
     const post = new Post(node)
     it('should be as expected', function () {
-      expect(site.canonicalPostUrl(post)).toEqual('https://example.com/post/ja/test-slug/')
+      expect(site.postUrl(post)).toEqual('https://example.com/post/ja/test-slug/')
     })
   })
 
-  describe('.canonicalPostEnUrl', function () {
+  describe('.postEnUrl', function () {
     const meta = {siteUrl: 'https://example.com'}
     const site = new Site(meta)
     const node = {frontmatter: {slug: 'test-slug', lang: 'ja'}}
     const post = new Post(node)
     it('should be as expected', function () {
-      expect(site.canonicalPostEnUrl(post)).toEqual('https://example.com/post/test-slug/')
+      expect(site.postEnUrl(post)).toEqual('https://example.com/post/test-slug/')
     })
   })
 
-  describe('.canonicalPostAlternativeLangUrl', function () {
+  describe('.postAlternativeLangUrl', function () {
     const meta = {siteUrl: 'https://example.com'}
     const site = new Site(meta)
     const node = {frontmatter: {slug: 'test-slug', lang: 'ja'}}
     const post = new Post(node)
     it('should be as expected', function () {
-      expect(site.canonicalPostAlternativeLangUrl(post)).toEqual('https://example.com/post/test-slug/')
+      expect(site.postAlternativeLangUrl(post)).toEqual('https://example.com/post/test-slug/')
     })
   })
 
