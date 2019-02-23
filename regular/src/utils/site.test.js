@@ -158,11 +158,4 @@ describe('Site', function () {
       expect(new Site(meta).twitterUserName).toEqual('tomoyukikashiro')
     })
   })
-
-  describe('.disqusSitename', function () {
-    const meta = {disqusSiteName: 'tkashiro'}
-    it('should be as expected', function () {
-      expect(new Site(meta).disqusSiteName).toEqual('tkashiro')
-    })
-  })
 })

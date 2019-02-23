@@ -8,7 +8,6 @@ import { headerBgUrl, headerBgClass } from '../utils/image'
 import ArticleBreadCrumb from '../components/ld_json/ArticleBreadCrumb'
 import Article from '../components/ld_json/Article'
 import Header from '../components/Header'
-import Disqus from '../components/Disqus'
 
 import HeaderStyles from '../components/Header.module.css'
 import LabelSvg from '../assets/images/label.svg'
@@ -114,12 +113,6 @@ class BlogPost extends React.Component {
           tags={ post.tags }
           url={ site.canonicalPostUrl(post) }
           html={ post.html } />
-        <aside className="body">
-          <Disqus
-            siteName={ site.disqusSiteName }
-            siteUrl={ site.url }
-            path={ post.path() }></Disqus>
-        </aside>
       </Layout>
     )
   }
@@ -138,7 +131,6 @@ export const pageQuery = graphql`
         profileUrl
         twitterUserName
         ampUrl
-        disqusSiteName
       }
     }
     markdownRemark(frontmatter: { slug: { eq: $slug }, lang: { eq: $lang } }) {

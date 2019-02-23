@@ -93,10 +93,4 @@ export default class Site {
   get twitterUserName() {
     return this.meta.twitterUserName
   }
- 
-  get disqusSiteName() {
-    return this.meta.disqusSiteName
-  }
-  
-
 }

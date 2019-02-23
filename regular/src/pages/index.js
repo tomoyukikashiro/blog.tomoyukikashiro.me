@@ -65,7 +65,6 @@ export const pageQuery = graphql`
         profileUrl
         twitterUserName
         ampUrl
-        disqusSiteName
       }
     }
     allMarkdownRemark(

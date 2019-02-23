@@ -6,8 +6,7 @@ module.exports = {
     siteUrl: 'https://blog.tomoyukikashiro.me',
     profileUrl: 'https://tomoyukikashiro.me',
     twitterUserName: 'tomoyukikashiro',
-    ampUrl: 'https://amp.tomoyukikashiro.me',
-    disqusSiteName: 'tkashiro'
+    ampUrl: 'https://amp.tomoyukikashiro.me'
   },
   plugins: [
     {
