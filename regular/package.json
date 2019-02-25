@@ -51,8 +51,8 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "24.1.0",
     "babel-plugin-dynamic-import-node": "2.2.0",
-    "eslint": "5.14.0",
     "babel-preset-gatsby": "0.1.7",
+    "eslint": "5.14.0",
     "eslint-plugin-react": "7.12.4",
     "gh-pages": "2.0.1",
     "identity-obj-proxy": "3.0.0",
@@ -77,6 +77,7 @@
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
     "develop": "gatsby develop",
     "build": "gatsby build",
-    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
+    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js",
+    "lh": "lighthousebot"
   }
 }

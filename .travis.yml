@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - "8"
+cache: npm
+if: env(REVIEW_URL) =~ ^https AND branch != master
+install:
+  - cd regular && npm i https://github.com/GoogleChromeLabs/lighthousebot
+script:
+  - npm run lh -- $REVIEW_URL
