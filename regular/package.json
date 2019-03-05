@@ -52,7 +52,7 @@
     "babel-jest": "24.1.0",
     "babel-plugin-dynamic-import-node": "2.2.0",
     "eslint": "5.14.0",
-    "babel-preset-gatsby": "0.1.7",
+    "babel-preset-gatsby": "0.1.8",
     "eslint-plugin-react": "7.12.4",
     "gh-pages": "2.0.1",
     "identity-obj-proxy": "3.0.0",
