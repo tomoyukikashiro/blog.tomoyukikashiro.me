@@ -1,3 +1,6 @@
+const Post = require("./src/utils/dist/post").default
+const Site = require("./src/utils/dist/site").default
+
 module.exports = {
   siteMetadata: {
     title: 'Tomoyuki Kashiro\'s Blog',
@@ -52,16 +55,15 @@ module.exports = {
       options: {
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
+            serialize: ({ query: { site: { siteMetadata }, allMarkdownRemark } }) => {
+              const site = new Site(siteMetadata)
               return allMarkdownRemark.edges.map(edge => {
-                const { slug, lang } = edge.node.frontmatter
-                const langPath = lang === 'ja' ? '/ja/' : '/'
-                const path = `/post${langPath}${slug}`
+                const post = new Post(edge.node)
                 return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.excerpt,
-                  date: edge.node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + path,
-                  guid: site.siteMetadata.siteUrl + path,
+                  description: post.summary,
+                  date: post.isoDate,
+                  url: site.postUrl(post),
+                  guid: site.postUrl(post),
                   custom_elements: [{ "content:encoded": edge.node.html }],
                 })
               })
@@ -74,10 +76,10 @@ module.exports = {
               ) {
                 edges {
                   node {
-                    excerpt
                     html
                     frontmatter {
                       title
+                      summary
                       date
                       slug
                       lang
@@ -96,18 +98,45 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        serialize: ({ site, allSitePage }) => {
-          return allSitePage.edges.map(edge => {
-            const { node: { path }} = edge
-            const lang = path.startsWith('/post/ja/') ? 'ja' : 'en-US'
-            const url = site.siteMetadata.siteUrl + edge.node.path + '/'
-            const alternateLang = lang === 'ja' ? 'en-US' : 'ja'
-            const alternatePath = lang === 'ja' ? path.replace('/post/ja', '/post') : path.replace('/post', '/post/ja')
-            const alternateEdge = allSitePage.edges.find(_edge => _edge.node.path === alternatePath) 
-            const links = [{ lang: lang, url: url }]
-            if (alternateEdge) links.push({ lang: alternateLang, url: site.siteMetadata.siteUrl + alternateEdge.node.path + '/' })
+        query: `
+        {
+          site {
+            siteMetadata {
+              siteUrl
+            }
+          }
+          allSitePage {
+            edges {
+              node {
+                path
+              }
+            }
+          }
+          allMarkdownRemark(
+            sort: { order: DESC, fields: [frontmatter___date] }
+            limit: 2000
+          ) {
+            edges {
+              node {
+                frontmatter {
+                  slug
+                  lang
+                }
+              }
+            }
+          }
+        }`,
+        serialize: ({ site: { siteMetadata }, allMarkdownRemark }) => {
+          const site = new Site(siteMetadata)
+          return allMarkdownRemark.edges.map(({ node }) => {
+            const post = new Post(node)
+            const edges = allMarkdownRemark.edges.filter(({ node: _node }) => _node.frontmatter.slug === node.frontmatter.slug) 
+            const links = edges.map(({ node: _node }) => {
+              const _post = new Post(_node)
+              return { lang: _post.lang, url: site.postUrl(_post) }
+            })
             return {
-              url: url,
+              url: site.postUrl(post),
               changefreq: 'daily',
               priority: 0.7,
               links

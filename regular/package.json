@@ -47,12 +47,13 @@
     "typography-theme-kirkham": "^0.16.3"
   },
   "devDependencies": {
-    "@babel/core": "7.3.4",
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "24.3.1",
     "babel-plugin-dynamic-import-node": "2.2.0",
-    "eslint": "5.15.1",
     "babel-preset-gatsby": "0.1.8",
+    "eslint": "5.15.1",
     "eslint-plugin-react": "7.12.4",
     "gh-pages": "2.0.1",
     "identity-obj-proxy": "3.0.0",
@@ -70,13 +71,14 @@
     "url": "git+https://github.com/tomoyukikashiro/blog.tomoyukikashiro.me.git"
   },
   "scripts": {
-    "dev": "gatsby develop",
+    "dev": "npm run build:utils && gatsby develop",
     "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
     "unit": "jest",
     "test": "npm run lint && npm run unit",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
-    "develop": "gatsby develop",
-    "build": "gatsby build",
-    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
+    "develop": "npm run build:utils && gatsby develop",
+    "build": "npm run build:utils && gatsby build",
+    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js",
+    "build:utils": "babel src/utils/post.js --out-file src/utils/dist/post.js --config-file ./src/utils/.babelrc && babel src/utils/site.js --out-file src/utils/dist/site.js --config-file ./src/utils/.babelrc"
   }
 }

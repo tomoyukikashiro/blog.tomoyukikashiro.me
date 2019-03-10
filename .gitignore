@@ -5,3 +5,5 @@ public
 .intermediate-representation/
 .cache/
 yarn.lock
+regular/src/utils/dist/*
+!regular/src/utils/dist/.gitkeep

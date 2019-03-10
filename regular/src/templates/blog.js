@@ -22,6 +22,7 @@ export const BlogPostHead = ({ post, site, hasAlternate = false}) => (
       <meta name="description" content={ site.postPageDescription(post) } />
       <link rel="amphtml" href={ site.canonicalPostAmpUrl(post) } />
       <link rel="canonical" href={ site.canonicalPostUrl(post) } />
+      <link rel="alternate" href={ site.postUrl(post) } hrefLang={ post.lang } />
       { hasAlternate ? <link rel="alternate" href={ site.postAlternativeLangUrl(post) } hrefLang={ post.alternativeLang } />: ''}
     </Helmet>
     <MetaSocial

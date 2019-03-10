@@ -1,4 +1,5 @@
 const path = require("path")
+const Post = require("../regular/src/utils/dist/post").default
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
@@ -31,15 +32,15 @@ exports.createPages = ({ actions, graphql }) => {
 
     // Create post detail pages
     posts.forEach(({ node }) => {
-      const langPath = node.frontmatter.lang.trim() === 'ja' ? '/ja/' : '/'
-      const _path = `/post${langPath}${node.frontmatter.slug.trim()}`
-
+      const currentPost = new Post(node)
+    
       const hasAlternate = posts.some(({ node: _node }) => {
-        return _node.frontmatter.slug.trim() === node.frontmatter.slug.trim() && _node.frontmatter.lang.trim() !== node.frontmatter.lang.trim()
+        const _post = new Post(_node)
+        return _post.slug === currentPost.slug && _post.lang !== currentPost.lang
       })
       
       createPage({
-        path: _path,
+        path: currentPost.path(),
         component: BlogPost,
         context: {
           slug: node.frontmatter.slug.trim(),

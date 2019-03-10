@@ -41,6 +41,8 @@
     "typography-theme-kirkham": "^0.16.3"
   },
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
     "amphtml-validator": "1.0.23",
     "eslint": "5.15.1",
     "eslint-plugin-react": "7.12.4",
@@ -57,12 +59,13 @@
     "url": "git+https://github.com/tomoyukikashiro/blog.tomoyukikashiro.me.git"
   },
   "scripts": {
-    "dev": "gatsby develop",
+    "dev": "npm run build:utils && gatsby develop",
     "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
     "amp": "amphtml-validator public/post/**/index.html",
     "test": "npm run lint && npm run amp",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
-    "develop": "gatsby develop",
-    "build": "gatsby build"
+    "develop": "npm run build:utils && gatsby develop",
+    "build": "npm run build:utils && gatsby build",
+    "build:utils": "babel ../regular/src/utils/post.js --out-file ../regular/src/utils/dist/post.js --config-file ../regular/src/utils/.babelrc && babel ../regular/src/utils/site.js --out-file ../regular/src/utils/dist/site.js --config-file ../regular/src/utils/.babelrc"
   }
 }
