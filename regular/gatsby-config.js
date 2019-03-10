@@ -94,7 +94,27 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-sitemap`
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        serialize: ({ site, allSitePage }) => {
+          return allSitePage.edges.map(edge => {
+            const { node: { path }} = edge
+            const lang = path.startsWith('/post/ja/') ? 'ja' : 'en-US'
+            const url = site.siteMetadata.siteUrl + edge.node.path + '/'
+            const alternateLang = lang === 'ja' ? 'en-US' : 'ja'
+            const alternatePath = lang === 'ja' ? path.replace('/post/ja', '/post') : path.replace('/post', '/post/ja')
+            const alternateEdge = allSitePage.edges.find(_edge => _edge.node.path === alternatePath) 
+            const links = [{ lang: lang, url: url }]
+            if (alternateEdge) links.push({ lang: alternateLang, url: site.siteMetadata.siteUrl + alternateEdge.node.path + '/' })
+            return {
+              url: url,
+              changefreq: 'daily',
+              priority: 0.7,
+              links
+            }
+          })
+        }
+      }
     },
     `gatsby-plugin-react-helmet`,
     {

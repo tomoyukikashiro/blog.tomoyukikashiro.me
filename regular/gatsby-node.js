@@ -37,10 +37,8 @@ exports.createPages = ({ actions, graphql }) => {
       const langPath = node.frontmatter.lang.trim() === 'ja' ? '/ja/' : '/'
       const _path = `/post${langPath}${node.frontmatter.slug.trim()}`
     
-      const hasAlternate = !!posts.find(({ node }) => {
-        const _node = node
-        return _node.frontmatter.slug.trim() === node.frontmatter.slug.trim() && 
-          _node.frontmatter.lang.trim() === node.frontmatter.lang.trim() === 'ja' ? 'en-US' : 'ja'
+      const hasAlternate = posts.some(({ node: _node }) => {
+        return _node.frontmatter.slug.trim() === node.frontmatter.slug.trim() && _node.frontmatter.lang.trim() !== node.frontmatter.lang.trim()
       })
       
       createPage({
