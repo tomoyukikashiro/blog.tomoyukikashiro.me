@@ -1,0 +1,19 @@
+{
+  "name": "blog-tomoyuki-kashiro",
+  "private": true,
+  "description": "Tomoyuki Kashiro blog",
+  "workspaces": ["regular", "amp"],
+  "author": "Tomoyuki Kashiro <ksrtmyk@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/tomoyukikashiro/blog.tomoyukikashiro.me/issues"
+  },
+  "homepage": "https://github.com/tomoyukikashiro/blog.tomoyukikashiro.me#readme",
+  "keywords": [
+    "gatsby"
+  ],
+  "main": "n/a",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomoyukikashiro/blog.tomoyukikashiro.me.git"
+  }
+}
