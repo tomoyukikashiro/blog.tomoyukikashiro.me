@@ -21,8 +21,8 @@ export const BlogPostHead = ({ post, site, hasAlternate = false}) => (
       <title>{ post.title }</title>
       <meta name="description" content={ site.postPageDescription(post) } />
       <link rel="amphtml" href={ site.canonicalPostAmpUrl(post) } />
-      <link rel="canonical" href={ site.canonicalPostUrl(post) } />
-      <link rel="alternate" href={ site.canonicalPostUrl(post) } hrefLang={ post.lang } />
+      <link rel="canonical" href={ site.postUrl(post) } />
+      <link rel="alternate" href={ site.postUrl(post) } hrefLang={ post.lang } />
       { hasAlternate ? <link rel="alternate" href={ site.postAlternativeLangUrl(post) } hrefLang={ post.alternativeLang } />: ''}
     </Helmet>
     <MetaSocial
@@ -154,7 +154,6 @@ export const pageQuery = graphql`
         summary
         tags
         lang
-        canonicalUrl
         date(formatString: "MMMM DD, YYYY")
       }
     }

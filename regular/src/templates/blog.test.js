@@ -8,7 +8,6 @@ describe('BlogPostHead', function () {
     postPageDescription: () => ('post description'),
     canonicalPostAmpUrl: () => ('https://amp.example.com'),
     postUrl: () => ('https://example.com'),
-    canonicalPostUrl: () => ('https://canonical.example.com'),
     title: 'test site title',
     url: 'https://example.com',
     author: 'test author',

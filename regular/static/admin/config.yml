@@ -16,7 +16,6 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Language", name: "lang", widget: "hidden", default: "en"}
       - {label: "Slug", name: "slug", widget: "string"}
-      - {label: "Canonical URL", name: "canonicalUrl", widget: "string"}
       - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "summary", widget: "text"}
@@ -30,7 +29,6 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Language", name: "lang", widget: "hidden", default: "ja"}
       - {label: "Slug", name: "slug", widget: "string"}
-      - {label: "Canonical URL", name: "canonicalUrl", widget: "string"}
       - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "summary", widget: "text"}

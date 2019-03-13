@@ -136,7 +136,7 @@ module.exports = {
               return { lang: _post.lang, url: site.postUrl(_post) }
             })
             return {
-              url: site.canonicalPostUrl(post),
+              url: site.postUrl(post),
               changefreq: 'daily',
               priority: 0.7,
               links
