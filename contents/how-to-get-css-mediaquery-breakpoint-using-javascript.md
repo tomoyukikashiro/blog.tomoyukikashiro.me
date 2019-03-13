@@ -2,7 +2,7 @@
 date: 2014-12-13
 title: How to get css mediaquery breakpoint using javascript.
 slug: how-to-get-css-mediaquery-breakpoint-using-javascript
-lang: en-US
+lang: en
 tags: [responsive, css]
 ---
 

@@ -2,7 +2,7 @@
 date: 2014-10-27
 title: Getting Start Custom Element
 slug: start-custom-element
-lang: en-US
+lang: en
 tags: [webcomponent]
 ---
 

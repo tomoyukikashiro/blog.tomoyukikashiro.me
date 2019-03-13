@@ -2,7 +2,7 @@
 date: 2015-05-11
 title: When before syntax is called in Rspec
 slug: when-before-syntax-is-called-in-rspec
-lang: en-US
+lang: en
 tags: [TDD,rails,rspec,test]
 ---
 

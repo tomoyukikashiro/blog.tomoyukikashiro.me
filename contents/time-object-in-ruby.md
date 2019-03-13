@@ -2,7 +2,7 @@
 date: 2015-06-03
 title: time object in ruby
 slug: time-object-in-ruby
-lang: en-US
+lang: en
 tags: [ruby]
 ---
 

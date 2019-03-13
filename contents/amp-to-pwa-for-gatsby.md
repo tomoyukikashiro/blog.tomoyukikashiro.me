@@ -1,7 +1,7 @@
 ---
 title: AMP to PWA for Gatsby
 slug: amp-to-pwa-for-gatsby
-lang: en-US
+lang: en
 tags:
   - amp
   - gatsby

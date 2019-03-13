@@ -2,7 +2,7 @@
 date: 2015-05-12
 title: When let is called in Rspec
 slug: when-let-syntax-is-called-in-rspec
-lang: en-US
+lang: en
 tags: [TDD,rails,rspec,test]
 ---
 

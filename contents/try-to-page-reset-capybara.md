@@ -2,7 +2,7 @@
 date: 2015-05-09
 title: Try to page.reset! if the page is not reloaded in Capybara
 slug: try-to-page-reset-capybara
-lang: en-US
+lang: en
 tags: [test,capybara,rails]
 ---
 

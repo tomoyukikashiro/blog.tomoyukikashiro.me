@@ -2,7 +2,7 @@
 date: 2015-06-05
 title: html escape with rails I18n
 slug: html-escape-with-rails-i18n
-lang: en-US
+lang: en
 tags: [rails,I18n,ruby]
 ---
 

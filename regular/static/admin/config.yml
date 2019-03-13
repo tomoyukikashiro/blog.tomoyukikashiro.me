@@ -14,7 +14,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Language", name: "lang", widget: "hidden", default: "en-US"}
+      - {label: "Language", name: "lang", widget: "hidden", default: "en"}
       - {label: "Slug", name: "slug", widget: "string"}
       - {label: "Canonical URL", name: "canonicalUrl", widget: "string"}
       - {label: "Tags", name: "tags", widget: "list"}

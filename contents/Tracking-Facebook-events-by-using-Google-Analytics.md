@@ -3,7 +3,7 @@ date: 2013-09-21
 title: Tracking Facebook events by using Google Analytics
 summary: I'm gonna explain how to track Facebook events by using Google Analytics
 slug: Tracking-Facebook-events-by-using-Google-Analytics
-lang: en-US
+lang: en
 tags: [GoogleAnalytics,Javascript]
 ---
 

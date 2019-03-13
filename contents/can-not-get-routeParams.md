@@ -2,7 +2,7 @@
 date: 2015-05-07
 title: Can not get $routeParams - AngularJS - 
 slug: can-not-get-routeParams
-lang: en-US
+lang: en
 tags: [angularjs]
 ---
 

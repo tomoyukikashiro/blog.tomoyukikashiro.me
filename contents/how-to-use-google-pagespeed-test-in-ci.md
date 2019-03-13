@@ -3,7 +3,7 @@ date: 2017-07-04
 title: How to use Google PageSpeed Test in CI
 summary: Is it possible to test site using Google PageSpeed Insight in CI ? The answer is YES!
 slug: how-to-use-google-pagespeed-test-in-ci
-lang: en-US
+lang: en
 tags: [ci, performance]
 ---
 

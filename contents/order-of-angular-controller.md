@@ -3,7 +3,7 @@ date: 2015-10-05
 title: order of angular controller's initialisation
 summary: I'm gonna explain order of angular controller's initialisation
 slug: order-of-angular-controller
-lang: en-US
+lang: en
 tags: [javascript,angularjs]
 ---
 

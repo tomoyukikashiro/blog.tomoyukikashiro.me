@@ -2,7 +2,7 @@
 date: 2015-05-18
 title: Rails Pagination - kaminari
 slug: rails-pagination-kaminari
-lang: en-US
+lang: en
 tags: [rails]
 ---
 

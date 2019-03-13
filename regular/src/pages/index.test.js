@@ -9,7 +9,7 @@ describe('BlogIndexHeader', function () {
     description: 'test description',
     url: 'https://example.com',
     type: 'website',
-    lang: 'en-US',
+    lang: 'en',
     twitterUserName: 'testAccount'
   }
   let headElement;

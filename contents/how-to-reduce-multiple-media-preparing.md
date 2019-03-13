@@ -2,7 +2,7 @@
 date: 2014-12-09
 title: How to reduce multiple media preparing
 slug: how-to-reduce-multiple-media-preparing
-lang: en-US
+lang: en
 tags: [html]
 ---
 

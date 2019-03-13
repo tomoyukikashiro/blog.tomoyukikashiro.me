@@ -2,7 +2,7 @@
 date: 2014-12-08
 title: How to specify high resolution display in css
 slug: how-to-specify-high-resolution-display-in-css
-lang: en-US
+lang: en
 tags: [css]
 ---
 

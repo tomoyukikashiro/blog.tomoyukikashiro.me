@@ -3,7 +3,7 @@ date: 2014-11-18
 title: algorithm in JavaScript
 summary: I've tried to expressed some algorithm in javascript to understand it
 slug: algorithm-in-javascript
-lang: en-US
+lang: en
 tags: [algorithm]
 ---
 

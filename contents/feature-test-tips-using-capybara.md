@@ -2,7 +2,7 @@
 date: 2015-05-13
 title: Feature test tips using capybara
 slug: feature-test-tips-using-capybara
-lang: en-US
+lang: en
 tags: [TDD,rails,rspec,capybara,test]
 ---
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-const MetaSocial = ({title, description, type, url, image, tags=[], published, lang = 'en-US', site}) => (
+const MetaSocial = ({title, description, type, url, image, tags=[], published, lang = 'en', site}) => (
   <Helmet>
     {/* BASIC */}
     <meta property="og:title" content={ title } />

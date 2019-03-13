@@ -2,7 +2,7 @@
 date: 2015-05-15
 title: Try in ruby
 slug: try-in-ruby
-lang: en-US
+lang: en
 tags: [rails,ruby]
 ---
 

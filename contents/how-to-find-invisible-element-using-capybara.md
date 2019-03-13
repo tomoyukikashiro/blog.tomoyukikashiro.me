@@ -2,7 +2,7 @@
 date: 2014-12-22
 title: How to find invisible element using capybara
 slug: how-to-find-invisible-element-using-capybara
-lang: en-US
+lang: en
 tags: [rails,ruby,rspec,capybara]
 ---
 

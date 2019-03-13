@@ -2,7 +2,7 @@
 date: 2015-05-04
 title: You should remove child node if parent node is deleted in mongodb
 slug: you-should-remove-child-node-if-parent-node-is-deleted-in-mongodb
-lang: en-US
+lang: en
 tags: [mongodb,mongoid]
 ---
 
