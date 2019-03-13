@@ -2,7 +2,7 @@
 date: 2014-10-28
 title: Getting Start HTML's Template
 slug: start-html-template
-lang: en-US
+lang: en
 tags: [webcomponent]
 ---
 

@@ -4,7 +4,7 @@ export default class Post {
 
   static LANGS = {
     JA: 'ja',
-    EN: 'en-US'
+    EN: 'en'
   }
 
   constructor(node) {
@@ -33,7 +33,7 @@ export default class Post {
   }
   
   get formatDate() {
-    return this.date.toLocaleString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
+    return this.date.toLocaleString('en', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
     // return moment(this.date.toISOString()).format('dddd LL')
   }
   
@@ -84,10 +84,6 @@ export default class Post {
   
   get html() {
     return this.node.html
-  }
-  
-  get canonicalUrl() {
-    return this.node.frontmatter.canonicalUrl
   }
 }
   

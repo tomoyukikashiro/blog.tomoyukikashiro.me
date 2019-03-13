@@ -3,7 +3,7 @@ date: 2013-02-16
 title: How to create sencha plugin
 summary: I'm gonna explain how to create sencha plugin
 slug: how-to-create-senchatouch-plugin
-lang: en-US
+lang: en
 tags: [sencha]
 ---
 

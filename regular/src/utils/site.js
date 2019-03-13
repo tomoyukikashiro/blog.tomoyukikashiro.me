@@ -64,11 +64,6 @@ export default class Site {
     return this.postUrl(post, post.alternativeLang)
   }
   
-  canonicalPostUrl(post, lang) {
-    if (post.canonicalUrl) return post.canonicalUrl
-    return this.postUrl(post, lang)
-  }
-  
   canonicalPostAmpUrl(post) {
     return `${this.ampUrl}${post.path()}/`
   }

@@ -1,7 +1,6 @@
 ---
 title: AMP to PWA をGatsbyで実装する
 slug: amp-to-pwa-for-gatsby
-canonicalUrl: https://qiita.com/Tkashiro/items/4b6417c409a8603c0d62
 lang: ja
 tags:
   - amp

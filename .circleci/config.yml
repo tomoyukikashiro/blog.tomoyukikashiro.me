@@ -1,100 +1,102 @@
 version: 2
 jobs:
+  
   build_regular:
     working_directory: ~/repo
     docker:
       - image: circleci/node:8.15.1-browsers
     steps:
       - checkout
-      - run:
-          name: Update npm
-          command: 'sudo npm install -g npm@latest'
       - restore_cache:
-          key: dependency-cache-{{ checksum "regular/package.json" }}
+          name: Restore Yarn Package Cache
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
       - run:
-          name: Install npm
-          command: npm install
-          working_directory: regular
-      - run:
-          name: Gatsby build
-          command: npm run build
-          working_directory: regular
+          name: Install Dependencies
+          command: yarn install --frozen-lockfile
       - save_cache:
-          key: dependency-cache-{{ checksum "regular/package.json" }}
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
-            - regular/node_modules
+            - ~/.cache/yarn
+      - run:
+          name: regular build
+          command: yarn run build
+          working_directory: regular      
+
   build_amp:
     working_directory: ~/repo
     docker:
       - image: circleci/node:8.15.1-browsers
     steps:
       - checkout
-      - run:
-          name: Update npm
-          command: 'sudo npm install -g npm@latest'
       - restore_cache:
-          key: dependency-cache-{{ checksum "amp/package.json" }}
+          name: Restore Yarn Package Cache
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
       - run:
-          name: Install npm
-          command: npm install
-          working_directory: amp
-      - run:
-          name: Gatsby build
-          command: npm run build
-          working_directory: amp
+          name: Install Dependencies
+          command: yarn install --frozen-lockfile
       - save_cache:
-          key: dependency-cache-{{ checksum "amp/package.json" }}
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
-            - amp/node_modules
+            - ~/.cache/yarn
+      - run:
+          name: amp build
+          command: yarn run build
+          working_directory: amp              
 
   test_regular:
+    working_directory: ~/repo
     docker:
       - image: circleci/node:8.15.1-browsers
     steps:
       - checkout
-      - run:
-          name: Update npm
-          command: 'sudo npm install -g npm@latest'
       - restore_cache:
-          key: dependency-cache-{{ checksum "regular/package.json" }}
+          name: Restore Yarn Package Cache
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
       - run:
-          name: Install npm
-          command: npm install
-          working_directory: regular
-      - run:
-          name: Test
-          command: npm test
-          working_directory: regular
+          name: Install Dependencies
+          command: yarn install --frozen-lockfile
       - save_cache:
-          key: dependency-cache-{{ checksum "regular/package.json" }}
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
-            - regular/node_modules
+            - ~/.cache/yarn
+      - run:
+          name: test regular
+          command: yarn run test
+          working_directory: regular  
+
   test_amp:
+    working_directory: ~/repo
     docker:
       - image: circleci/node:8.15.1-browsers
     steps:
       - checkout
-      - run:
-          name: Update npm
-          command: 'sudo npm install -g npm@latest'
       - restore_cache:
-          key: dependency-cache-{{ checksum "amp/package.json" }}
+          name: Restore Yarn Package Cache
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
       - run:
-          name: Install npm
-          command: npm install
-          working_directory: amp
-      - run:
-          name: Build
-          command: npm run build
-          working_directory: amp
-      - run:
-          name: Test
-          command: npm test
-          working_directory: amp
+          name: Install Dependencies
+          command: yarn install --frozen-lockfile
       - save_cache:
-          key: dependency-cache-{{ checksum "amp/package.json" }}
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
-            - amp/node_modules            
+            - ~/.cache/yarn
+      - run:
+          name: amp build
+          command: yarn run build
+          working_directory: amp
+      - run:
+          name: test amp
+          command: yarn run test
+          working_directory: amp
+          
 workflows:
   version: 2
   build_and_test:

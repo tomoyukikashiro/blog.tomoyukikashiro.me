@@ -1,7 +1,7 @@
 ---
 title: AMP ⚡ using Gatsby
 slug: amp-using-gatsby
-lang: en-US
+lang: en
 tags:
   - amp
   - gatsby

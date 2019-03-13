@@ -8,7 +8,6 @@ describe('BlogPostHead', function () {
     postPageDescription: () => ('post description'),
     canonicalPostAmpUrl: () => ('https://amp.example.com'),
     postUrl: () => ('https://example.com'),
-    canonicalPostUrl: () => ('https://canonical.example.com'),
     title: 'test site title',
     url: 'https://example.com',
     author: 'test author',
@@ -20,7 +19,7 @@ describe('BlogPostHead', function () {
     type: 'article',
     date: new Date('2018-12-24'),
     isoDate: new Date('2018-12-24').toISOString(),
-    lang: 'en-US',
+    lang: 'en',
     tags: ['test1', 'test2'],
     path: () => ('/post/test-slug')
   }

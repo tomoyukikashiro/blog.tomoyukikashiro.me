@@ -3,7 +3,7 @@ date: 2015-06-09
 title: how to use kaminari from array
 summary: I always forget way of use rails pagination library (kaminari) with array
 slug: how-to-use-kaminari-from-array
-lang: en-US
+lang: en
 tags: [ruby,rails]
 ---
 

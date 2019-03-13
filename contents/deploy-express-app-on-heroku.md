@@ -3,7 +3,7 @@ date: 2013-09-11
 title: Deploy Express(node) app on heroku
 summary: I'm gonna explain how to deploy node Express application on heroku
 slug: deploy-express-app-on-heroku
-lang: en-US
+lang: en
 tags: [heroku,node,Express]
 ---
 

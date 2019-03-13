@@ -2,7 +2,7 @@
 date: 2015-06-07
 title: how to add extra data in draper
 slug: how-to-add-extra-data-in-draper
-lang: en-US
+lang: en
 tags: [rails]
 ---
 

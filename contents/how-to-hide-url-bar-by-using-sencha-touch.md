@@ -3,7 +3,7 @@ date: 2012-11-11
 title: How to hide URL Bar by using sencha touch
 summary: I wonder if you want to hide urlbar in smartphone web site, you will write following script
 slug: how-to-hide-url-bar-by-using-sencha-touch
-lang: en-US
+lang: en
 tags: [sencha]
 ---
 

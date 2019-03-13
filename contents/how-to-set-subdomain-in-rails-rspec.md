@@ -2,7 +2,7 @@
 date: 2015-05-04
 title: How to set subdomain in rails rspec
 slug: how-to-set-subdomain-in-rails-rspec
-lang: en-US
+lang: en
 tags: [rails,ruby,rspec]
 ---
 

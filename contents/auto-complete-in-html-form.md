@@ -3,7 +3,7 @@ date: 2014-11-27
 title: AutoComplete in html form
 summary: It's important to set correct autocomplete attributes in html form
 slug: auto-complete-in-html-form
-lang: en-US
+lang: en
 tags: [html]
 ---
 

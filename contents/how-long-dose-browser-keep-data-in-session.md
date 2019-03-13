@@ -3,7 +3,7 @@ date: 2015-06-11
 title: How long dose browser keep data in session
 summary: The duration of session is different between device so I'm gonna explain how long do they last 
 slug: how-long-dose-browser-keep-data-in-session
-lang: en-US
+lang: en
 tags: [javascript,html]
 ---
 

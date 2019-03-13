@@ -2,7 +2,7 @@
 date: 2015-05-16
 title: Test CSRF in feature test using Capybara
 slug: test-csrf-in-feature-test-using-capybara
-lang: en-US
+lang: en
 tags: [tdd,capybara,rails,ruby, test]
 ---
 

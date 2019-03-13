@@ -3,7 +3,7 @@ date: 2013-01-13
 title: How to use sencha touch custom components(Ext.ux.touch)
 summary: I'm gonna explain how to use sencha touch custom components using Ext.ux.touch
 slug: how-to-use-senchatouch-custom-components
-lang: en-US
+lang: en
 tags: [sencha]
 ---
 

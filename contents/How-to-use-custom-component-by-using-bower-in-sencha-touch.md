@@ -2,7 +2,7 @@
 date: 2014-02-16
 title: How to use custom component by using bower in sencha touch
 slug: how-to-use-custom-component-by-using-bower-in-sencha-touch
-lang: en-US
+lang: en
 tags: [sencha]
 ---
 

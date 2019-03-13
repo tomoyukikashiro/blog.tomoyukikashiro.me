@@ -2,7 +2,7 @@
 date: 2014-11-16
 title: Bubble sort algorithm in JavaScript
 slug: bubble-sort-algorithm-in-javascript
-lang: en-US
+lang: en
 tags: [algorithm]
 ---
 
