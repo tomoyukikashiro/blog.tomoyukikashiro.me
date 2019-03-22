@@ -27,7 +27,7 @@
     "github-markdown-css": "3.0.1",
     "immutable": "3.8.2",
     "lodash": "4.17.11",
-    "netlify-cms": "2.7.0",
+    "netlify-cms": "2.8.0",
     "netlify-cms-lib-auth": "2.1.0",
     "prismjs": "1.15.0",
     "prop-types": "15.7.2",
