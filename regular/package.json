@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "dependencies": {
-    "gatsby": "2.2.6",
+    "gatsby": "2.2.7",
     "gatsby-plugin-feed": "2.1.0",
     "gatsby-plugin-google-tagmanager": "2.0.10",
     "gatsby-plugin-manifest": "2.0.24",
