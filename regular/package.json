@@ -28,7 +28,7 @@
     "immutable": "3.8.2",
     "lodash": "4.17.11",
     "netlify-cms": "2.6.1",
-    "netlify-cms-lib-auth": "2.0.5",
+    "netlify-cms-lib-auth": "2.1.0",
     "prismjs": "1.15.0",
     "prop-types": "15.7.2",
     "react": "16.8.4",
