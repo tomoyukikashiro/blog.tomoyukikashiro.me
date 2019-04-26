@@ -43,8 +43,8 @@
     "typography-theme-kirkham": "0.16.19"
   },
   "devDependencies": {
-    "@babel/cli": "7.2.3",
-    "@babel/core": "7.4.0",
+    "@babel/cli": "7.4.4",
+    "@babel/core": "7.4.4",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "24.3.1",
     "babel-plugin-dynamic-import-node": "2.2.0",
