@@ -12,7 +12,8 @@ export default class Post {
   }
   
   get key() {
-    return `${this.lang}-${this.slug}`
+    const key = `${this.lang}-${this.slug}`
+    return key || Date.now()
   }
 
   get title() {
