@@ -17,7 +17,7 @@ export default class Post {
   }
 
   get title() {
-    return this.node.frontmatter.title.trim()
+    return this.node.frontmatter.title ? this.node.frontmatter.title.trim() : ''
   }
 
   get date() {
