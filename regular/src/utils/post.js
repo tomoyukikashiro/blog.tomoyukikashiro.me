@@ -42,11 +42,11 @@ export default class Post {
   }
   
   get slug() {
-    return this.node.frontmatter.slug.trim()
+    return this.node.frontmatter.slug ? this.node.frontmatter.slug.trim() : ''
   }
   
   get lang() {
-    return this.node.frontmatter.lang.trim()
+    return this.node.frontmatter.lang ? this.node.frontmatter.lang.trim() : ''
   }
   
   get isEn() {
