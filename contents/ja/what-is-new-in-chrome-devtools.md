@@ -1,7 +1,7 @@
 ---
 date: 2019-06-01
 title: What's new in Chrome DevTools 2019
-summary: I would like to summalize Chrome DevTools Updates for 2019.
+summary: Chrome DevToolsの更新情報をまとめました！2019年度版 What's new in ChromeDevtools!.
 slug: what-is-new-in-chrome-devtools
 lang: ja
 tags: [javascript, devtools]
