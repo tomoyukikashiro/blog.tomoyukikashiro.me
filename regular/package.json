@@ -31,8 +31,8 @@
     "netlify-cms": "2.9.7",
     "prismjs": "1.17.1",
     "prop-types": "15.7.2",
-    "react": "16.10.1",
-    "react-dom": "16.10.1",
+    "react": "16.10.2",
+    "react-dom": "16.10.2",
     "react-helmet": "5.2.1",
     "react-typography": "0.16.19",
     "reset-css": "4.0.1",
@@ -54,7 +54,7 @@
     "identity-obj-proxy": "3.0.0",
     "jest": "24.9.0",
     "prettier": "1.18.2",
-    "react-test-renderer": "16.10.1"
+    "react-test-renderer": "16.10.2"
   },
   "scripts": {
     "dev": "npm run build:utils && gatsby develop",
