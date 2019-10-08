@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "dependencies": {
-    "gatsby": "2.15.31",
+    "gatsby": "2.15.32",
     "gatsby-plugin-feed": "2.3.15",
     "gatsby-plugin-google-tagmanager": "2.1.12",
     "gatsby-plugin-manifest": "2.2.20",
@@ -21,7 +21,7 @@
     "gatsby-remark-prismjs": "3.3.17",
     "gatsby-remark-responsive-iframe": "2.2.22",
     "gatsby-remark-smartypants": "2.1.11",
-    "gatsby-source-filesystem": "2.1.29",
+    "gatsby-source-filesystem": "2.1.30",
     "gatsby-transformer-remark": "2.6.27",
     "gatsby-transformer-sharp": "2.2.20",
     "github-markdown-css": "3.0.1",
