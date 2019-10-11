@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "dependencies": {
-    "gatsby": "2.15.35",
+    "gatsby": "2.15.36",
     "gatsby-plugin-html2amp": "1.1.0",
     "gatsby-plugin-netlify": "2.1.19",
     "gatsby-plugin-react-helmet": "3.1.11",
