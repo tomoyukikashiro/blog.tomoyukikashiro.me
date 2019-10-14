@@ -44,13 +44,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-google-tagmanager`,
-      options: {
-        id: "GTM-5WXKGHD",
-        includeInDevelopment: true
-      }
-    },
-    {
       resolve: `gatsby-plugin-feed`,
       options: {
         feeds: [
