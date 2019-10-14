@@ -1,5 +1,21 @@
-# blog.tomoyukikashiro.me / amp.tomoyukikashiro.me
+# blog.tomoyukikashiro.me
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ec2549ea-d342-488b-b89a-da151ae77c22/deploy-status)](https://app.netlify.com/sites/blog-tomoyukikashiro-me/deploys)
+https://blog.tomoyukikashiro.me/
 
+## Install
 
+```bash
+$ npm intall
+$ npm run dev
+```
+
+## Build
+
+```bash
+$ npm run build
+```
+
+## Test
+```bash
+$ npm test
+```

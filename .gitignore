@@ -4,5 +4,5 @@ public
 .DS_Store
 .intermediate-representation/
 .cache/
-regular/src/utils/dist/*
-!regular/src/utils/dist/.gitkeep
+src/utils/dist/*
+!src/utils/dist/.gitkeep
