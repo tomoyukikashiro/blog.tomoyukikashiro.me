@@ -1,0 +1,1 @@
+{ "vars": { "account": "UA-50867411-2"}, "triggers": {"trackPageview": {"on": "visible", "request": "pageview"}}}

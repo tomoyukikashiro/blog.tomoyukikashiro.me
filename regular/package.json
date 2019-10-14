@@ -59,8 +59,9 @@
   "scripts": {
     "dev": "npm run build:utils && gatsby develop",
     "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
+    "amp": "amphtml-validator public/**/*.html",
     "unit": "jest",
-    "test": "npm run lint && npm run unit",
+    "test": "npm run lint && npm run unit && npm run amp",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
     "develop": "npm run build:utils && gatsby develop",
     "build": "npm run build:utils && gatsby build",

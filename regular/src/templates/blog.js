@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { Link,graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import MetaSocial from '../components/MetaSocial'
@@ -11,7 +11,6 @@ import Header from '../components/Header'
 import FooterStyle from './BlogFooter.module.css'
 
 import HeaderStyles from '../components/Header.module.css'
-import LabelSvg from '../assets/images/label.svg'
 import Site from '../utils/site'
 import Post from '../utils/post'
 
@@ -20,7 +19,7 @@ export const BlogPostHead = ({ post, site, hasAlternate = false}) => (
     <Helmet>
       <title>{ post.title }</title>
       <meta name="description" content={ site.postPageDescription(post) } />
-      <link rel="amphtml" href={ site.canonicalPostAmpUrl(post) } />
+      <link rel="amphtml" href={ site.postUrl(post) } />
       <link rel="canonical" href={ site.postUrl(post) } />
       <link rel="alternate" href={ site.postUrl(post) } hrefLang={ post.lang } />
       { hasAlternate ? <link rel="alternate" href={ site.postAlternativeLangUrl(post) } hrefLang={ post.alternativeLang } />: ''}
@@ -32,7 +31,6 @@ export const BlogPostHead = ({ post, site, hasAlternate = false}) => (
       type={ post.type }
       url={ site.postUrl(post) }
       image={ headerBgUrl(post.date.getDate()) }
-      tags={ post.tags }
       published={ post.isoDate }
       lang={ post.lang }
     />
@@ -50,25 +48,8 @@ export const BlogPostFooter = ({ url, twitterUserName }) => {
 }
 
 export class BlogPostTemplate extends React.Component {
-  state = {
-    ShareButtonContainer: null,
-    ShareButton: null
-  }
-
-  componentDidMount() {
-    if (!navigator || !navigator.share) return
-    import(/* webpackChunkName: "sharebutton" */ '../components/ShareButton')
-      .then(module => {
-        this.setState({
-          ShareButtonContainer: module.ShareButtonContainer,
-          ShareButton: module.ShareButton
-        })
-      })
-  }
-
   render () {
     const post = new Post({frontmatter: this.props, html: this.props.html})
-    const {ShareButtonContainer, ShareButton} = this.state
     return (
       <article>
         <Header klass={headerBgClass(post.date.getDate())} text={ post.title } link={ `${post.path()}/` }>
@@ -76,28 +57,11 @@ export class BlogPostTemplate extends React.Component {
             <address className={ `${ HeaderStyles.header__author } text-elegant` }>By { this.props.author }</address>
             <time className={ `${ HeaderStyles.header__publish_date } text-elegant` } dateTime={ post.isoDate }> on { post.formatDate }</time>
           </div>
-          { post.hasTags
-            ? <ul className={ `${ HeaderStyles.header__tags } clearfix` }>
-              {
-                post.tags.map(tag => (
-                  <li className={ `${ HeaderStyles.header__tag } tag` } key={ tag }>
-                    <i><LabelSvg className={HeaderStyles.header__title_icon} /></i>
-                    <Link to={ `/tag/${tag}/` }>{ tag.toUpperCase() }</Link>
-                  </li>
-                ))
-              }
-            </ul>
-            : null
-          }
         </Header>
         <div className="markdown-body body">
           { this.props.content
             ? <div>{ this.props.content }</div>
             : <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
-          }
-          { ShareButtonContainer && ShareButton
-            ? <ShareButtonContainer><ShareButton url={ this.props.url } title={ post.title }/></ShareButtonContainer>
-            : null
           }
         </div>
       </article>
@@ -120,7 +84,6 @@ class BlogPost extends React.Component {
           title={ post.title }
           slug={ post.slug }
           lang={ post.lang }
-          tags={ post.tags }
           url={ site.postUrl(post) }
           html={ post.html } />
         <BlogPostFooter url={site.postEnUrl(post)} twitterUserName={site.twitterUserName}/>
@@ -152,7 +115,6 @@ export const pageQuery = graphql`
         title
         slug
         summary
-        tags
         lang
         date(formatString: "MMMM DD, YYYY")
       }

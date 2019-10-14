@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-const MetaSocial = ({title, description, type, url, image, tags=[], published, lang = 'en', site}) => (
+const MetaSocial = ({title, description, type, url, image, published, lang = 'en', site}) => (
   <Helmet>
     {/* BASIC */}
     <meta property="og:title" content={ title } />
@@ -23,9 +23,6 @@ const MetaSocial = ({title, description, type, url, image, tags=[], published, l
       ? <meta property="profile:username" content={ site.author } />
       : null
     }
-    { tags.map(tag => (
-      <meta key={ tag } property="article:tag" content={ tag } />
-    )) }
 
     {/* twitter */}
     <meta name="twitter:card" content="summary_large_image" />

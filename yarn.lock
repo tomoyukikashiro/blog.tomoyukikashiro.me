@@ -6514,7 +6514,7 @@ gatsby-plugin-google-tagmanager@2.1.13:
   dependencies:
     "@babel/runtime" "^7.6.3"
 
-gatsby-plugin-html2amp@1.1.0:
+gatsby-plugin-html2amp@1.1.0, gatsby-plugin-html2amp@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-html2amp/-/gatsby-plugin-html2amp-1.1.0.tgz#58a986c6dac60f23ea36157c7f101809c624a3b6"
   integrity sha512-5sEMTwh0g0411yVLJgsyPW+1ZguwcXULlJZv/kyhw4Go8Igk6zzRQi5SkzlzevgfJx5VM2wOoFLWXPxaLwSgFA==

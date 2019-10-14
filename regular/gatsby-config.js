@@ -166,6 +166,13 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-html2amp',
+      options: {
+        files: ['post/**/index.html', 'index.html'], // for exclude admin/index.html
+        gaConfigPath: 'gaConfig.json'
+      }
+    },
     // 'gatsby-plugin-webpack-bundle-analyzer',
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
