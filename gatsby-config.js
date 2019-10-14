@@ -170,7 +170,8 @@ module.exports = {
       resolve: 'gatsby-plugin-html2amp',
       options: {
         files: ['post/**/index.html', 'index.html'], // for exclude admin/index.html
-        gaConfigPath: 'gaConfig.json'
+        gaConfigPath: 'gaConfig.json',
+        optimize: true
       }
     },
     // 'gatsby-plugin-webpack-bundle-analyzer',
