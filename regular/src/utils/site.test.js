@@ -9,51 +9,10 @@ describe('Site', function () {
     })
   })
 
-  describe('.tagsPageTtitle', function () {
-    const meta = {title: 'test title'}
-    it('should be as expected', function () {
-      expect(new Site(meta).tagsPageTitle).toEqual('TAGS | test title')
-    })
-  })
-
-  describe('.tagsPagePrefix', function () {
-    describe('When total count is 1', function () {
-      it('should be as expected', function () {
-        expect(new Site().tagPagePrefix('test', 1)).toEqual('Post tagged with "TEST"')
-      })
-    })
-    describe('When total count is greater than 1', function () {
-      it('should be as expected', function () {
-        expect(new Site().tagPagePrefix('test', 2)).toEqual('Posts tagged with "TEST"')
-      })
-    })
-  })
-
-  describe('.tagPageTitle', function () {
-    const meta = {title: 'test title'}
-    it('should be as expected', function () {
-      expect(new Site(meta).tagPageTitle('test', 1)).toEqual('Post tagged with "TEST" TAG | test title')
-    })
-  })
-
   describe('.description', function () {
     const meta = {description: 'test description'}
     it('should be as expected', function () {
       expect(new Site(meta).description).toEqual('test description')
-    })
-  })
-
-  describe('.tagsPageDescription', function () {
-    const meta = {description: 'test description'}
-    it('should be as expected', function () {
-      expect(new Site(meta).tagsPageDescription).toEqual('TAGS | test description')
-    })
-  })
-
-  describe('.tagPageDescription', function () {
-    const meta = {description: 'test description'}
-    it('should be as expected', function () {
-      expect(new Site(meta).tagPageDescription('test', 1)).toEqual('Post tagged with "TEST" TAG | test description')
     })
   })
 
@@ -116,20 +75,6 @@ describe('Site', function () {
     it('should be as expected', function () {
       expect(site.canonicalPostAmpUrl(post)).toEqual('https://example.com/post/ja/test-slug/')
     })
-  })
-
-  describe('.tagsPageUrl', function () {
-    const meta = {siteUrl: 'https://example.com'}
-    it('should be as expected', function () {
-      expect(new Site(meta).tagsPageUrl).toEqual('https://example.com/tags')
-    }) 
-  })
-  
-  describe('.tagPageUrl', function () {
-    const meta = {siteUrl: 'https://example.com'}
-    it('should be as expected', function () {
-      expect(new Site(meta).tagPageUrl('test')).toEqual('https://example.com/tag/test/')
-    }) 
   })
 
   describe('.profileUrl', function () {

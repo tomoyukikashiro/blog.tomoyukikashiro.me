@@ -26,7 +26,6 @@
     "gatsby-transformer-sharp": "2.2.22",
     "github-markdown-css": "3.0.1",
     "immutable": "3.8.2",
-    "lodash": "4.17.15",
     "netlify-cms": "2.9.7",
     "netlify-cms-lib-auth": "2.2.4",
     "prismjs": "1.17.1",

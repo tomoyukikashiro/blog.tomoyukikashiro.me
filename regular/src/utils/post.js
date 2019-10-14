@@ -62,18 +62,6 @@ export default class Post {
     return this.isEn ? Post.LANGS.JA : Post.LANGS.EN
   }
   
-  get tags() {
-    if (this.node.frontmatter.tags) {
-      return this.node.frontmatter.tags.map(tag => tag.trim().toLowerCase()) 
-    } else {
-      return []
-    }
-  }
-  
-  get hasTags() {
-    return !!this.tags.length
-  }
-
   path(lang) {
     const langPath = (lang || this.lang) === Post.LANGS.JA ? '/ja/' : '/'
     return `/post${langPath}${this.slug}`

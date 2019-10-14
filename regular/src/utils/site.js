@@ -12,29 +12,9 @@ export default class Site {
     return this.meta.title
   }
   
-  get tagsPageTitle() {
-    return `TAGS | ${this.title}`
-  }
-  
-  tagPagePrefix(tag, totalCount) {
-    return `Post${totalCount === 1 ? "" : "s"} tagged with "${tag.toUpperCase()}"`
-  }
-  
-  tagPageTitle(tag, totalCount) {
-    return `${this.tagPagePrefix(tag, totalCount)} TAG | ${this.title}`
-  }
-
   // --- description ---
   get description() {
     return this.meta.description
-  }
-  
-  get tagsPageDescription() {
-    return `TAGS | ${this.meta.description}`
-  }
-
-  tagPageDescription(tag, totalCount) {
-    return `${this.tagPagePrefix(tag, totalCount)} TAG | ${this.description}`
   }
   
   postPageDescription(post) {
@@ -68,14 +48,6 @@ export default class Site {
     return `${this.ampUrl}${post.path()}/`
   }
 
-  get tagsPageUrl() {
-    return `${this.url}/tags`
-  }
-  
-  tagPageUrl(tag) {
-    return `${this.url}/tag/${tag.toLowerCase()}/`
-  }
-  
   get profileUrl() {
     return this.meta.profileUrl
   }

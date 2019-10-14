@@ -150,37 +150,6 @@ describe('Post', function () {
     }) 
   })
 
-  describe('.tags', function () {
-    describe('When tags does not exist', function () {
-      const node = {frontmatter: {}}
-      it('should be empy array', function () {
-       expect(new Post(node).tags).toEqual([]) 
-      }) 
-    })
-    describe('When tags contain upper case', function () {
-      const node = {frontmatter: {tags: ['TEST', 'aaaa']}}
-      it('should be lower case', function () {
-       expect(new Post(node).tags).toContain('test')
-       expect(new Post(node).tags).toContain('aaaa')
-      }) 
-    })
-  })
-
-  describe('.hasTags', function () {
-    describe('When tags does not exist', function () {
-      const node = {frontmatter: {}}
-      it('should be false', function () {
-        expect(new Post(node).hasTags).toBe(false) 
-      })
-    }) 
-    describe('When tags exists', function () {
-      const node = {frontmatter: {tags: ['test']}}
-      it('should be true', function () {
-        expect(new Post(node).hasTags).toBe(true) 
-      })
-    }) 
-  })
-
   describe('.path', function () {
     describe('When lang of node is ja', function () {
       const node = {frontmatter: {lang: 'ja', slug: 'test-slug'}}
