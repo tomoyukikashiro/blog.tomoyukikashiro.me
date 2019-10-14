@@ -1,7 +1,7 @@
 version: 2
 jobs:
   
-  build_regular:
+  build:
     working_directory: ~/repo
     docker:
       - image: circleci/node:8.16.2-browsers
@@ -20,11 +20,10 @@ jobs:
           paths:
             - ~/.cache/yarn
       - run:
-          name: regular build
+          name: build
           command: yarn run build
-          working_directory: regular      
 
-  build_amp:
+  test:
     working_directory: ~/repo
     docker:
       - image: circleci/node:8.16.2-browsers
@@ -43,69 +42,14 @@ jobs:
           paths:
             - ~/.cache/yarn
       - run:
-          name: amp build
-          command: yarn run build
-          working_directory: amp              
-
-  test_regular:
-    working_directory: ~/repo
-    docker:
-      - image: circleci/node:8.16.2-browsers
-    steps:
-      - checkout
-      - restore_cache:
-          name: Restore Yarn Package Cache
-          keys:
-            - yarn-packages-{{ checksum "yarn.lock" }}
-      - run:
-          name: Install Dependencies
-          command: yarn install --frozen-lockfile
-      - save_cache:
-          name: Save Yarn Package Cache
-          key: yarn-packages-{{ checksum "yarn.lock" }}
-          paths:
-            - ~/.cache/yarn
-      - run:
-          name: test regular
+          name: test
           command: yarn run test
-          working_directory: regular  
 
-  test_amp:
-    working_directory: ~/repo
-    docker:
-      - image: circleci/node:8.16.2-browsers
-    steps:
-      - checkout
-      - restore_cache:
-          name: Restore Yarn Package Cache
-          keys:
-            - yarn-packages-{{ checksum "yarn.lock" }}
-      - run:
-          name: Install Dependencies
-          command: yarn install --frozen-lockfile
-      - save_cache:
-          name: Save Yarn Package Cache
-          key: yarn-packages-{{ checksum "yarn.lock" }}
-          paths:
-            - ~/.cache/yarn
-      - run:
-          name: amp build
-          command: yarn run build
-          working_directory: amp
-      - run:
-          name: test amp
-          command: yarn run test
-          working_directory: amp
-          
 workflows:
   version: 2
   build_and_test:
     jobs:
-      - build_regular
-      - test_regular:
+      - build
+      - test:
           requires:
-            - build_regular
-      - build_amp
-      - test_amp:
-          requires:
-            - build_amp
+            - build
