@@ -165,7 +165,7 @@ module.exports = {
         files: ['post/**/index.html', 'index.html'], // for exclude admin/index.html
         gaConfigPath: 'gaConfig.json',
         serviceWorker: {
-          src: '/sw.js',
+          src: 'https://blog.tomoyukikashiro.me/sw.js',
           'data-iframe-src': 'https://blog.tomoyukikashiro.me/uninstall-serviceworker.html',
           layout: 'nodisplay'
         },
