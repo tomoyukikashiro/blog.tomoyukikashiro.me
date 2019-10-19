@@ -30,10 +30,12 @@ export default class Post {
   }
   
   get isoDate() {
+    if (!this.date) return
     return this.date.toISOString()
   }
   
   get formatDate() {
+    if (!this.date) return
     return this.date.toLocaleString('en', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
     // return moment(this.date.toISOString()).format('dddd LL')
   }
