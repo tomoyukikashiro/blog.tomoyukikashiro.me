@@ -10,7 +10,6 @@ const BlogPostPreview = ({ entry, widgetFor }) => (
     lang={entry.getIn(['data', 'lang'])}
     url=""
     content={widgetFor('body')}
-    tags={entry.getIn(['data', 'tags'])}
   />
 )
 
