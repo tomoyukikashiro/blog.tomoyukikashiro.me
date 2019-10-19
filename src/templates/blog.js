@@ -55,7 +55,10 @@ export class BlogPostTemplate extends React.Component {
         <Header klass={headerBgClass(post.date.getDate())} text={ post.title } link={ `${post.path()}/` }>
           <div className={ HeaderStyles.header__meta }>
             <address className={ `${ HeaderStyles.header__author } text-elegant` }>By { this.props.author }</address>
-            <time className={ `${ HeaderStyles.header__publish_date } text-elegant` } dateTime={ post.isoDate }> on { post.formatDate }</time>
+            { post.isoDate
+              ? <time className={ `${ HeaderStyles.header__publish_date } text-elegant` } dateTime={ post.isoDate }> on { post.formatDate }</time>
+              : null
+            }
           </div>
         </Header>
         <div className="markdown-body body">
