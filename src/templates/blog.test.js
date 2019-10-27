@@ -21,6 +21,7 @@ describe('BlogPostHead', function () {
     isoDate: new Date('2018-12-24').toISOString(),
     lang: 'en',
     tags: ['test1', 'test2'],
+    image: 'https://example.com/images/3.jpg',
     path: () => ('/post/test-slug')
   }
   let headElement;

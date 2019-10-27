@@ -1,5 +1,4 @@
 import React from 'react'
-import { headerBgUrl } from '../../utils/image'
 import Helmet from 'react-helmet'
 
 const ArticleBreadCrumb = ({ post, site }) => (
@@ -16,7 +15,7 @@ const ArticleBreadCrumb = ({ post, site }) => (
             "item": {
               "@id": "${ site.url }/",
               "name": "HOME",
-              "image": "${ site.url }${ headerBgUrl() }"
+              "image": "${ site.url }/images/home.jpg"
             }
           },
           {
@@ -25,7 +24,7 @@ const ArticleBreadCrumb = ({ post, site }) => (
             "item": {
               "@id": "${ site.url }${post.path()}/",
               "name": "${ post.title }",
-              "image": "${ site.url }${ headerBgUrl(post.date.getDate()) }"
+              "image": "${post.image }"
             }
           }
         ]

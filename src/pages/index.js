@@ -5,7 +5,6 @@ import Helmet from 'react-helmet'
 
 import Layout from '../components/Layout'
 import MetaSocial from '../components/MetaSocial'
-import { headerBgUrl } from '../utils/image'
 import HomeBreadCrumb from '../components/ld_json/HomeBreadCrumb'
 import Article from '../components/Article'
 import Header from '../components/Header'
@@ -25,7 +24,7 @@ export const BlogIndexHead = ({ site }) => (
       description={ site.description }
       type={ site.type }
       url={ `${site.url}/` }
-      image={ headerBgUrl() }
+      image={ `${site.url}/images/home.jpg` }
     />
     <HomeBreadCrumb site={ site } />
   </React.Fragment>
@@ -42,7 +41,7 @@ class BlogIndex extends React.Component {
       <Layout site={site}>
         <BlogIndexHead site={ site } />
         <main>
-          <Header klass="header__bg_home" text={ site.title } link="/" />
+          <Header text={ site.title } link="/" imageUrl={`${site.url}/images/home.jpg`} title={site.title} />
           <div className="body">
             { posts.map(post => <Article key={ post.key } post={ post } />) }
           </div>

@@ -1,5 +1,4 @@
 import React from 'react'
-import { headerBgUrl } from '../../utils/image'
 import truncate from 'lodash/truncate'
 import Helmet from 'react-helmet'
 
@@ -17,7 +16,7 @@ const Article = ( {post, site} ) => (
           "headline": "${ truncate(post.summary, { length: 110 }) }",
           "image": {
             "@type": "ImageObject",
-            "url": "${ site.url }${ headerBgUrl(post.date.getDate()) }",
+            "url": "${post.image}",
             "height": 900,
             "width": 1600
           },

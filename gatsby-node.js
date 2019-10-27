@@ -48,8 +48,8 @@ exports.createPages = async ({ actions, graphql }) => {
       context: {
         slug: node.frontmatter.slug.trim(),
         lang: node.frontmatter.lang.trim(),
-        hasAlternate: !!alternate.data.allMarkdownRemark
-      },
+        hasAlternate: !!alternate.data.allMarkdownRemark.edges.length
+      }
     })
   })
   return Promise.all(promises)
