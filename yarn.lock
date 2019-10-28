@@ -6743,10 +6743,10 @@ gatsby-plugin-feed@2.3.19:
     lodash.merge "^4.6.2"
     rss "^1.2.2"
 
-gatsby-plugin-html2amp@1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-html2amp/-/gatsby-plugin-html2amp-1.3.0.tgz#1c012fdb0abcd2f7b80739858f81dba58eb89656"
-  integrity sha512-W0GQ4EJZggDYpJopHd6ZsI0Rn+NjuiM4iKIfrxEybiQcr0aABQAlNMQg8bNFeHmsCSFDvoefjQAPDRDbn3UBpA==
+gatsby-plugin-html2amp@1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-html2amp/-/gatsby-plugin-html2amp-1.3.1.tgz#4d52fff582e24cb7f88acdc8cc6b4c368a3a56b0"
+  integrity sha512-u0brHM7sqmtJ4d/roMnKbkyBc9MsljHuRQumr/kREDbHjEdxt7GIPTTZBluuVvetXkAR+9J2DESW5IDCp+vcrA==
   dependencies:
     fs-extra "^8.1.0"
     globby "^10.0.0"
