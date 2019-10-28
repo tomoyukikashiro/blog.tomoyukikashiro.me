@@ -4,13 +4,11 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import MetaSocial from '../components/MetaSocial'
-import { headerBgUrl, headerBgClass } from '../utils/image'
 import ArticleBreadCrumb from '../components/ld_json/ArticleBreadCrumb'
 import Article from '../components/ld_json/Article'
 import Header from '../components/Header'
 import FooterStyle from './BlogFooter.module.css'
 
-import HeaderStyles from '../components/Header.module.css'
 import Site from '../utils/site'
 import Post from '../utils/post'
 
@@ -30,7 +28,7 @@ export const BlogPostHead = ({ post, site, hasAlternate = false}) => (
       description={ post.summary || site.description }
       type={ post.type }
       url={ site.postUrl(post) }
-      image={ headerBgUrl(post.date.getDate()) }
+      image={ post.image }
       published={ post.isoDate }
       lang={ post.lang }
     />
@@ -52,15 +50,13 @@ export class BlogPostTemplate extends React.Component {
     const post = new Post({frontmatter: this.props, html: this.props.html})
     return (
       <article>
-        <Header klass={headerBgClass(post.date.getDate())} text={ post.title } link={ `${post.path()}/` }>
-          <div className={ HeaderStyles.header__meta }>
-            <address className={ `${ HeaderStyles.header__author } text-elegant` }>By { this.props.author }</address>
-            { post.isoDate
-              ? <time className={ `${ HeaderStyles.header__publish_date } text-elegant` } dateTime={ post.isoDate }> on { post.formatDate }</time>
-              : null
-            }
-          </div>
-        </Header>
+        <Header
+          imageUrl={post.image}
+          title={post.title}
+          path={post.path()}
+          author={this.props.author}
+          formatDate={post.formatDate}
+          isoDate={post.isoDate}></Header>
         <div className="markdown-body body">
           { this.props.content
             ? <div>{ this.props.content }</div>
@@ -88,6 +84,7 @@ class BlogPost extends React.Component {
           slug={ post.slug }
           lang={ post.lang }
           url={ site.postUrl(post) }
+          image={ post.image }
           html={ post.html } />
         <BlogPostFooter url={site.postEnUrl(post)} twitterUserName={site.twitterUserName}/>
       </Layout>
@@ -119,6 +116,7 @@ export const pageQuery = graphql`
         slug
         summary
         lang
+        image
         date(formatString: "MMMM DD, YYYY")
       }
     }

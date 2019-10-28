@@ -1,5 +1,4 @@
 import React from 'react'
-import { headerBgUrl } from '../../utils/image'
 import Helmet from 'react-helmet'
 
 const HomeBreadCrumb = ({ site }) => (
@@ -16,7 +15,7 @@ const HomeBreadCrumb = ({ site }) => (
               "item": {
                 "@id": "${ site.url }/",
                 "name": "HOME",
-                "image": "${ site.url }${ headerBgUrl() }"
+                "image": "${ site.url }/images/home.jpg"
               }
             }
           ]

@@ -27,11 +27,19 @@ class Post {
     return 'article';
   }
 
+  get image() {
+    const siteUrl = `https://blog.tomoyukikashiro.me`;
+    const image = this.node.frontmatter.image && this.node.frontmatter.image.trim();
+    return image || `${siteUrl}/images/${this.date.getDate() % 7}.jpg`;
+  }
+
   get isoDate() {
+    if (!this.date) return;
     return this.date.toISOString();
   }
 
   get formatDate() {
+    if (!this.date) return;
     return this.date.toLocaleString('en', {
       weekday: 'long',
       year: 'numeric',

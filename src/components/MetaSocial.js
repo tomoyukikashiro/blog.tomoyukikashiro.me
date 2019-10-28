@@ -6,7 +6,7 @@ const MetaSocial = ({title, description, type, url, image, published, lang = 'en
     {/* BASIC */}
     <meta property="og:title" content={ title } />
     <meta property="og:type" content={ type } />
-    <meta property="og:image" content={ `${ site.url }${ image.trim() }` } />
+    <meta property="og:image" content={ image } />
     <meta property="og:url" content={ url } />
 
     {/* OPTIONAL */}
@@ -29,7 +29,7 @@ const MetaSocial = ({title, description, type, url, image, published, lang = 'en
     <meta name="twitter:creator" content={ `@${ site.twitterUserName }` } />
     <meta name="twitter:title" content={ title } />
     <meta name="twitter:description" content={ description.replace(/"/g, '') } />
-    <meta name="twitter:image" content={ `${ site.url }${ image.trim() }` } />
+    <meta name="twitter:image" content={ image } />
   </Helmet>
 )
 

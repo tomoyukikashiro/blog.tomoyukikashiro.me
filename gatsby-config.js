@@ -1,5 +1,15 @@
 const Post = require("./src/utils/dist/post").default
 const Site = require("./src/utils/dist/site").default
+const cheerio = require('cheerio')
+
+const addLayoutAttr = (htmlString) => {
+  let $ = cheerio.load(htmlString)
+  $('amp-img').each((i, element) => {
+    const $amp = $(element)
+    $amp.attr('layout', 'fixed')
+  })
+  return $.html()
+}
 
 module.exports = {
   siteMetadata: {
@@ -12,6 +22,7 @@ module.exports = {
     ampUrl: 'https://amp.tomoyukikashiro.me'
   },
   plugins: [
+    'gatsby-plugin-sass',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -169,7 +180,8 @@ module.exports = {
           'data-iframe-src': 'https://blog.tomoyukikashiro.me/uninstall-serviceworker.html',
           layout: 'nodisplay'
         },
-        optimize: true
+        optimize: true,
+        htmlPlugins: [addLayoutAttr]
       }
     },
     // 'gatsby-plugin-webpack-bundle-analyzer',
