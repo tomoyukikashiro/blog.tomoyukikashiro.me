@@ -7053,6 +7053,17 @@ gatsby-react-router-scroll@^2.1.14:
     scroll-behavior "^0.9.10"
     warning "^3.0.0"
 
+gatsby-remark-autolink-headers@^2.1.16:
+  version "2.1.16"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-autolink-headers/-/gatsby-remark-autolink-headers-2.1.16.tgz#e9142efecb92df781f6b06f98cdb3651766a19b3"
+  integrity sha512-dBBlJSDSDkrMF0JMqDUXzaYpnyvy0kI38qFyMJ3Bul9TsXCsdAAJjMWAG+/Qx4Qvf6dv0d9Gz1d/d0Qyb3ZEqQ==
+  dependencies:
+    "@babel/runtime" "^7.6.3"
+    github-slugger "^1.2.1"
+    lodash "^4.17.15"
+    mdast-util-to-string "^1.0.6"
+    unist-util-visit "^1.4.1"
+
 gatsby-remark-copy-linked-files@2.1.28:
   version "2.1.28"
   resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-2.1.28.tgz#0e26f4d52b512794d93e1c08faa8adc87d42ca22"
@@ -7453,7 +7464,7 @@ github-markdown-css@3.0.1:
   resolved "https://registry.yarnpkg.com/github-markdown-css/-/github-markdown-css-3.0.1.tgz#d08db1060d2e182025e0d07d547cfe2afed30205"
   integrity sha512-9G5CIPsHoyk5ObDsb/H4KTi23J8KE1oDd4KYU51qwqeM+lKWAiO7abpSgCkyWswgmSKBiuE7/4f8xUz7f2qAiQ==
 
-github-slugger@^1.1.1:
+github-slugger@^1.1.1, github-slugger@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/github-slugger/-/github-slugger-1.2.1.tgz#47e904e70bf2dccd0014748142d31126cfd49508"
   integrity sha512-SsZUjg/P03KPzQBt7OxJPasGw6NRO5uOgiZ5RGXVud5iSIZ0eNZeNp5rTwCxtavrRUa/A77j8mePVc5lEvk0KQ==
@@ -14077,6 +14088,11 @@ relay-runtime@2.0.0:
   dependencies:
     "@babel/runtime" "^7.0.0"
     fbjs "^1.0.0"
+
+remark-breaks@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/remark-breaks/-/remark-breaks-1.0.3.tgz#9ca5dbf99ad04154bbf0b6e8f227b3735dfe637a"
+  integrity sha512-ip5hvJE8vsUJCGfgHaEJbf/JfO6KTZV+NBG68AWkEMhrjHW3Qh7EorED41mCt0FFSTrUDeRiNHovKO7cqgPZmw==
 
 remark-parse@^3.0.1:
   version "3.0.1"
