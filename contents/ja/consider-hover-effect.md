@@ -3,7 +3,7 @@ date: 2019-11-08
 title: タブレットのhoverを考え直したい
 summary: hoverのアクションを利用してUIを実装しているサイトを目にするがタブレットでうまく動かないことが多々あるのでどんなことに気をつけるのか整理してみました。
 slug: consider-hover-effect-for-table
-lang: en
+lang: ja
 tags: [css]
 image: https://i.gyazo.com/8515fecd2796e523d239aac818c93230.png
 ---
