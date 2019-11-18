@@ -11193,7 +11193,12 @@ netlify-cms-editor-component-image@^2.4.2:
   resolved "https://registry.yarnpkg.com/netlify-cms-editor-component-image/-/netlify-cms-editor-component-image-2.4.2.tgz#2b0cb781e7a2c797104dd14f98a0c3e5983f5714"
   integrity sha512-yJbbchPUbJnQERpW4+HOLv8f3IfAi4+Yg1w1o4HPfI9W7VOEsqV8rUoZ3N0p4kb9khFX07BSyBPzaeEWnaa5nA==
 
-netlify-cms-lib-auth@2.2.4, netlify-cms-lib-auth@^2.2.4:
+netlify-cms-lib-auth@2.2.5:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/netlify-cms-lib-auth/-/netlify-cms-lib-auth-2.2.5.tgz#096d9c1b117a7ac10a9ab07b62c2cddb70fb11d8"
+  integrity sha512-9HFHl9aw1vnmkXwwNt2BX8AffHnq0K6ee/iB3GsX3icVUQdlbi+BFwkpf5Gdhr9X1j1tP9sO5foWd2GMkbKRcA==
+
+netlify-cms-lib-auth@^2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/netlify-cms-lib-auth/-/netlify-cms-lib-auth-2.2.4.tgz#e7a12f510e535fdc22adc0d0bd8a6450e53e9a80"
   integrity sha512-Y9/Gm+FpAz9t8P4lpeHE5e3+e6+6jSRey5RCcQv42RNXwrV5aODuxpmQ/vBYe9VSBXZUv3C7OJ1Sxsm2fhixXg==
