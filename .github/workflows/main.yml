@@ -1,0 +1,20 @@
+name: Lighthouse
+on: push
+jobs:
+  static-dist-dir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: build
+        run: |
+          yarn
+          yarn build
+      - name: Run Lighthouse against a static dist dir
+        uses: treosh/lighthouse-ci-action@v2
+        with:
+          configPath: '.github/lighthouse/lighthouserc.json'
+      - name: Save results
+        uses: actions/upload-artifact@v1
+        with:
+          name: lighthouse-results
+          path: '.github/lighthouse/lighthouseci.json'
