@@ -14985,15 +14985,16 @@ slate-soft-break@^0.6.1:
   resolved "https://registry.yarnpkg.com/slate-soft-break/-/slate-soft-break-0.6.1.tgz#b5e9ccf3cb876168c10266428274e2523b0d3dd9"
   integrity sha512-PTujwU6B8vKO86Yqj2TXcryxkal6PBmFrUhZwZF6fQlhlLUaJAMYQX60blGvO7tncDxyofxxIkBKdGdjL3JldA==
 
-slate@0.50.2:
-  version "0.50.2"
-  resolved "https://registry.yarnpkg.com/slate/-/slate-0.50.2.tgz#74b1250e6e3b9f420ec9585dabd8be0228e8e6d4"
-  integrity sha512-t+rMgoIcQ+uLozO9ZdXeVq4wUpWjISdqOwwwkH8JyM4z62gz1K6AfNWvUplLsQSTa+XKd6Rb+9OPQvO//EBRtQ==
+slate@0.50.4:
+  version "0.50.4"
+  resolved "https://registry.yarnpkg.com/slate/-/slate-0.50.4.tgz#996332116aee883255640b95096fd09a3e48033d"
+  integrity sha512-WduHethrRUvutElJut9gdJ2nmgnt/AS+H+x0jq+7Hl0A6E5Xnb5o9mqiHB2OrgqW4capWGnqbFJAaIU5r8aOeg==
   dependencies:
     "@types/esrever" "^0.2.0"
     esrever "^0.2.0"
     immer "^5.0.0"
     is-plain-object "^3.0.0"
+    tiny-warning "^1.0.3"
 
 slate@^0.34.0:
   version "0.34.7"
@@ -15991,6 +15992,11 @@ tiny-emitter@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/tiny-emitter/-/tiny-emitter-2.1.0.tgz#1d1a56edfc51c43e863cbb5382a72330e3555423"
   integrity sha512-NB6Dk1A9xgQPMoGqC5CVXn123gWyte215ONT5Pp5a0yt4nlEoO1ZWeCwpncaekPHXO60i47ihFnZPiRPjRMq4Q==
+
+tiny-warning@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/tiny-warning/-/tiny-warning-1.0.3.tgz#94a30db453df4c643d0fd566060d60a875d84754"
+  integrity sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==
 
 tinycolor2@^1.4.1:
   version "1.4.1"
