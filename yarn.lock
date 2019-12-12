@@ -15069,10 +15069,10 @@ slate-soft-break@^0.6.1:
   resolved "https://registry.yarnpkg.com/slate-soft-break/-/slate-soft-break-0.6.1.tgz#b5e9ccf3cb876168c10266428274e2523b0d3dd9"
   integrity sha512-PTujwU6B8vKO86Yqj2TXcryxkal6PBmFrUhZwZF6fQlhlLUaJAMYQX60blGvO7tncDxyofxxIkBKdGdjL3JldA==
 
-slate@0.53.0:
-  version "0.53.0"
-  resolved "https://registry.yarnpkg.com/slate/-/slate-0.53.0.tgz#cb20df5531dbc1d90341df5856342bb1d65fd60d"
-  integrity sha512-qdTNTp+QKghw6QSCEMQm+Mp3fXaMfgn57m5p1JVlSJA0uYkkQnsrPVJuweY2mqacgq+xDiRgvPDvrhZfsjJ/gw==
+slate@0.54.1:
+  version "0.54.1"
+  resolved "https://registry.yarnpkg.com/slate/-/slate-0.54.1.tgz#c1010dac8d8ffe873ea34ddbfa1b6594b236a006"
+  integrity sha512-VoCN7fJzpIZeTq0jLV4BCXIwMKnN6TjLayYtiUUUUa8dZ81l2Vpq5EvXDIMTSWVHe3+7evF3Eag4wIzZwe+ARA==
   dependencies:
     "@types/esrever" "^0.2.0"
     esrever "^0.2.0"
