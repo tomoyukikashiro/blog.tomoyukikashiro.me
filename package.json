@@ -29,7 +29,7 @@
     "netlify-cms": "2.10.2",
     "netlify-cms-lib-auth": "2.2.6",
     "node-sass": "4.13.0",
-    "prismjs": "1.17.1",
+    "prismjs": "1.18.0",
     "prop-types": "15.7.2",
     "react": "16.10.2",
     "react-dom": "16.10.2",
