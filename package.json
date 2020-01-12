@@ -44,8 +44,8 @@
     "typography-theme-kirkham": "0.16.19"
   },
   "devDependencies": {
-    "@babel/cli": "7.7.7",
-    "@babel/core": "7.7.7",
+    "@babel/cli": "7.8.0",
+    "@babel/core": "7.8.0",
     "amphtml-validator": "1.0.29",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.0.3",
