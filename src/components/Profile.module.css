@@ -5,6 +5,7 @@
 .image {
   width: 150px;
   height: 150px;
+  display: inline-block;
   border-radius: 100%;
   margin-bottom: var(--size-4);
 }

@@ -176,8 +176,8 @@ module.exports = {
           'data-iframe-src': 'https://blog.tomoyukikashiro.me/uninstall-serviceworker.html',
           layout: 'nodisplay'
         },
-        optimize: true,
-        htmlPlugins: [addLayoutAttr]
+        optimize: true
+        // htmlPlugins: [addLayoutAttr]
       }
     },
     // 'gatsby-plugin-webpack-bundle-analyzer',

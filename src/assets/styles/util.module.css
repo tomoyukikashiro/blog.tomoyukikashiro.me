@@ -3,7 +3,8 @@
   padding-top: calc(670/1280*100%);
   position: relative;
 }
-.ogpRatioBox > img {
+.ogpRatioBox > img,
+.ogpRatioBox > amp-img {
   position: absolute;
   width: 100%;
   height: 100%;
