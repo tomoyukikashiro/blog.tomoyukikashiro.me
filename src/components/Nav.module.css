@@ -6,9 +6,10 @@
 }
 .nav {
   height: 100%;
+  max-width: var(--max-width);
+  margin: auto;
   display: flex;
   justify-content: flex-start;
-  padding: 0 25px;
 }
 .nav__item {
   height: 100%;
