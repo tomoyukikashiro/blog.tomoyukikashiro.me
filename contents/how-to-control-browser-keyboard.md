@@ -16,7 +16,7 @@ Google explains the way to control browser keyboard for html form using `type at
 For example if you use `type="email`
 
 ```html
-<input type="email">
+<input  type="email" />
 ```
 
 The keyboard which is customized for typing email address will show.
@@ -27,7 +27,7 @@ But this also has side effects.
 For example, if you use `type="number"`
 
 ```html
-<input type="number">
+<input type="number" />
 ```
 
 `An unexpected element` to support typing number will be shown inside the element and the number you type will be increased and decreased by scrolling when you hover the element.
@@ -57,7 +57,7 @@ This browser below didn't support it at this moment.
 ## inputmode=none
 
 ```html
-<input type="text" inputmode="none">
+<input type="text" inputmode="none" />
 ```
 
 The value if you implement own software keyboard will not show system keyboard but...
@@ -72,7 +72,7 @@ These browsers show system keyboard.
 
 
 ```html
-<input type="text" inputmode="text">
+<input type="text" inputmode="text" />
 ```
 
 ![iOS safari / Android Chrome inputmode=text](https://i.gyazo.com/8388776d57016142809a4a111494c17a.jpg)
@@ -82,7 +82,7 @@ These browsers show system keyboard.
 ## inputmode=decimal
 
 ```html
-<input type="text" inputmode="decimal">
+<input type="text" inputmode="decimal" />
 ```
 
 This value shows keyboard which allow user type decimal easily (not only number but also `.`).
@@ -93,7 +93,7 @@ This value shows keyboard which allow user type decimal easily (not only number 
 ## inputmode=numeric
 
 ```html
-<input type="text" inputmode="numeric">
+<input type="text" inputmode="numeric" />
 ```
 
 ![iOS safari / Android Chrome inputmode=numeric](https://i.gyazo.com/3e573a853ccff69d6a111a339ed307b4.jpg)
@@ -102,7 +102,7 @@ This value shows keyboard which allow user type decimal easily (not only number 
 ## inputmode=tel
 
 ```html
-<input type="text" inputmode="tel">
+<input type="text" inputmode="tel" />
 ```
 
 This value shows keyboard which allow user type phone number easily such as `+`, `*` and `#`.
@@ -113,7 +113,7 @@ This value shows keyboard which allow user type phone number easily such as `+`,
 ## inputmode=search
 
 ```html
-<input type="text" inputmode="search">
+<input type="text" inputmode="search" />
 ```
 
 ![iOS safari / Android Chrome inputmode=search](https://i.gyazo.com/72d39419f81bd977c2a4488308085550.jpg)
@@ -122,7 +122,7 @@ This value shows keyboard which allow user type phone number easily such as `+`,
 ## inputmode=email
 
 ```html
-<input type="text" inputmode="email">
+<input type="text" inputmode="email" />
 ```
 
 This value shows keyboard which allow user type email easily such as `alphabet` and `@`.
@@ -133,7 +133,7 @@ This value shows keyboard which allow user type email easily such as `alphabet` 
 ## inputmode=url
 
 ```html
-<input type="text" inputmode="url">
+<input type="text" inputmode="url" />
 ```
 
 This value shows keyboard which allow user type URL easily such as `/` and `.com`.

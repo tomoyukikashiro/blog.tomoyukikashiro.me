@@ -97,10 +97,10 @@ describe('Site', function () {
     }) 
   })
 
-  describe('.twitterUserName', function () {
-    const meta = {twitterUserName: 'tomoyukikashiro'}
+  describe('.socialAccount', function () {
+    const meta = {socialAccount: 'tomoyukikashiro'}
     it('should be as expected', function () {
-      expect(new Site(meta).twitterUserName).toEqual('tomoyukikashiro')
+      expect(new Site(meta).socialAccount).toEqual('tomoyukikashiro')
     })
   })
 })

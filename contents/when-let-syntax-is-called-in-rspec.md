@@ -6,22 +6,22 @@ lang: en
 tags: [TDD,rails,rspec,test]
 ---
 
-# Outline
+## Outline
 
 When let / let! syntax is called in Rspec. ?
 
-# let
+## let
 
 Use let to define a memoized helper method and you can execute it when you want to do.
 But it can be called once in example.
 
-# let!
+## let!
 
 It is similar to let.
 It force the method's invocation before each example.
 (let! is similar to before)
 
-# Example
+## Example
 
 ```ruby
 require 'rails_helper'

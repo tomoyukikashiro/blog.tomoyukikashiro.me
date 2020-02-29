@@ -17,9 +17,9 @@ There are so many custom components for sencha touch.
 If you want to use those awesome custom components in your app, you should add some configations in **app.js** and **.sencha** when developing or build apps.
 
 
-# How to...
+## How to...
 
-## When developing
+### When developing
 
 At first, You download costom component and add **ux** folder you downloaded to application folder.
 
@@ -37,7 +37,7 @@ Ext.Loader.setPath({
 });
 ```
 
-## when building
+### when building
 
 When you build your app use Ext.ux.touch custom components, you add following configation in **.sencha/app/sencha.cfg**.
 This is adding Ext.ux.touch class path to build tool

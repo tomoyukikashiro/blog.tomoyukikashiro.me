@@ -15,10 +15,10 @@ module.exports = {
   siteMetadata: {
     title: 'Tomoyuki Kashiro\'s Blog',
     author: 'Tomoyuki Kashiro',
-    description: 'Web developer Tomoyuki Kashiro\'s Blog.',
+    description: 'A Web developer in Tokyo focus on React/Vue and Rails/Django. Google Mobile Web Specialist / Google Analytics Individual Qualification',
     siteUrl: 'https://blog.tomoyukikashiro.me',
     profileUrl: 'https://tomoyukikashiro.me',
-    twitterUserName: 'tomoyukikashiro',
+    socialAccount: 'tomoyukikashiro',
     ampUrl: 'https://amp.tomoyukikashiro.me'
   },
   plugins: [
@@ -152,12 +152,6 @@ module.exports = {
       }
     },
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: 'gatsby-plugin-typography',
-      options: {
-        pathToConfigModule: 'src/utils/typography',
-      },
-    },
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {

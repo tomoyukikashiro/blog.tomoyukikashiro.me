@@ -6,8 +6,8 @@ import Layout from '../components/Layout'
 import MetaSocial from '../components/MetaSocial'
 import ArticleBreadCrumb from '../components/ld_json/ArticleBreadCrumb'
 import Article from '../components/ld_json/Article'
-import Header from '../components/Header'
-import FooterStyle from './BlogFooter.module.css'
+import ArticleHeader from '../components/ArticleHeader'
+import style from '../components/AskMeTwitter.module.css'
 
 import Site from '../utils/site'
 import Post from '../utils/post'
@@ -37,11 +37,11 @@ export const BlogPostHead = ({ post, site, hasAlternate = false}) => (
   </React.Fragment>
 )
 
-export const BlogPostFooter = ({ url, twitterUserName }) => {
-  const tweet = encodeURIComponent(`.@${twitterUserName} Feel free to ask question :)  `)
+export const BlogPostFooter = ({ url, socialAccount }) => {
+  const tweet = encodeURIComponent(`.@${socialAccount} Feel free to ask question :)  `)
   const tweetUrl = `https://twitter.com/intent/tweet?text=${tweet}&url=${encodeURIComponent(url)}` 
   return (
-    <div className={FooterStyle.l_blog_footer}>This blog doesn't have comment function <br/> so feel free to contact me via <a href={tweetUrl} target="_blank">Twitter</a></div>
+    <div className={style.ask_me_twtter}><a href={tweetUrl} target="_blank">Ask Me on Twitter</a></div>
   )
 }
 
@@ -50,13 +50,13 @@ export class BlogPostTemplate extends React.Component {
     const post = new Post({frontmatter: this.props, html: this.props.html})
     return (
       <article>
-        <Header
+        <ArticleHeader
           imageUrl={post.image}
           title={post.title}
           path={post.path()}
-          author={this.props.author}
           formatDate={post.formatDate}
-          isoDate={post.isoDate}></Header>
+          tags={post.tags}
+          isoDate={post.isoDate}/>
         <div className="markdown-body body">
           { this.props.content
             ? <div>{ this.props.content }</div>
@@ -85,8 +85,9 @@ class BlogPost extends React.Component {
           lang={ post.lang }
           url={ site.postUrl(post) }
           image={ post.image }
+          tags={ post.tags }
           html={ post.html } />
-        <BlogPostFooter url={site.postEnUrl(post)} twitterUserName={site.twitterUserName}/>
+        <BlogPostFooter url={site.postEnUrl(post)} socialAccount={site.socialAccount}/>
       </Layout>
     )
   }
@@ -103,7 +104,7 @@ export const pageQuery = graphql`
         description
         siteUrl
         profileUrl
-        twitterUserName
+        socialAccount
         ampUrl
       }
     }
@@ -117,6 +118,7 @@ export const pageQuery = graphql`
         summary
         lang
         image
+        tags
         date(formatString: "MMMM DD, YYYY")
       }
     }

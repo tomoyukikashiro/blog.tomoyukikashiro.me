@@ -1,0 +1,13 @@
+.ask_me_twtter {
+  text-align: center;
+  margin: 0 auto 30px;
+  width: 250px;
+  font-size: 20px;
+  padding: 20px;
+  border: 2px solid var(--color-yellow-1);
+}
+.ask_me_twtter a {
+  color: var(--color-yellow-1);
+  font-weight: bold;
+  text-decoration: underline;
+}

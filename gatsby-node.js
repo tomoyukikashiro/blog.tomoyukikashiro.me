@@ -4,7 +4,9 @@ const Post = require("./src/utils/dist/post").default
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
 
+  let tags = []
   const BlogPost = path.resolve("src/templates/blog.js")
+  const TagTemplete = path.resolve("src/templates/tag.js")
 
   const result = await graphql(`
     {
@@ -31,6 +33,7 @@ exports.createPages = async ({ actions, graphql }) => {
   // Create post detail pages
   const promises = posts.map( async ({ node }) => {
     const currentPost = new Post(node)
+    tags = [...currentPost.tags, ...tags]
   
     const alternateQuery = `query($slug: String, $lang: String) {
       allMarkdownRemark(filter: {frontmatter: {slug: {eq: $slug}, lang: {eq: $lang}}}) {
@@ -52,5 +55,16 @@ exports.createPages = async ({ actions, graphql }) => {
       }
     })
   })
-  return Promise.all(promises)
+  return Promise
+    .all(promises)
+    .then(() => {
+      tags = [...new Set(tags)]
+      tags.forEach(tag => {
+        createPage({
+          path: `/tag/${tag.toLowerCase()}/`,
+          component: TagTemplete,
+          context: { tag }
+        })
+      })
+    })
 }

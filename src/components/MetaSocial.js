@@ -26,7 +26,7 @@ const MetaSocial = ({title, description, type, url, image, published, lang = 'en
 
     {/* twitter */}
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:creator" content={ `@${ site.twitterUserName }` } />
+    <meta name="twitter:creator" content={ `@${ site.socialAccount }` } />
     <meta name="twitter:title" content={ title } />
     <meta name="twitter:description" content={ description.replace(/"/g, '') } />
     <meta name="twitter:image" content={ image } />

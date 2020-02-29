@@ -10,7 +10,7 @@ describe('BlogIndexHeader', function () {
     url: 'https://example.com',
     type: 'website',
     lang: 'en',
-    twitterUserName: 'testAccount'
+    socialAccount: 'testAccount'
   }
   let headElement;
   beforeEach(() => {

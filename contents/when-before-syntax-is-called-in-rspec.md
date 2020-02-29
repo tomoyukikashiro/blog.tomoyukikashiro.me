@@ -6,11 +6,11 @@ lang: en
 tags: [TDD,rails,rspec,test]
 ---
 
-# Outline
+## Outline
 
 When before syntax is called in Rspec. ?
 
-# Example
+## Example
 
 ```ruby
 describe "before spec example" do
@@ -23,7 +23,7 @@ describe "before spec example" do
     # do somthing each(1)
   end
 
-  it "" doa
+  it "" do
     # execute : before all(1)
     # execute : before each(1)
   end

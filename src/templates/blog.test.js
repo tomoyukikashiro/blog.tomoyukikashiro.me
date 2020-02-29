@@ -11,7 +11,7 @@ describe('BlogPostHead', function () {
     title: 'test site title',
     url: 'https://example.com',
     author: 'test author',
-    twitterUserName: 'testAccount',
+    socialAccount: 'testAccount',
   }
   const post = {
     title: 'test post title',

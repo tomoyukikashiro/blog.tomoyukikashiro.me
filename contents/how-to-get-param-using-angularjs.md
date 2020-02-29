@@ -6,7 +6,7 @@ lang: en
 tags: [angularjs]
 ---
 
-# Basic Usage
+## Basic Usage
 
 If you want to get params using angularjs
 
@@ -41,7 +41,7 @@ function ItemController($routeParams){
 }
 ```
 
-# Usage for No SAP page
+## Usage for No SAP page
 
 If you do not need to create SAP page you can get params like this.
 

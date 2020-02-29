@@ -16,7 +16,7 @@ $(function(){
 });
 ```
 
-# How to...
+## How to...
 If you want to hide URLbar by using sencha touch, you can write following code in ** app.js **.
 
 ```js
@@ -31,5 +31,5 @@ viewport: {
 
 
 
-# reference
+## reference
 * [Ext.viewport.DefaultView.autoMaximize](http://docs.sencha.com/touch/2-0/#!/api/Ext.viewport.Default-cfg-autoMaximize)

@@ -6,7 +6,7 @@ lang: en
 tags: [TDD,rails,rspec,capybara,test]
 ---
 
-# About `Capybara.default_wait_time`
+## About `Capybara.default_wait_time`
 
 According to [api document](http://www.rubydoc.info/github/jnicklas/capybara/Capybara/Node/Finders#find-instance_method)...
 
@@ -14,7 +14,7 @@ According to [api document](http://www.rubydoc.info/github/jnicklas/capybara/Cap
 > The length of time find will wait is controlled through Capybara.default_wait_time and defaults to 2 seconds.
 
 
-## ATTENTION
+### ATTENTION
 
 You had better not set much time to `Capybara_default_wait_time`.
 
@@ -31,7 +31,7 @@ expect(page).to have_no_selector(:css, "p a#doesnotexist") # wait 10 seconds
 ```
 
 
-## Solution
+### Solution
 
 If you need more than 2 seconds(default value in Capybara.default_wait_time) to wait to check you can set `wait` option to find instead.
 

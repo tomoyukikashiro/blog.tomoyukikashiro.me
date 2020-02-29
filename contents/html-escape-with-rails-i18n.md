@@ -6,7 +6,7 @@ lang: en
 tags: [rails,I18n,ruby]
 ---
 
-# String is always html escaped in 'config/locales/en.yml'
+## String is always html escaped in 'config/locales/en.yml'
 
 'config/locales/en.yml'
 
@@ -34,7 +34,7 @@ html source is like this
 hello &lt;strong&gt;Tomoyuki&lt;/strong&gt;
 ```
 
-# Output html and locales with html safe
+## Output html and locales with html safe
 
 You can set locale and set html tags in 'conf/locales/XX.yml' with html safe.
 Try to use 'XXX_html' suffix in your locale key.
@@ -62,6 +62,6 @@ html source is like this
 hello <strong>Tomoyuki</strong>
 ```
 
-# Reference
+## Reference
 
 * http://guides.rubyonrails.org/i18n.html#using-safe-html-translations

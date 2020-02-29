@@ -82,6 +82,10 @@ export default class Post {
   get html() {
     return this.node.html
   }
+  
+  get tags() {
+    return this.node.frontmatter.tags || []
+  }
 }
   
 

@@ -2,8 +2,8 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Nav from './Nav'
 import Footer from './Footer'
-
-import contentStyles from '../components/Content.module.css'
+import Profile from './Profile'
+import style from './Layout.module.css'
 
 const Layout = ({ site, children }) => (
   <React.Fragment>
@@ -12,6 +12,7 @@ const Layout = ({ site, children }) => (
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       <link rel="icon" type="image/png" sizes="48x48" href="/favicon.ico" />
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff5722" />
+      <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=swap&subset=japanese" rel="stylesheet" />
       <meta name="theme-color" content="#ffffff" />
       <script type="application/ld+json">
         {
@@ -25,8 +26,13 @@ const Layout = ({ site, children }) => (
       </script>
     </Helmet>
     <Nav />
-    <div className={contentStyles.l_content}>
-      {children}
+    <div className={style.layout}>
+      <main className={style.main}>
+        {children}
+      </main>
+      <aside>
+        <Profile />
+      </aside>
     </div>
     <Footer site={site} />
   </React.Fragment>

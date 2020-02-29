@@ -4,12 +4,18 @@
   box-sizing: border-box;
 }
 a {
-  color: var(--color-primary);
   text-decoration: none;
 }
 a:hover {
   text-decoration: underline;
 }
-a:visited {
-  color: var(--color-primary);
+
+body {
+  font-family: 'Noto Sans JP';
+  color: #333;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
 }

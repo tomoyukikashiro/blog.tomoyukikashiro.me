@@ -6,8 +6,7 @@ import Helmet from 'react-helmet'
 import Layout from '../components/Layout'
 import MetaSocial from '../components/MetaSocial'
 import HomeBreadCrumb from '../components/ld_json/HomeBreadCrumb'
-import Article from '../components/Article'
-import Header from '../components/Header'
+import ArticleCard from '../components/ArticleCard'
 import Post from '../utils/post'
 import Site from '../utils/site'
 
@@ -40,12 +39,9 @@ class BlogIndex extends React.Component {
     return (
       <Layout site={site}>
         <BlogIndexHead site={ site } />
-        <main>
-          <Header text={ site.title } link="/" imageUrl={`${site.url}/images/home.jpg`} title={site.title} />
-          <div className="body">
-            { posts.map(post => <Article key={ post.key } post={ post } />) }
-          </div>
-        </main>
+        <div className="body">
+          { posts.map(post => <ArticleCard key={ post.key } post={ post }/>) }
+        </div>
       </Layout>
     )
   }
@@ -62,7 +58,7 @@ export const pageQuery = graphql`
         description
         siteUrl
         profileUrl
-        twitterUserName
+        socialAccount
         ampUrl
       }
     }
@@ -76,8 +72,10 @@ export const pageQuery = graphql`
           frontmatter {
             slug
             date(formatString: "DD MMMM, YYYY")
+            image
             title
             lang
+            tags
             summary
           }
         }

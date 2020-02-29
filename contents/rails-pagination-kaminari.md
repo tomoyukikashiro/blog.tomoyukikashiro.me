@@ -10,7 +10,7 @@ tags: [rails]
 
 https://github.com/amatsuda/kaminari
 
-# Basic Usage
+## Basic Usage
 
 prepare target 
 ```ruby
@@ -26,7 +26,7 @@ render pagination
 <%= paginate @articles %>
 ```
 
-# Config
+## Config
 
 generate config file
 ```ruby
@@ -45,7 +45,7 @@ page_method_name  # :page by default
 param_name        # :page by default
 ```
 
-# Page scope method
+## Page scope method
 
 http://www.rubydoc.info/github/amatsuda/kaminari/master/Kaminari/PageScopeMethods
 
@@ -59,7 +59,7 @@ example:
 <%= @articles.current_page? %>
 ```
 
-# Customize pagination
+## Customize pagination
 
 make pagination using default template
 

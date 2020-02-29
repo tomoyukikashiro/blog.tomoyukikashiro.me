@@ -64,8 +64,8 @@ class Site {
     return this.meta.author;
   }
 
-  get twitterUserName() {
-    return this.meta.twitterUserName;
+  get socialAccount() {
+    return this.meta.socialAccount;
   }
 
 }

@@ -6,7 +6,7 @@ lang: en
 tags: [angularjs,css,javascript]
 ---
 
-# Basic Usage
+## Basic Usage
 
 You can set style value using `scope`.
 
@@ -28,7 +28,7 @@ You can switch style value using expression.
 $scope.isMobile = true // switch value to change style
 ```
 
-# Customize Usage
+## Customize Usage
 
 How to change style propertry and value using expression
 
