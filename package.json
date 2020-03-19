@@ -29,8 +29,8 @@
     "node-sass": "4.13.1",
     "prismjs": "1.19.0",
     "prop-types": "15.7.2",
-    "react": "16.10.2",
-    "react-dom": "16.10.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
     "react-helmet": "5.2.1",
     "remark-breaks": "1.0.3",
     "reset-css": "5.0.1",
@@ -52,7 +52,7 @@
     "identity-obj-proxy": "3.0.0",
     "jest": "24.9.0",
     "prettier": "1.19.1",
-    "react-test-renderer": "16.10.2"
+    "react-test-renderer": "16.13.1"
   },
   "scripts": {
     "dev": "npm run build:utils && gatsby develop",
