@@ -34,7 +34,7 @@
     "react-helmet": "5.2.1",
     "remark-breaks": "1.0.3",
     "reset-css": "5.0.1",
-    "slate": "0.57.1",
+    "slate": "0.57.2",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.75"
   },
