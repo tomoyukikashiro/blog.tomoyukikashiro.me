@@ -5,17 +5,17 @@ https://blog.tomoyukikashiro.me/
 ## Install
 
 ```bash
-$ npm intall
-$ npm run dev
+$ yarn intall
+$ yarn dev
 ```
 
 ## Build
 
 ```bash
-$ npm run build
+$ yarn build
 ```
 
 ## Test
 ```bash
-$ npm test
+$ yarn test
 ```
