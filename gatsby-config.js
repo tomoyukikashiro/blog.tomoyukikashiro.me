@@ -161,12 +161,6 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-plugin-netlify-cms',
-      options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
-      },
-    },
-    {
       resolve: 'gatsby-plugin-html2amp',
       options: {
         files: ['post/**/index.html', 'index.html'], // for exclude admin/index.html
