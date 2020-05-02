@@ -2,6 +2,9 @@
   "name": "regular",
   "private": true,
   "version": "1.0.0",
+  "engines": {
+    "node": "12.x"
+  },
   "dependencies": {
     "gatsby": "^2.21.9",
     "gatsby-plugin-feed": "^2.5.0",
