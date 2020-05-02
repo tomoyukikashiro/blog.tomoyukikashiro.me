@@ -1,6 +1,6 @@
 import React from 'react'
 import truncate from 'lodash/truncate'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 
 const Article = ( {post, site} ) => (
   <Helmet>
