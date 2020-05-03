@@ -33,7 +33,7 @@ export default class Site {
   }
   
   postUrl(post, lang) {
-    return `${this.url}${post.path(lang)}/`
+    return `${this.url}${post.path(lang)}`
   }
   
   postEnUrl(post) {
@@ -45,7 +45,7 @@ export default class Site {
   }
   
   canonicalPostAmpUrl(post) {
-    return `${this.ampUrl}${post.path()}/`
+    return `${this.ampUrl}${post.path()}`
   }
 
   get profileUrl() {

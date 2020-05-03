@@ -72,7 +72,7 @@ export default class Post {
   
   path(lang) {
     const langPath = (lang || this.lang) === Post.LANGS.JA ? '/ja/' : '/'
-    return `/post${langPath}${this.slug}`
+    return `/post${langPath}${this.slug}/`
   }
   
   get alternativeLangPath() {

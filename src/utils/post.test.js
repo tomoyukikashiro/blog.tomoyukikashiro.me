@@ -154,19 +154,19 @@ describe('Post', function () {
     describe('When lang of node is ja', function () {
       const node = {frontmatter: {lang: 'ja', slug: 'test-slug'}}
       it('should use node path', function () {
-        expect(new Post(node).path()).toEqual('/post/ja/test-slug') 
+        expect(new Post(node).path()).toEqual('/post/ja/test-slug/') 
       }) 
     }) 
     describe('When lang of node is en', function () {
       const node = {frontmatter: {lang: 'en', slug: 'test-slug'}}
       it('should use node path', function () {
-        expect(new Post(node).path()).toEqual('/post/test-slug') 
+        expect(new Post(node).path()).toEqual('/post/test-slug/') 
       }) 
     })
     describe('When lang is passed', function () {
       const node = {frontmatter: {lang: 'en', slug: 'test-slug'}}
       it('should return path using that lang', function () {
-        expect(new Post(node).path('ja')).toEqual('/post/ja/test-slug') 
+        expect(new Post(node).path('ja')).toEqual('/post/ja/test-slug/') 
       }) 
     })
   })
@@ -175,13 +175,13 @@ describe('Post', function () {
     describe('When lang is ja', function () {
       const node = {frontmatter: {lang: 'ja', slug: 'test-slug'}}
       it('should return en path', function () {
-       expect(new Post(node).alternativeLangPath).toEqual('/post/test-slug') 
+       expect(new Post(node).alternativeLangPath).toEqual('/post/test-slug/') 
       }) 
     }) 
     describe('When lang is en', function () {
       const node = {frontmatter: {lang: 'en', slug: 'test-slug'}}
       it('should return ja path', function () {
-       expect(new Post(node).alternativeLangPath).toEqual('/post/ja/test-slug') 
+       expect(new Post(node).alternativeLangPath).toEqual('/post/ja/test-slug/') 
       }) 
     }) 
   })
