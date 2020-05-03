@@ -6447,13 +6447,13 @@ gatsby-plugin-feed@^2.5.0:
     rss "^1.2.2"
 
 gatsby-plugin-html2amp@^1.3.3:
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-html2amp/-/gatsby-plugin-html2amp-1.3.3.tgz#db821016a5c1d992252da3b27d6e804c0f17f1c1"
-  integrity sha512-uurkc2wkSa1gaaee8pGuw89az2Ztr0W7V5VYvT/Hbe0wKqhupeHbamoS7RXeHnNPoUIxxuR6eZfvxUQy4ahyeQ==
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-html2amp/-/gatsby-plugin-html2amp-1.4.0.tgz#0e731cc09cafc5607b8dd200f425029ba86be0b1"
+  integrity sha512-8w4KJkdeF4sjqwy3QC+5UP2Y3Bpi9PAu2ccjoSugYDXqvOqXgS4UGM7I/dhsc//Fm/zphoerty5m65gK6bvF/w==
   dependencies:
     fs-extra "^9.0.0"
     globby "^11.0.0"
-    html2amp "^1.3.2"
+    html2amp "^1.4.0"
     slash "^3.0.0"
 
 gatsby-plugin-netlify@2.1.31:
@@ -7761,10 +7761,10 @@ html-void-elements@^1.0.0, html-void-elements@^1.0.1:
   resolved "https://registry.yarnpkg.com/html-void-elements/-/html-void-elements-1.0.5.tgz#ce9159494e86d95e45795b166c2021c2cfca4483"
   integrity sha512-uE/TxKuyNIcx44cIWnjr/rfIATDH7ZaOMmstu0CwhFG1Dunhlp4OC6/NMbhiwoq5BpW0ubi303qnEk/PZj614w==
 
-html2amp@^1.3.2:
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/html2amp/-/html2amp-1.3.2.tgz#6fed9b1ac5c8408f3a2044f7bc7242393f3fa786"
-  integrity sha512-YI1Qct0Rp9GVRXRWjsi/fWADFOD4vGgHGPDHSefvVNk/tUXTxvDZyiIuq1ImiKiLCY9inD/zwsHW6BSFKbyWow==
+html2amp@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/html2amp/-/html2amp-1.4.0.tgz#e56fff943000d217fb2cf2cf356339a063a137bf"
+  integrity sha512-J4kTDWl2rtgxwtzW3R7TwHnfnw4okV7t3ztzwmZiXaBn1YgTDJ5vsyJnhshOiVQYcgs4Afdl59lE9nUZJQTFqw==
   dependencies:
     "@ampproject/toolbox-optimizer" "^2.3.0"
     axios "^0.19.2"
@@ -12054,9 +12054,9 @@ postcss@^6.0.1, postcss@^6.0.23:
     supports-color "^5.4.0"
 
 postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.26, postcss@^7.0.27:
-  version "7.0.27"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.27.tgz#cc67cdc6b0daa375105b7c424a85567345fc54d9"
-  integrity sha512-WuQETPMcW9Uf1/22HWUWP9lgsIC+KEHg2kozMflKjbeUtw9ujvFX6QmIfozaErDkmLWS9WEnEdEe6Uo9/BNTdQ==
+  version "7.0.28"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.28.tgz#d349ced7743475717ba91f6810efb58c51fb5dbb"
+  integrity sha512-YU6nVhyWIsVtlNlnAj1fHTsUKW5qxm3KEgzq2Jj6KTEFOTK8QWR12eIDvrlWhiSTK8WIBFTBhOJV4DY6dUuEbw==
   dependencies:
     chalk "^2.4.2"
     source-map "^0.6.1"
