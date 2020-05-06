@@ -1,15 +1,5 @@
 const Post = require("./src/utils/dist/post").default
 const Site = require("./src/utils/dist/site").default
-const cheerio = require('cheerio')
-
-const addLayoutAttr = (htmlString) => {
-  let $ = cheerio.load(htmlString)
-  $('amp-img').each((i, element) => {
-    const $amp = $(element)
-    $amp.attr('layout', 'fixed')
-  })
-  return $.html()
-}
 
 module.exports = {
   siteMetadata: {
@@ -165,13 +155,7 @@ module.exports = {
       options: {
         files: ['post/**/index.html', 'index.html'], // for exclude admin/index.html
         gaConfigPath: 'gaConfig.json',
-        serviceWorker: {
-          src: 'https://blog.tomoyukikashiro.me/sw.js',
-          'data-iframe-src': 'https://blog.tomoyukikashiro.me/uninstall-serviceworker.html',
-          layout: 'nodisplay'
-        },
         optimize: true
-        // htmlPlugins: [addLayoutAttr]
       }
     },
     // 'gatsby-plugin-webpack-bundle-analyzer',
