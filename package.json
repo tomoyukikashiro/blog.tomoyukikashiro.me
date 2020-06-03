@@ -61,7 +61,7 @@
     "test": "npm run lint && npm run unit && npm run amp",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
     "develop": "npm run build:utils && gatsby develop",
-    "build": "npm run build:utils && gatsby build",
+    "build": "npm run build:utils && gatsby build --log-pages",
     "serve": "gatsby serve",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js",
     "build:utils": "babel src/utils/post.js --out-file src/utils/dist/post.js --config-file ./src/utils/.babelrc && babel src/utils/site.js --out-file src/utils/dist/site.js --config-file ./src/utils/.babelrc"

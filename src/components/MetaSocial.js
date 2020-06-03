@@ -30,6 +30,12 @@ const MetaSocial = ({title, description, type, url, image, published, lang = 'en
     <meta name="twitter:title" content={ title } />
     <meta name="twitter:description" content={ description.replace(/"/g, '') } />
     <meta name="twitter:image" content={ image } />
+
+    {/* webmentions */}
+    <link href="https://twitter.com/tomoyukikashiro" rel="me" />
+    <link href="https://github.com/tomoyukikashiro" rel="me authn" />
+    <link rel="webmention" href="https://webmention.io/blog.tomoyukikashiro.me/webmention" />
+    <link rel="pingback" href="https://webmention.io/blog.tomoyukikashiro.me/xmlrpc" />
   </Helmet>
 )
 
