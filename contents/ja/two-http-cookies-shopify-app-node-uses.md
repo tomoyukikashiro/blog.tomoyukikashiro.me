@@ -23,7 +23,7 @@ https://github.com/Shopify/shopify-app-template-node/pull/493
 とはいえ、[Shopify App Node](https://github.com/Shopify/shopify-app-template-node) を動かしてみるといくつか Cookie を使ってるようです。
 気になったので、ここで使われてる Cookie が何に利用されるものなのか調査しました。
 
-## shopify_app_session
+## `shopify_app_session`
 
 アプリケーションのセッション情報を Cookie に保存する際の cookie の名前です。
 
@@ -33,7 +33,7 @@ Shopify App Node が [shopify-node-api](https://github.com/Shopify/shopify-node-
 
 JWT の user id, shop url と `Shopify_app_session` の cookie に紐づくアプリケーションのセッション情報をSessionStorageから取り出し、user id / shop url などが同じである場合、また有効期限内である場合、有効なセッションとして扱います。
 
-## shopify_top_level_oauth
+## `shopify_top_level_oauth`
 
 先程説明した `shopify_app_session` の セッション Cookie を保存するためには 1st party cookie にする必要があります。
 つまり、embedded app のように iframe に埋め込まれるアプリケーションだったとしても、OAuth 認証をする場合はそのリクエストは iframe の外側 で行う必要があります。
@@ -46,26 +46,26 @@ Shopify App Node の [server/middleware/auth.js](https://github.com/Shopify/shop
 ### `/auth` へのリクエストが iframe の外側からの場合
 
 - STEP1：`/auth` にリクエスト
-  - 最初は shopify_top_level_oauth の cookie が存在しないので `/auth/top-level` にリダイレクト
+  - 最初は `shopify_top_level_oauth` の cookie が存在しないので `/auth/top-level` にリダイレクト
 - STEP2：`/auth/top-level`
-  - shopify_top_level_oauth の cookie を `samesite=strict` で発行
+  - `shopify_top_level_oauth` の cookie を `samesite=strict` で発行
   - また、 JavaScript を返却し browser で実行
     - iframe の 外側なので（`window.top === window.self` で判定）`/auth` にリダイレクト
 - STEP3：`/auth`
-  - `/auth/top-level`  が iframe の外側で、そこから `/auth` へリダイレクトした場合、`/auth` で shopify_top_level_oauth の cookie が読めるので、認証処理を開始できる
+  - `/auth/top-level`  が iframe の外側で、そこから `/auth` へリダイレクトした場合、`/auth` で `shopify_top_level_oauth` の cookie が読めるので、認証処理を開始できる
   - つまり、iframe の外側にいることの確認が取れたことになる
 
 ### `/auth` へのリクエストが iframe の内側からの場合
 
 - STEP1：`/auth` にリクエスト
-  - 最初は shopify_top_level_oauth の cookie が存在しないので `/auth/top-level` にリダイレクト
+  - 最初は `shopify_top_level_oauth` の cookie が存在しないので `/auth/top-level` にリダイレクト
 - STEP2：`/auth/top-level`
-  - shopify_top_level_oauth の cookie を `samesite=strict` で発行
+  - `shopify_top_level_oauth` の cookie を `samesite=strict` で発行
   - また、 JavaScript を返却し browser で実行
     - iframe の 内側なので App Bridge のリダイレクト機能を利用して iframe の親 window で `/auth/top-level` にリダイレクト
     - `/auth` にリダイレクトしない理由は、iframe の内側からのリクエストに対して  `samesite=strict` で発行した cookie は ブラウザに保存されれないためです
 - STEP3：`/auth/top-level`
-  - iframe の 外側からのリクエストでまた同様に shopify_top_level_oauth の cookie を `samesite=strict` で発行
+  - iframe の 外側からのリクエストでまた同様に `shopify_top_level_oauth` の cookie を `samesite=strict` で発行
   - 以降は、`/auth へのリクエストが iframe の外側からの場合` と同じになる
 
 以上のように、iframe の 内側か、外側かの判定はブラウザ側でして、その結果の判断は `samesite=strict` で発行された cookie の有無によって行われている。
