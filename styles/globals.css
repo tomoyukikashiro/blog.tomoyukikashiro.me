@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "~prismjs/themes/prism-tomorrow.css";
+
+
+.prose h1 {
+  @apply leading-tight font-semibold font-heading text-4xl mb-2;
+}
+.prose h2 {
+  @apply leading-tight font-semibold font-heading text-3xl mb-2;
+}
+.prose h3 {
+  @apply leading-tight font-semibold font-heading text-2xl mb-2;
+}
+.prose h4 {
+  @apply leading-tight font-semibold font-heading text-lg mb-2;
+}
+.prose h5 {
+  @apply leading-tight font-semibold font-heading text-lg mb-2;
+}
+.prose h6 {
+  @apply leading-tight font-semibold font-heading mb-2;
+}
+.prose p {
+  @apply mb-2 text-xl text-base text-gray-800;
+}
+.prose a {
+  @apply font-medium text-red-500 underline hover:no-underline;
+}
+.prose img {
+  @apply border border-solid border-gray-300 mx-auto;
+}
