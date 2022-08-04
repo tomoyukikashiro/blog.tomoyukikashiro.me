@@ -32,3 +32,7 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# generated files
+/public/sitemap.xml
+/public/rss.xml
