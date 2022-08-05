@@ -1,5 +1,6 @@
 import { VFC } from "react";
 import { emojiTable } from "../../lib/reaction";
+import Budoux from "../Budoux";
 
 export const ContentHeader: VFC<{ post: Post }> = ({ post }) => {
   const reactions = emojiTable(post.reactions);
@@ -11,8 +12,8 @@ export const ContentHeader: VFC<{ post: Post }> = ({ post }) => {
       >
         {post.createdAt}
       </time>
-      <h1 className="text-3xl md:text-4xl font-extrabold font-heading mb-8">
-        {post.title}
+      <h1 className="text-3xl md:text-4xl font-extrabold font-heading mb-8 leading-relaxed">
+        <Budoux>{post.title}</Budoux>
       </h1>
 
       <div className="gap-2 flex justify-center mb-8">

@@ -1,6 +1,7 @@
 import { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import Budoux from "./Budoux";
 
 const Item: FC<{ post: Post }> = ({ post }) => (
   <div className="w-full lg:w-1/2 px-4 mb-8">
@@ -24,7 +25,9 @@ const Item: FC<{ post: Post }> = ({ post }) => (
         >
           {post.createdAt}
         </time>
-        <h2 className="text-2xl font-extrabold mb-6">{post.title}</h2>
+        <h2 className="text-2xl font-extrabold mb-6  leading-relaxed">
+          <Budoux>{post.title}</Budoux>
+        </h2>
         <Link href={post.path}>
           <a className="inline-block text-xl font-bold text-indigo-500 hover:text-indigo-600">
             Read More

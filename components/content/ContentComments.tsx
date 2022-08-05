@@ -16,7 +16,7 @@ export const ContentComments: VFC<{
 }> = ({ githubUrl, comments }) => {
   if (!comments) return null;
   return (
-    <div className="flex flex-col gap-3 my-6">
+    <div className="max-w-4xl mx-auto flex flex-col gap-3 my-6">
       {comments.map((comment) => (
         <div key={comment.id} className="border border-indigo-900 p-3">
           <div

@@ -42,7 +42,7 @@ export const ContentBody: VFC<{ post: Post }> = ({ post }) => {
         </div>
       )}
       <div
-        className="max-w-4xl mx-auto mb-10 prose prose-sky prose-img:mx-auto"
+        className="max-w-4xl mx-auto mb-10 prose prose-sky prose-img:mx-auto prose-a:break-all"
         dangerouslySetInnerHTML={{ __html: post.html }}
       />
       <div className="md:flex justify-center items-center gap-6">

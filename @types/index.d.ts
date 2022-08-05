@@ -1,3 +1,9 @@
+namespace NodeJS {
+  interface ProcessEnv {
+    readonly REVALIDATE_TOKEN: string;
+  }
+}
+
 interface FrontMatter {
   title: string;
   slug: string;

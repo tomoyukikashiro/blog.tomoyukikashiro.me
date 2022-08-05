@@ -28,7 +28,7 @@ export const getStaticProps: GetStaticProps<{ posts: Post[] }> = async () => {
     props: {
       posts: postData,
     },
-    revalidate: 60 * 60 * 24,
+    revalidate: 60 * 60,
   };
 };
 
@@ -46,7 +46,7 @@ const Home: NextPage<Props> = ({ posts }) => {
         alternateUrl="https://blog.tomoyukikashiro.me"
         alternateLang="x-default"
       />
-      <section className="py-26 bg-white">
+      <section className="py-20 bg-white">
         <div className="container px-4 mx-auto">
           <div className="max-w-4xl mx-auto mb-16 text-center">
             <span className="text-lg font-extrabold text-indigo-500">

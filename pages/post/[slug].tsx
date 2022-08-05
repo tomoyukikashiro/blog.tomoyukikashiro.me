@@ -35,7 +35,7 @@ export const getStaticProps: GetStaticProps<{ post: Post }, Params> = async ({
       post,
       alternatePost,
     },
-    revalidate: 60 * 60 * 24,
+    revalidate: 60 * 60,
   };
 };
 
@@ -75,7 +75,7 @@ const Content: NextPage<{ post: Post; alternatePost?: Post }> = ({
         alternateUrl={alternatePost?.url}
       />
       <ArticleLdJson post={post} />
-      <article className="py-26 bg-white">
+      <article className="py-20 bg-white">
         <div className="container px-4 mx-auto">
           <ContentHeader post={post} />
           <ContentBody post={post} />
