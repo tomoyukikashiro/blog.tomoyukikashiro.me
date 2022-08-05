@@ -46,6 +46,12 @@ export const ContentBody: VFC<{ post: Post }> = ({ post }) => {
         dangerouslySetInnerHTML={{ __html: post.html }}
       />
       <div className="md:flex justify-center items-center gap-6">
+        <button
+          onClick={copy}
+          className="inline-block w-full md:w-auto mb-4 md:mb-0 py-3 px-8 text-center leading-6 text-lg text-white font-extrabold bg-indigo-800 hover:bg-indigo-900 border-3 border-indigo-900 shadow rounded transition duration-200"
+        >
+          Leave a comment
+        </button>
         {shareable ? (
           <button
             onClick={share}
