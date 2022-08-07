@@ -1,0 +1,20 @@
+name: 'update'
+
+on:
+  issue_comment:
+    types: [created, deleted, edited]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    if: ${{ !github.event.issue.pull_request }}
+    steps:
+      - name: revalidate
+        run: |
+          curl -X POST "https://blog-tomoyukikashiro-me.vercel.app/api/revalidate" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "issue": ${{ github.event.issue.number }},
+              "secret": "${{ secrets.REVALIDATE_TOKEN }}"
+            }'
+

@@ -33,6 +33,7 @@
     "remark-parse-frontmatter": "^1.0.3",
     "remark-rehype": "^10.1.0",
     "remark-smartypants": "^2.0.0",
+    "remark-stringify": "^10.0.2",
     "sitemap": "^7.1.1",
     "unified": "^10.1.1"
   },

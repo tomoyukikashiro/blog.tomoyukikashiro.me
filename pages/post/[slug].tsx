@@ -35,7 +35,7 @@ export const getStaticProps: GetStaticProps<{ post: Post }, Params> = async ({
       post,
       alternatePost,
     },
-    revalidate: 60 * 60,
+    revalidate: 60 * 60 * 24 * 7,
   };
 };
 

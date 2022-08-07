@@ -2,6 +2,7 @@ import { unified } from "unified";
 import markdown from "remark-parse";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkParserFrontmatter from "remark-parse-frontmatter";
+import remarkStringify from "remark-stringify";
 import smartypants from "remark-smartypants";
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
@@ -33,6 +34,17 @@ const parseComment = async (comment: PostComment["body"]): Promise<string> => {
 
   const { value: bodyHtml } = vFile;
   return bodyHtml.toString();
+};
+
+export const parseFrontmatter = async (body: string): Promise<FrontMatter> => {
+  const vFile = await unified()
+    .use(markdown)
+    .use(remarkFrontmatter, ["yaml"])
+    .use(remarkParserFrontmatter)
+    .use(remarkStringify)
+    .process(body);
+
+  return vFile.data.frontmatter as FrontMatter;
 };
 
 export const parseIssue = async (post: Issue): Promise<Post> => {

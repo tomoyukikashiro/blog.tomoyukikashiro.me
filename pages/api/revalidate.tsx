@@ -1,17 +1,15 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { timingSafeEqual } from "crypto";
+import { getIssueByNumber } from "../../lib/github-client";
+import { parseFrontmatter } from "../../lib/parser";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  // ?secret=xxxx&path=/path/to/revalidate1
-  const { secret, path } = req.query as {
-    secret: string | undefined;
-    path: string | undefined;
-  };
+  const { issue, secret } = req.body as { issue: number; secret: string };
   if (
-    !path ||
+    !issue ||
     !secret ||
     !timingSafeEqual(
       Buffer.from(secret),
@@ -20,6 +18,14 @@ export default async function handler(
   ) {
     return res.status(401).json({ message: "Invalid token" });
   }
+
+  const body = await getIssueByNumber(issue);
+  if (!body) return res.status(401).json({ message: "Invalid issue number" });
+  const frontmatter = await parseFrontmatter(body);
+  const isJa = frontmatter.lang === "ja-JP";
+  const path = isJa
+    ? `/ja-JP/post/${frontmatter.slug}`
+    : `/post/${frontmatter.slug}`;
 
   try {
     await res.revalidate(path);

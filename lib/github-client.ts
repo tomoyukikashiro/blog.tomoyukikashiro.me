@@ -1,5 +1,9 @@
 import { graphql } from "@octokit/graphql";
-import { Issue, SearchResultItemConnection } from "@octokit/graphql-schema";
+import {
+  Issue,
+  Repository,
+  SearchResultItemConnection,
+} from "@octokit/graphql-schema";
 
 const TOKEN = process.env.GITHUB_TOKEN;
 const repositoryName = "blog.tomoyukikashiro.me";
@@ -10,6 +14,23 @@ const request = graphql.defaults({
     authorization: `token ${TOKEN}`,
   },
 });
+
+export const getIssueByNumber = (number: number) => {
+  return request<{ repository: Repository }>(
+    `query getIssue($name: String!, $owner: String!, $number: Int!) {
+  repository(name: $name, owner: $owner) {
+    issue(number: $number) {
+      body
+    }
+  }
+}`,
+    {
+      name: repositoryName,
+      owner: ownerName,
+      number: number,
+    }
+  ).then((data) => data.repository.issue?.body);
+};
 
 export const getIssues = ({
   lang,
