@@ -1,5 +1,6 @@
 import { SyntheticEvent, useEffect, useState, VFC } from "react";
 import Image from "next/image";
+import Author from "./Author";
 
 export const ContentBody: VFC<{ post: Post }> = ({ post }) => {
   const tweet = encodeURIComponent(
@@ -41,10 +42,13 @@ export const ContentBody: VFC<{ post: Post }> = ({ post }) => {
           />
         </div>
       )}
-      <div
-        className="max-w-4xl mx-auto mb-10 prose prose-sky prose-img:mx-auto prose-a:break-all"
-        dangerouslySetInnerHTML={{ __html: post.html }}
-      />
+      <div className="max-w-4xl mx-auto">
+        <Author post={post} />
+        <div
+          className="max-w-full mb-10 prose prose-sky prose-img:mx-auto prose-a:break-all"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
+      </div>
       <div className="md:flex justify-center items-center gap-6">
         <a
           href={`${post.githubUrl}#issuecomment-new`}

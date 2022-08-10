@@ -6,12 +6,6 @@ export const ContentHeader: VFC<{ post: Post }> = ({ post }) => {
   const reactions = emojiTable(post.reactions);
   return (
     <header className="max-w-4xl mx-auto mb-12 text-center">
-      <time
-        className="text-xl font-bold text-gray-400 mb-2"
-        dateTime={new Date(post.createdAt).toISOString()}
-      >
-        {post.createdAt}
-      </time>
       <h1 className="text-3xl md:text-4xl font-extrabold font-heading mb-8 leading-relaxed">
         <Budoux>{post.title}</Budoux>
       </h1>

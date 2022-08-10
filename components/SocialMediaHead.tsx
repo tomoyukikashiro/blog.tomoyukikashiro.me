@@ -38,6 +38,7 @@ export const SiteHead: VFC<{
     <meta property="profile:first_name" content="Tomoyuki" />
     <meta property="profile:last_name" content="Kashiro" />
     <meta property="profile:username" content="tomoyukikashiro" />
+    <meta name="robots" content="max-image-preview:large" />
 
     {/* og:type:article */}
     {type === "article" && createdAt && (
