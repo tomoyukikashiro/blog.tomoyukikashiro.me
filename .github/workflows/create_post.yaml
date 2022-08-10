@@ -1,0 +1,23 @@
+on:
+  issues:
+    types: [labeled, unlabeled]
+jobs:
+  sitemap:
+    runs-on: ubuntu-latest
+    if: github.event.label.name == 'published'
+    steps:
+      - name: post
+        run: |
+         curl -X POST "https://blog-tomoyukikashiro-me.vercel.app/api/revalidate" \
+           -H "Content-Type: application/json" \
+           -d '{
+             "issue": ${{ github.event.issue.number }},
+             "secret": "${{ secrets.REVALIDATE_TOKEN }}"
+           }'
+      - name: sitemap
+        run: |
+          curl -X POST "https://blog-tomoyukikashiro-me.vercel.app/api/revalidate" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "secret": "${{ secrets.REVALIDATE_TOKEN }}"
+            }'

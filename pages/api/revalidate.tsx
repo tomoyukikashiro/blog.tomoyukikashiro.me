@@ -3,14 +3,21 @@ import { timingSafeEqual } from "crypto";
 import { getIssueByNumber } from "../../lib/github-client";
 import { parseFrontmatter } from "../../lib/parser";
 
+const getPathByNumber = async (number: number): Promise<string | null> => {
+  const body = await getIssueByNumber(number);
+  if (!body) return null;
+  const frontmatter = await parseFrontmatter(body);
+  const isJa = frontmatter.lang === "ja-JP";
+  return isJa ? `/ja-JP/post/${frontmatter.slug}` : `/post/${frontmatter.slug}`;
+};
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   const { issue, secret } = req.body as { issue: number; secret: string };
+
   if (
-    !issue ||
-    !secret ||
     !timingSafeEqual(
       Buffer.from(secret),
       Buffer.from(process.env.REVALIDATE_TOKEN)
@@ -19,13 +26,8 @@ export default async function handler(
     return res.status(401).json({ message: "Invalid token" });
   }
 
-  const body = await getIssueByNumber(issue);
-  if (!body) return res.status(401).json({ message: "Invalid issue number" });
-  const frontmatter = await parseFrontmatter(body);
-  const isJa = frontmatter.lang === "ja-JP";
-  const path = isJa
-    ? `/ja-JP/post/${frontmatter.slug}`
-    : `/post/${frontmatter.slug}`;
+  const path = issue ? await getPathByNumber(issue) : "/";
+  if (!path) return res.status(401).json({ message: "Invalid issue number" });
 
   try {
     await res.revalidate(path);
